@@ -117,7 +117,17 @@
   function renderTestimonials(){
     const holder=qs('[data-testimonials]');
     if(!holder||!window.testimonials)return;
-    holder.innerHTML=window.testimonials.map(item=>`<figure class="quote-card reveal"><blockquote>${item.quote}</blockquote><figcaption><span>${item.name}</span><span>${item.type}</span></figcaption></figure>`).join('');
+    holder.innerHTML=window.testimonials.map(item=>{
+      const messages=(item.messages||[item.quote||'']).filter(Boolean).map(message=>`<p class="chat-bubble" data-cursor="Note">${message}</p>`).join('');
+      return `<article class="quote-card chat-card reveal" data-cursor="Read">
+        <header class="chat-card-header">
+          <span class="chat-avatar is-${item.avatarTone||'blue'}" aria-hidden="true">${item.initial||item.name?.charAt(0)||'L'}</span>
+          <span class="chat-project"><strong>${item.name||''}</strong><small>${item.category||item.type||''}</small></span>
+        </header>
+        <div class="chat-messages">${messages}</div>
+        <footer class="chat-meta">${item.meta||item.type||''}</footer>
+      </article>`;
+    }).join('');
   }
 
   function setupProjectInteractions(root=document){
@@ -200,6 +210,13 @@
     });
   }
 
+  function prepareNowCards(){
+    qsa('.now-list li').forEach(item=>{
+      if(!item.dataset.cursor)item.dataset.cursor='Read';
+      item.setAttribute('tabindex','0');
+    });
+  }
+
   document.addEventListener('DOMContentLoaded',()=>{
     const featured=qs('[data-featured-list]');
     const themedMain=qs('.main-content');
@@ -211,6 +228,7 @@
     renderTestimonials();
     setupMenu();
     prepareProjectGallery();
+    prepareNowCards();
     bindFallbacks();
     setupHoverPreview();
     setupLightbox();
