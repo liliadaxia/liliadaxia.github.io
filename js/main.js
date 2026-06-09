@@ -3,10 +3,17 @@
   const qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer=matchMedia('(hover:hover) and (pointer:fine)').matches;
-  const categories=['全部','品牌系统','活动传播','空间物料','衍生产品'];
+  const categories=['\u5168\u90e8','\u54c1\u724c\u7cfb\u7edf','\u6d3b\u52a8\u4f20\u64ad','\u7a7a\u95f4\u7269\u6599','\u884d\u751f\u4ea7\u54c1'];
+  const themeByCategory={
+    '\u54c1\u724c\u7cfb\u7edf':'brand',
+    '\u6d3b\u52a8\u4f20\u64ad':'campaign',
+    '\u7a7a\u95f4\u7269\u6599':'space',
+    '\u884d\u751f\u4ea7\u54c1':'merch'
+  };
   const projects=()=>window.projects||window.siteProjects||[];
   const cover=p=>p.cover||p.image||'';
   const link=p=>p.url||'';
+  const themeOf=item=>item.theme||themeByCategory[item.category]||'default';
 
   function imageFrame(src,alt){
     return `<div class="image-frame"><img src="${src}" alt="${alt}" loading="lazy" data-fallback></div>`;
@@ -61,29 +68,37 @@
 
   function projectCard(project){
     const tags=(project.tags||[]).map(tag=>`<span>${tag}</span>`).join('');
-    const status=link(project)?'查看项目':'整理中';
+    const status=link(project)?'\u67e5\u770b\u9879\u76ee View Project':'\u6574\u7406\u4e2d';
     const body=`${imageFrame(cover(project),project.title)}<span class="floating-view">${status}</span><div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
-    if(link(project))return `<a class="project-card reveal" href="${link(project)}" data-category="${project.category||''}" data-cursor="View">${body}</a>`;
-    return `<article class="project-card is-disabled reveal" data-category="${project.category||''}" aria-label="${project.title} coming soon">${body}</article>`;
+    const theme=themeOf(project);
+    if(link(project))return `<a class="project-card reveal" href="${link(project)}" data-category="${project.category||''}" data-theme-trigger="${theme}" data-cursor="View">${body}</a>`;
+    return `<article class="project-card is-disabled reveal" data-category="${project.category||''}" data-theme-trigger="${theme}" aria-label="${project.title} coming soon">${body}</article>`;
   }
 
-  function renderProjectCards(filter='全部'){
+  function renderProjectCards(filter='\u5168\u90e8'){
     const grid=qs('[data-project-grid]')||qs('[data-featured-list]');
     if(!grid)return;
-    grid.classList.add('work-list');
-    grid.innerHTML=projects().filter(project=>filter==='全部'||project.category===filter).map(projectCard).join('');
-    bindFallbacks(grid);
-    window.dispatchEvent(new CustomEvent('content:updated'));
+    grid.classList.add('work-list','is-switching');
+    const selected=projects().filter(project=>filter==='\u5168\u90e8'||project.category===filter);
+    window.setTimeout(()=>{
+      grid.innerHTML=selected.map(projectCard).join('');
+      bindFallbacks(grid);
+      setupProjectInteractions(grid);
+      grid.classList.remove('is-switching');
+      window.dispatchEvent(new CustomEvent('content:updated'));
+    },reduced?0:140);
   }
 
   function renderWorksPage(){
     const grid=qs('[data-works-grid]');
     if(!grid)return;
     grid.innerHTML=projects().map(project=>{
+      const theme=themeOf(project);
       const body=`${imageFrame(cover(project),project.title)}<div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p></div>`;
-      return `<article class="project-card reveal" id="${project.id||project.slug||''}">${link(project)?`<a href="${link(project)}" data-cursor="View">${body}</a>`:body}</article>`;
+      return `<article class="project-card reveal" id="${project.id||project.slug||''}" data-theme-trigger="${theme}">${link(project)?`<a href="${link(project)}" data-cursor="View">${body}</a>`:body}</article>`;
     }).join('');
     bindFallbacks(grid);
+    setupProjectInteractions(grid);
     window.dispatchEvent(new CustomEvent('content:updated'));
   }
 
@@ -103,6 +118,26 @@
     const holder=qs('[data-testimonials]');
     if(!holder||!window.testimonials)return;
     holder.innerHTML=window.testimonials.map(item=>`<figure class="quote-card reveal"><blockquote>${item.quote}</blockquote><figcaption><span>${item.name}</span><span>${item.type}</span></figcaption></figure>`).join('');
+  }
+
+  function setupProjectInteractions(root=document){
+    if(!finePointer)return;
+    const themeTarget=qs('.main-content[data-theme],.about-page')||document.body;
+    qsa('.project-card[data-theme-trigger]',root).forEach(card=>{
+      card.addEventListener('mouseenter',()=>{themeTarget.dataset.theme=card.dataset.themeTrigger||'default';});
+      card.addEventListener('mouseleave',()=>{
+        themeTarget.dataset.theme='default';
+        card.style.setProperty('--card-x','0px');
+        card.style.setProperty('--card-y','0px');
+      });
+      card.addEventListener('mousemove',event=>{
+        const rect=card.getBoundingClientRect();
+        const x=((event.clientX-rect.left)/rect.width-.5)*10;
+        const y=((event.clientY-rect.top)/rect.height-.5)*8;
+        card.style.setProperty('--card-x',x.toFixed(1)+'px');
+        card.style.setProperty('--card-y',y.toFixed(1)+'px');
+      },{passive:true});
+    });
   }
 
   function setupHoverPreview(){
@@ -167,6 +202,8 @@
 
   document.addEventListener('DOMContentLoaded',()=>{
     const featured=qs('[data-featured-list]');
+    const themedMain=qs('.main-content');
+    if(themedMain&&!themedMain.dataset.theme)themedMain.dataset.theme='default';
     setupFilters(featured);
     renderProjectCards();
     renderWorksPage();
@@ -177,6 +214,7 @@
     bindFallbacks();
     setupHoverPreview();
     setupLightbox();
+    setupProjectInteractions();
     setTimeout(()=>document.body.classList.add('is-loaded'),80);
   });
 })();
