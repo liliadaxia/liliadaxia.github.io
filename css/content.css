@@ -1,0 +1,279 @@
+.section-subtitle {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  font-size: var(--fs-body);
+  font-style: italic;
+}
+
+.section-copy {
+  max-width: 820px;
+  margin: 18px 0 0;
+  color: var(--color-muted);
+  font-size: var(--fs-body);
+  line-height: 1.78;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.44fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(30px, 6vw, 88px);
+}
+
+.about-portrait {
+  display: grid;
+  gap: 16px;
+}
+
+.profile-frame {
+  aspect-ratio: 4 / 5;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.profile-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.portrait-note {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.about-title {
+  max-width: 920px;
+  margin: 18px 0 16px;
+  font-size: var(--fs-section);
+  font-weight: 540;
+  line-height: 1.06;
+}
+
+.about-subtitle {
+  margin: 0 0 28px;
+  color: var(--color-dark);
+  font-size: var(--fs-title);
+  font-style: italic;
+}
+
+.about-text-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 38px);
+  color: var(--color-muted);
+}
+
+.about-text-grid p,
+.about-prose p {
+  margin: 0;
+}
+
+.about-prose {
+  display: grid;
+  gap: 16px;
+  max-width: 860px;
+  margin-top: 22px;
+  color: var(--color-muted);
+  line-height: 1.78;
+}
+
+.thinking-grid,
+.service-grid,
+.tool-groups,
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 30px);
+}
+
+.thinking-card,
+.service-card,
+.tool-group,
+.contact-panel,
+.quote-card {
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.thinking-card span,
+.service-card p {
+  color: var(--color-muted);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.thinking-card h3,
+.service-card h3,
+.tool-group h3 {
+  margin: 12px 0 6px;
+  font-size: var(--fs-title);
+  font-weight: 560;
+}
+
+.thinking-card p,
+.service-card span {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.card-en {
+  font-style: italic;
+}
+
+.service-card,
+.tool-badge,
+.workflow-list span {
+  transition: transform 0.3s var(--ease-out), background-color 0.3s var(--ease-out);
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  background: var(--color-coral-soft);
+}
+
+.tool-groups {
+  grid-template-columns: 1fr 1fr 1.2fr;
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.tool-badge,
+.workflow-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 6px 13px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-soft);
+  font-size: var(--fs-small);
+  font-weight: 650;
+}
+
+.tool-badge:hover,
+.workflow-list span:hover {
+  transform: translateY(-2px);
+  background: var(--color-blue-soft);
+}
+
+.tool-badge img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tool-badge.is-text-fallback img,
+.tool-badge.text-only img {
+  display: none;
+}
+
+.poetic-closing {
+  display: grid;
+  gap: 18px;
+}
+
+.poetic-closing blockquote {
+  max-width: 980px;
+  margin: 0;
+}
+
+.poetic-closing blockquote p {
+  margin: 0;
+  font-size: var(--fs-section);
+  line-height: 1.12;
+}
+
+.poetic-closing cite {
+  display: block;
+  margin-top: 16px;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.closing-note {
+  max-width: 640px;
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.contact-panel h2 {
+  margin: 0;
+  font-size: var(--fs-title);
+  font-weight: 540;
+}
+
+.contact-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-muted);
+}
+
+.quote-card {
+  margin: 0;
+}
+
+.quote-card blockquote {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.quote-card figcaption {
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+  color: var(--color-muted);
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 1080px) {
+  .about-hero,
+  .about-text-grid,
+  .thinking-grid,
+  .service-grid,
+  .tool-groups,
+  .quote-grid,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-copy {
+    margin-top: 14px;
+  }
+
+  .about-text-grid {
+    gap: 16px;
+  }
+
+  .tool-badge,
+  .workflow-list span {
+    min-height: 44px;
+  }
+
+  .hero-actions .button {
+    line-height: 1.25;
+  }
+}

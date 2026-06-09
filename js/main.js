@@ -3,7 +3,7 @@
   const qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer=matchMedia('(hover:hover) and (pointer:fine)').matches;
-  const categories=['All','Brand','Campaign','AI Visual','Live Commerce'];
+  const categories=['全部','品牌系统','活动传播','空间物料','衍生产品'];
   const projects=()=>window.projects||window.siteProjects||[];
   const cover=p=>p.cover||p.image||'';
   const link=p=>p.url||'';
@@ -22,6 +22,7 @@
         img.removeAttribute('src');
         img.alt='Image pending';
         img.closest('.image-frame')?.classList.add('is-placeholder');
+        img.closest('.tool-badge')?.classList.add('is-text-fallback');
       },{once:true});
     });
   }
@@ -60,17 +61,17 @@
 
   function projectCard(project){
     const tags=(project.tags||[]).map(tag=>`<span>${tag}</span>`).join('');
-    const status=link(project)?'View Project':'Coming soon';
+    const status=link(project)?'查看项目':'整理中';
     const body=`${imageFrame(cover(project),project.title)}<span class="floating-view">${status}</span><div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
     if(link(project))return `<a class="project-card reveal" href="${link(project)}" data-category="${project.category||''}" data-cursor="View">${body}</a>`;
     return `<article class="project-card is-disabled reveal" data-category="${project.category||''}" aria-label="${project.title} coming soon">${body}</article>`;
   }
 
-  function renderProjectCards(filter='All'){
+  function renderProjectCards(filter='全部'){
     const grid=qs('[data-project-grid]')||qs('[data-featured-list]');
     if(!grid)return;
     grid.classList.add('work-list');
-    grid.innerHTML=projects().filter(project=>filter==='All'||project.category===filter).map(projectCard).join('');
+    grid.innerHTML=projects().filter(project=>filter==='全部'||project.category===filter).map(projectCard).join('');
     bindFallbacks(grid);
     window.dispatchEvent(new CustomEvent('content:updated'));
   }
