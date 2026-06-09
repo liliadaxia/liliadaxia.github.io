@@ -43,6 +43,41 @@ function doodle(){
   addEventListener('mouseup',()=>{down=false;cur=null}); addEventListener('mouseleave',()=>{down=false;cur=null}); addEventListener('resize',size); size();
   (function paint(){const now=performance.now();ctx.clearRect(0,0,innerWidth,innerHeight);for(let i=strokes.length-1;i>=0;i--){const s=strokes[i];s.p=s.p.filter(p=>now-p.t<4600);if(s.p.length<2){if(!s.p.length)strokes.splice(i,1);continue;}ctx.globalAlpha=Math.max(0,Math.min(1,(4600-(now-s.p[0].t))/1800));ctx.strokeStyle=s.c;ctx.lineWidth=s.w;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();ctx.moveTo(s.p[0].x,s.p[0].y);for(let n=1;n<s.p.length;n++){const a=s.p[n-1],b=s.p[n];ctx.quadraticCurveTo(a.x+a.j,a.y-a.j,(a.x+b.x)/2,(a.y+b.y)/2);}ctx.stroke();}ctx.globalAlpha=1;requestAnimationFrame(paint);})();
 }
-document.addEventListener('DOMContentLoaded',()=>{reveal();drawLines();scrollLine();cursor();doodle();});
+function aboutTheme(){
+  const page=qs('.about-page');
+  if(!page||!fine)return;
+  qsa('[data-theme-trigger]',page).forEach(item=>{
+    item.addEventListener('mouseenter',()=>page.dataset.theme=item.dataset.themeTrigger||'default');
+    item.addEventListener('mouseleave',()=>page.dataset.theme='default');
+  });
+}
+function noteLight(){
+  const note=qs('.note-section');
+  if(!note)return;
+  if(reduced){
+    note.classList.add('is-lit');
+    return;
+  }
+  if('IntersectionObserver'in window){
+    const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting)note.classList.add('is-lit');
+    }),{threshold:.28});
+    io.observe(note);
+  }else note.classList.add('is-lit');
+  if(fine){
+    note.addEventListener('mousemove',event=>{
+      const rect=note.getBoundingClientRect();
+      const x=((event.clientX-rect.left)/rect.width-.5)*22;
+      const y=((event.clientY-rect.top)/rect.height-.5)*18;
+      note.style.setProperty('--beam-x',x.toFixed(1)+'px');
+      note.style.setProperty('--beam-y',y.toFixed(1)+'px');
+    },{passive:true});
+    note.addEventListener('mouseleave',()=>{
+      note.style.setProperty('--beam-x','0px');
+      note.style.setProperty('--beam-y','0px');
+    });
+  }
+}
+document.addEventListener('DOMContentLoaded',()=>{reveal();drawLines();scrollLine();cursor();doodle();aboutTheme();noteLight();});
 addEventListener('content:updated',reveal);
 })();

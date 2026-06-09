@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="关于 LILIA DESIGN - 商业视觉设计师，专注品牌视觉、活动传播、空间物料与衍生产品设计。">
+    <meta name="description" content="关于 LILIA DESIGN - 商业视觉设计师，专注品牌视觉、活动传播、空间物料与 AI 辅助商业视觉工作流。">
     <title>关于 About - LILIA DESIGN</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/content.css">
@@ -28,7 +28,7 @@
         </nav>
       </header>
 
-      <main class="main-content about-page">
+      <main class="main-content about-page" data-theme="default">
         <section class="about-hero section">
           <div class="about-portrait reveal">
             <div class="image-frame profile-frame">
@@ -37,9 +37,9 @@
             <p class="portrait-note">Commercial Visual Designer<br>Brand System + Campaign Design</p>
           </div>
           <div class="about-hero-copy">
-            <p class="eyebrow reveal">About LILIA DESIGN</p>
-            <h1 class="about-title reveal">关于我</h1>
-            <p class="about-subtitle reveal">我把品牌的气质，翻译成可以被看见的视觉。</p>
+            <p class="eyebrow reveal">ABOUT LILIA DESIGN</p>
+            <h1 class="about-title reveal">我把品牌的气质，翻译成可以被看见的视觉。</h1>
+            <p class="about-subtitle reveal">I translate brand feelings into visible systems.</p>
             <div class="about-text-grid reveal">
               <p>我是一名关注商业落地和品牌表达的视觉设计师，擅长将品牌气质转化为清晰、统一、可延展的视觉系统。我的项目通常围绕教育、研学、餐饮与生活方式品牌展开，内容包括品牌 VI、IP 延展、活动传播、空间墙面广告和商业物料设计。</p>
               <p>相比只完成一张漂亮画面，我更关心视觉在真实场景里的作用：它是否能被家长记住，是否能让活动更有氛围，是否能让门店更容易被识别，是否能让一组衍生产品真正成为品牌触点。</p>
@@ -77,9 +77,7 @@
             <article class="service-card reveal"><p>Space Graphics</p><h3>空间墙面广告</h3><span>幼教空间 / 餐饮空间 / 墙面视觉 / 场景氛围</span></article>
             <article class="service-card reveal"><p>IP Extension</p><h3>IP形象延展</h3><span>角色形象 / 辅助图形 / 品牌符号 / 视觉记忆点</span></article>
             <article class="service-card reveal"><p>Commercial Materials</p><h3>商业物料设计</h3><span>包装 / 贴纸 / 旗帜 / 手提袋 / 手机壳 / 书包 / 行李箱</span></article>
-            <article class="service-card reveal"><p>Merchandise Design</p><h3>品牌衍生产品</h3><span>可携带、可使用、可被反复遇见的品牌触点</span></article>
-            <article class="service-card reveal"><p>Content Visual</p><h3>摄影与内容视觉</h3><span>照片处理 / 社媒视觉 / 商品展示 / 场景拍摄</span></article>
-            <article class="service-card reveal"><p>AI-assisted Proposal</p><h3>AI辅助视觉提案</h3><span>视觉探索 / 样机生成 / 提案表达 / 内容细化</span></article>
+            <article class="service-card reveal"><p>Content Visual</p><h3>内容视觉与摄影</h3><span>照片处理 / 社媒视觉 / 商品展示 / 场景拍摄</span></article>
           </div>
         </section>
 
@@ -87,15 +85,18 @@
           <div class="section-header">
             <p class="section-kicker reveal">TOOLS & AI WORKFLOW</p>
             <div>
-              <h2 class="section-title reveal">工具是效率，判断力才是设计的核心。</h2>
+              <h2 class="section-title reveal">工具提高效率，判断力决定方向。</h2>
+              <p class="section-subtitle reveal">Tools speed up the process. Taste gives it direction.</p>
               <div class="about-prose reveal">
-                <p>传统设计软件帮助我完成系统、版式、图像和视频内容，AI 工具则用于前期创意探索、样机生成、提示词整理和方案提案。它们共同服务于一个目标：让视觉判断更清楚，让方案更快进入真实场景。</p>
+                <p>传统设计软件帮助我完成系统、版式、图像和视频内容；AI 工具则用于前期创意探索、样机生成、动态测试、提示词整理和网页迭代。它们共同服务于一个目标：让视觉判断更清楚，让方案更快进入真实场景。</p>
               </div>
             </div>
           </div>
-          <div class="tool-groups">
-            <article class="tool-group reveal">
+
+          <div class="tool-groups expanded-tools">
+            <article class="tool-group reveal" data-theme-trigger="brand">
               <h3>Design Tools</h3>
+              <p>用于传统设计、排版、图像、视频和三维表达。</p>
               <div class="tool-list">
                 <span class="tool-badge" title="Photoshop" data-cursor="Photoshop"><img src="images/tools/photoshop.png" alt="" data-fallback>Photoshop</span>
                 <span class="tool-badge" title="Illustrator" data-cursor="Illustrator"><img src="images/tools/illustrator.png" alt="" data-fallback>Illustrator</span>
@@ -103,24 +104,66 @@
                 <span class="tool-badge" title="Blender" data-cursor="Blender"><img src="images/tools/blender.png" alt="" data-fallback>Blender</span>
               </div>
             </article>
-            <article class="tool-group reveal">
-              <h3>AI Tools</h3>
+            <article class="tool-group reveal" data-theme-trigger="ai">
+              <h3>AI Creation Tools</h3>
+              <p>用于视觉探索、图像生成、视频生成和动态内容尝试。</p>
               <div class="tool-list">
                 <span class="tool-badge" title="ChatGPT" data-cursor="ChatGPT"><img src="images/tools/chatgpt.png" alt="" data-fallback>ChatGPT</span>
                 <span class="tool-badge" title="Gemini" data-cursor="Gemini"><img src="images/tools/gemini.png" alt="" data-fallback>Gemini</span>
-                <span class="tool-badge text-only" title="Midjourney / 即梦 / 可灵" data-cursor="AI Tools">Midjourney / 即梦 / 可灵</span>
+                <span class="tool-badge" title="Midjourney" data-cursor="Midjourney"><img src="images/tools/midjourney.png" alt="" data-fallback>Midjourney</span>
+                <span class="tool-badge" title="即梦" data-cursor="即梦"><img src="images/tools/jimeng.png" alt="" data-fallback>即梦</span>
+                <span class="tool-badge" title="可灵 Kling" data-cursor="Kling"><img src="images/tools/kling.png" alt="" data-fallback>可灵 Kling</span>
+                <span class="tool-badge" title="Runway" data-cursor="Runway"><img src="images/tools/runway.png" alt="" data-fallback>Runway</span>
+                <span class="tool-badge" title="ComfyUI" data-cursor="ComfyUI"><img src="images/tools/comfyui.png" alt="" data-fallback>ComfyUI</span>
               </div>
             </article>
-            <article class="tool-group reveal">
+            <article class="tool-group reveal" data-theme-trigger="space">
+              <h3>AI Coding & Agent Tools</h3>
+              <p>用于网站搭建、代码修改、自动化整理和工作流协作。</p>
+              <div class="tool-list">
+                <span class="tool-badge" title="Codex" data-cursor="Codex"><img src="images/tools/codex.png" alt="" data-fallback>Codex</span>
+                <span class="tool-badge" title="Claude Code" data-cursor="Claude Code"><img src="images/tools/claude-code.png" alt="" data-fallback>Claude Code</span>
+                <span class="tool-badge" title="Cherry Studio" data-cursor="Cherry Studio"><img src="images/tools/cherry-studio.png" alt="" data-fallback>Cherry Studio</span>
+                <span class="tool-badge" title="GitHub Copilot" data-cursor="Copilot"><img src="images/tools/copilot.png" alt="" data-fallback>GitHub Copilot</span>
+                <span class="tool-badge" title="Cursor" data-cursor="Cursor"><img src="images/tools/cursor.png" alt="" data-fallback>Cursor</span>
+                <span class="tool-badge text-only" title="Agent Workflow" data-cursor="Agent">Agent Workflow</span>
+              </div>
+            </article>
+            <article class="tool-group reveal" data-theme-trigger="campaign">
               <h3>Workflow</h3>
+              <p>展示我的 AI 辅助设计流程。</p>
               <div class="tool-list workflow-list">
-                <span>Visual Research</span><span>Prompt Design</span><span>Mockup Generation</span><span>Brand Presentation</span><span>Content Refinement</span>
+                <span>Visual Research</span>
+                <span>Prompt Strategy</span>
+                <span>Moodboard Exploration</span>
+                <span>Mockup Generation</span>
+                <span>Image / Video Refinement</span>
+                <span>Website Iteration</span>
+                <span>Brand Presentation</span>
+                <span>Content Delivery</span>
               </div>
             </article>
           </div>
+
+          <div class="agent-note reveal">
+            <h3>AI 不是替代审美，而是放大判断力的工作流。</h3>
+            <p class="section-subtitle">AI is not a replacement for taste, but a workflow that expands visual thinking.</p>
+            <p>我会把 AI 工具放进设计流程中，而不是把它当作单独的作品分类。它可以帮助我更快完成资料整理、风格探索、样机生成、动态测试和网页迭代，但最终的方向判断、视觉取舍和品牌表达，仍然来自设计师对场景和用户的理解。</p>
+          </div>
+
+          <div class="agent-flow reveal" aria-label="Agent workflow">
+            <div class="flow-step"><span>Research</span><small>调研</small></div>
+            <div class="flow-step"><span>Prompt</span><small>提示词</small></div>
+            <div class="flow-step"><span>Generate</span><small>生成</small></div>
+            <div class="flow-step"><span>Refine</span><small>精修</small></div>
+            <div class="flow-step"><span>Mockup</span><small>样机</small></div>
+            <div class="flow-step"><span>Present</span><small>提案</small></div>
+            <div class="flow-step"><span>Iterate</span><small>迭代</small></div>
+          </div>
         </section>
 
-        <section class="section poetic-closing">
+        <section class="section poetic-closing note-section">
+          <div class="light-beam" aria-hidden="true"></div>
           <p class="section-kicker reveal">A SMALL NOTE</p>
           <blockquote class="reveal">
             <p>设计像一束温柔的光，替品牌照亮它想被记住的样子。</p>
