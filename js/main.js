@@ -1,223 +1,181 @@
-(function () {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const qs = (selector, scope = document) => scope.querySelector(selector);
-  const qsa = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+(function(){
+  const qs=(s,r=document)=>r.querySelector(s);
+  const qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const categories=['All','Brand','Campaign','AI Visual','Live Commerce'];
+  const projects=()=>window.projects||window.siteProjects||[];
+  const cover=p=>p.cover||p.image||'';
+  const link=p=>p.url||'';
 
-  function initMenu() {
-    const toggle = qs(".menu-toggle");
-    const nav = qs(".site-nav");
-    if (!toggle || !nav) return;
+  function imageFrame(src,alt){
+    return `<div class="image-frame"><img src="${src}" alt="${alt}" loading="lazy" data-fallback></div>`;
+  }
 
-    toggle.addEventListener("click", () => {
-      const isOpen = document.body.classList.toggle("menu-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
+  function bindFallbacks(root=document){
+    qsa('img[data-fallback]',root).forEach(img=>{
+      img.addEventListener('load',()=>{
+        img.classList.add('is-loaded');
+        img.closest('.image-frame')?.classList.remove('is-placeholder');
+      },{once:true});
+      img.addEventListener('error',()=>{
+        img.removeAttribute('src');
+        img.alt='Image pending';
+        img.closest('.image-frame')?.classList.add('is-placeholder');
+      },{once:true});
     });
+  }
 
-    qsa(".site-nav a").forEach((link) => {
-      link.addEventListener("click", () => {
-        document.body.classList.remove("menu-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
+  function setupMenu(){
+    const toggle=qs('.menu-toggle');
+    if(!toggle)return;
+    toggle.addEventListener('click',()=>{
+      const open=document.body.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded',String(open));
     });
+    qsa('.site-nav a').forEach(a=>a.addEventListener('click',()=>{
+      document.body.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded','false');
+    }));
   }
 
-  function getProjectCover(project) {
-    return project.cover || project.image || "";
-  }
-
-  function renderFeatured() {
-    const list = qs("[data-featured-list]");
-    if (!list || !window.siteProjects) return;
-
-    list.innerHTML = window.siteProjects
-      .map((project) => {
-        const meta = [project.year, project.status].filter(Boolean).join(" / ");
-        return `
-          <a class="work-row reveal" href="${project.url}" data-preview="${getProjectCover(project)}">
-            <span class="work-number">${project.number}</span>
-            <span class="work-title">${project.title}</span>
-            <span class="work-type">${project.type}</span>
-            <span class="work-meta">
-              <span>${meta}</span>
-              <span>${project.category || ""}</span>
-            </span>
-            <span class="work-arrow" aria-hidden="true">→</span>
-          </a>
-        `;
-      })
-      .join("");
-  }
-
-  function renderWorksPage() {
-    const grid = qs("[data-works-grid]");
-    if (!grid || !window.siteProjects) return;
-
-    grid.innerHTML = window.siteProjects
-      .map(
-        (project) => `
-          <article class="project-card reveal" id="${project.slug}">
-            <a href="${project.url}">
-              <div class="image-frame">
-                <img src="${getProjectCover(project)}" alt="${project.title}" loading="lazy">
-              </div>
-              <div class="project-card-meta">
-                <span>${project.number}</span>
-                <span>${project.year}</span>
-              </div>
-              <h2>${project.title}</h2>
-              <p>${project.summary}</p>
-            </a>
-          </article>
-        `
-      )
-      .join("");
-  }
-
-  function renderArchive() {
-    const grid = qs("[data-archive-grid]");
-    if (!grid || !window.archiveItems) return;
-
-    grid.innerHTML = window.archiveItems
-      .map(
-        (item) => `
-          <figure class="archive-item reveal">
-            <button class="image-button" type="button" data-lightbox="${item.image}" aria-label="Open ${item.title}">
-              <div class="image-frame">
-                <img src="${item.image}" alt="${item.title}" loading="lazy">
-                <span class="archive-tag">${item.category}</span>
-              </div>
-            </button>
-            <figcaption>
-              <span>${item.title}</span>
-              <span>${item.category}</span>
-            </figcaption>
-          </figure>
-        `
-      )
-      .join("");
-  }
-
-  function renderTestimonials() {
-    const wrap = qs("[data-testimonials]");
-    if (!wrap || !window.testimonials) return;
-
-    wrap.innerHTML = window.testimonials
-      .map(
-        (item) => `
-          <figure class="quote-card reveal">
-            <blockquote>${item.quote}</blockquote>
-            <figcaption>
-              <span>${item.name}</span>
-              <span>${item.type}</span>
-            </figcaption>
-          </figure>
-        `
-      )
-      .join("");
-  }
-
-  function initPreview() {
-    const rows = qsa(".work-row[data-preview]");
-    const preview = qs(".hover-preview");
-    if (!rows.length || !preview) return;
-
-    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (!canHover || prefersReducedMotion) return;
-
-    const img = qs("img", preview);
-    let frame = null;
-    let lastX = 0;
-    let lastY = 0;
-
-    function movePreview() {
-      frame = null;
-      const previewWidth = preview.offsetWidth || 320;
-      const previewHeight = preview.offsetHeight || 240;
-      const x = Math.min(lastX + 28, window.innerWidth - previewWidth - 20);
-      const y = Math.min(lastY + 24, window.innerHeight - previewHeight - 20);
-      preview.style.setProperty("--preview-transform", `translate3d(${Math.max(18, x)}px, ${Math.max(18, y)}px, 0)`);
+  function setupFilters(list){
+    let holder=qs('[data-project-filters]');
+    if(!holder&&list){
+      holder=document.createElement('div');
+      holder.className='project-filters reveal';
+      holder.dataset.projectFilters='';
+      list.parentNode.insertBefore(holder,list);
     }
-
-    rows.forEach((row) => {
-      row.addEventListener("mouseenter", () => {
-        img.src = row.dataset.preview;
-        img.alt = row.querySelector(".work-title")?.textContent || "Project preview";
-        preview.classList.add("is-visible");
-      });
-
-      row.addEventListener("mousemove", (event) => {
-        lastX = event.clientX;
-        lastY = event.clientY;
-        if (!frame) frame = window.requestAnimationFrame(movePreview);
-      });
-
-      row.addEventListener("mouseleave", () => {
-        preview.classList.remove("is-visible");
-      });
+    if(!holder)return;
+    holder.innerHTML=categories.map((name,index)=>`<button class="filter-button ${index===0?'is-active':''}" type="button" data-filter="${name}" data-cursor="Go">${name}</button>`).join('');
+    holder.addEventListener('click',event=>{
+      const button=event.target.closest('[data-filter]');
+      if(!button)return;
+      qsa('.filter-button',holder).forEach(item=>item.classList.remove('is-active'));
+      button.classList.add('is-active');
+      renderProjectCards(button.dataset.filter);
     });
   }
 
-  function initLightbox() {
-    const lightbox = qs(".lightbox");
-    if (!lightbox) return;
+  function projectCard(project){
+    const tags=(project.tags||[]).map(tag=>`<span>${tag}</span>`).join('');
+    const status=link(project)?'View Project':'Coming soon';
+    const body=`${imageFrame(cover(project),project.title)}<span class="floating-view">${status}</span><div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
+    if(link(project))return `<a class="project-card reveal" href="${link(project)}" data-category="${project.category||''}" data-cursor="View">${body}</a>`;
+    return `<article class="project-card is-disabled reveal" data-category="${project.category||''}" aria-label="${project.title} coming soon">${body}</article>`;
+  }
 
-    const img = qs(".lightbox img", lightbox);
-    const close = qs(".lightbox-close", lightbox);
+  function renderProjectCards(filter='All'){
+    const grid=qs('[data-project-grid]')||qs('[data-featured-list]');
+    if(!grid)return;
+    grid.classList.add('work-list');
+    grid.innerHTML=projects().filter(project=>filter==='All'||project.category===filter).map(projectCard).join('');
+    bindFallbacks(grid);
+    window.dispatchEvent(new CustomEvent('content:updated'));
+  }
 
-    function openLightbox(src, alt) {
-      if (!src) return;
-      img.src = src;
-      img.alt = alt || "Preview image";
-      lightbox.classList.add("is-open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.classList.add("lock-scroll");
+  function renderWorksPage(){
+    const grid=qs('[data-works-grid]');
+    if(!grid)return;
+    grid.innerHTML=projects().map(project=>{
+      const body=`${imageFrame(cover(project),project.title)}<div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p></div>`;
+      return `<article class="project-card reveal" id="${project.id||project.slug||''}">${link(project)?`<a href="${link(project)}" data-cursor="View">${body}</a>`:body}</article>`;
+    }).join('');
+    bindFallbacks(grid);
+    window.dispatchEvent(new CustomEvent('content:updated'));
+  }
+
+  function renderArchive(){
+    const grid=qs('[data-archive-grid]');
+    if(!grid||!window.archiveItems)return;
+    grid.innerHTML=window.archiveItems.map(item=>{
+      const media=`<div class="image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback><span class="archive-tag">${item.category||''}</span></div>`;
+      const action=item.url?`<a class="archive-link" href="${item.url}" data-cursor="View">${media}</a>`:`<button class="image-button" type="button" data-lightbox="${item.image}" data-cursor="Open" aria-label="Open ${item.title}">${media}</button>`;
+      return `<figure class="archive-item reveal">${action}<figcaption><span>${item.title}</span><span>${item.category||''}</span></figcaption></figure>`;
+    }).join('');
+    bindFallbacks(grid);
+    window.dispatchEvent(new CustomEvent('content:updated'));
+  }
+
+  function renderTestimonials(){
+    const holder=qs('[data-testimonials]');
+    if(!holder||!window.testimonials)return;
+    holder.innerHTML=window.testimonials.map(item=>`<figure class="quote-card reveal"><blockquote>${item.quote}</blockquote><figcaption><span>${item.name}</span><span>${item.type}</span></figcaption></figure>`).join('');
+  }
+
+  function setupHoverPreview(){
+    const rows=qsa('.work-row[data-preview]');
+    const preview=qs('.hover-preview');
+    if(!rows.length||!preview||reduced||!finePointer)return;
+    const image=qs('img',preview);
+    let x=0,y=0,raf=0;
+    function move(){
+      raf=0;
+      const width=preview.offsetWidth||320;
+      const height=preview.offsetHeight||240;
+      const left=Math.max(18,Math.min(x+28,innerWidth-width-20));
+      const top=Math.max(18,Math.min(y+24,innerHeight-height-20));
+      preview.style.setProperty('--preview-transform',`translate3d(${left}px,${top}px,0)`);
     }
-
-    function closeLightbox() {
-      lightbox.classList.remove("is-open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("lock-scroll");
-    }
-
-    document.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-lightbox]");
-      if (!button) return;
-      const image = qs("img", button);
-      openLightbox(button.dataset.lightbox, image?.alt);
-    });
-
-    close?.addEventListener("click", closeLightbox);
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) closeLightbox();
-    });
-    window.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeLightbox();
+    rows.forEach(row=>{
+      row.addEventListener('mouseenter',()=>{
+        image.src=row.dataset.preview;
+        image.alt=row.querySelector('.work-title')?.textContent||'Project preview';
+        preview.classList.add('is-visible');
+      });
+      row.addEventListener('mousemove',event=>{
+        x=event.clientX;
+        y=event.clientY;
+        if(!raf)raf=requestAnimationFrame(move);
+      });
+      row.addEventListener('mouseleave',()=>preview.classList.remove('is-visible'));
     });
   }
 
-  function initProjectGallery() {
-    qsa(".project-image").forEach((button) => {
-      const image = qs("img", button);
-      button.setAttribute("data-lightbox", button.dataset.image || image?.src || "");
+  function setupLightbox(){
+    const lightbox=qs('.lightbox');
+    if(!lightbox)return;
+    const image=qs('img',lightbox);
+    const closeButton=qs('.lightbox-close',lightbox);
+    const close=()=>{
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden','true');
+      document.body.classList.remove('lock-scroll');
+    };
+    document.addEventListener('click',event=>{
+      const trigger=event.target.closest('[data-lightbox]');
+      if(!trigger)return;
+      image.src=trigger.dataset.lightbox;
+      image.alt=qs('img',trigger)?.alt||'Preview image';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden','false');
+      document.body.classList.add('lock-scroll');
+    });
+    closeButton?.addEventListener('click',close);
+    lightbox.addEventListener('click',event=>{if(event.target===lightbox)close();});
+    addEventListener('keydown',event=>{if(event.key==='Escape')close();});
+  }
+
+  function prepareProjectGallery(){
+    qsa('.project-image').forEach(button=>{
+      button.dataset.lightbox=button.dataset.image||qs('img',button)?.getAttribute('src')||'';
+      button.dataset.cursor='Open';
     });
   }
 
-  function markLoaded() {
-    if (prefersReducedMotion) {
-      document.documentElement.classList.add("reduce-motion");
-    }
-    window.setTimeout(() => document.body.classList.add("is-loaded"), 80);
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    renderFeatured();
+  document.addEventListener('DOMContentLoaded',()=>{
+    const featured=qs('[data-featured-list]');
+    setupFilters(featured);
+    renderProjectCards();
     renderWorksPage();
     renderArchive();
     renderTestimonials();
-    initMenu();
-    initProjectGallery();
-    initPreview();
-    initLightbox();
-    markLoaded();
+    setupMenu();
+    prepareProjectGallery();
+    bindFallbacks();
+    setupHoverPreview();
+    setupLightbox();
+    setTimeout(()=>document.body.classList.add('is-loaded'),80);
   });
 })();
