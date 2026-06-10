@@ -957,3 +957,238 @@ body.neo-bauhaus .custom-cursor.has-label .cursor-label {
     width: 140px;
   }
 }
+
+/* Final close-out fixes scoped to the active neo-bauhaus layer. */
+body.neo-bauhaus,
+body.neo-bauhaus * {
+  box-sizing: border-box;
+}
+
+html,
+body.neo-bauhaus {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body.neo-bauhaus main,
+body.neo-bauhaus .page-main,
+body.neo-bauhaus .main-content,
+body.neo-bauhaus .section,
+body.neo-bauhaus .section-inner,
+body.neo-bauhaus .content-wrap,
+body.neo-bauhaus .archive-section,
+body.neo-bauhaus #archive {
+  width: 100%;
+  max-width: 100%;
+}
+
+body.neo-bauhaus .section-inner,
+body.neo-bauhaus .archive-inner,
+body.neo-bauhaus .archive-wrap,
+body.neo-bauhaus .projects-inner,
+body.neo-bauhaus .works-inner,
+body.neo-bauhaus #archive > .section-header,
+body.neo-bauhaus #archive > .archive-grid,
+body.neo-bauhaus #archive > .archive-list,
+body.neo-bauhaus #archive > .archive-board,
+body.neo-bauhaus #archive > .visual-archive-grid {
+  width: min(1200px, calc(100vw - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.neo-bauhaus #archive .section-header {
+  text-align: left;
+}
+
+body.neo-bauhaus .archive-grid,
+body.neo-bauhaus .archive-list,
+body.neo-bauhaus .archive-board,
+body.neo-bauhaus .visual-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  overflow: visible;
+}
+
+body.neo-bauhaus .archive-item,
+body.neo-bauhaus .archive-card,
+body.neo-bauhaus .visual-archive-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-soft, 24px) !important;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+body.neo-bauhaus .project-card .image-frame,
+body.neo-bauhaus .project-card .img-wrapper,
+body.neo-bauhaus .project-card .project-media,
+body.neo-bauhaus .project-card .project-cover,
+body.neo-bauhaus .work-card .image-frame,
+body.neo-bauhaus .work-card .img-wrapper,
+body.neo-bauhaus .archive-card .image-frame,
+body.neo-bauhaus .archive-card .img-wrapper,
+body.neo-bauhaus .archive-card .archive-media,
+body.neo-bauhaus .archive-item .image-frame,
+body.neo-bauhaus .archive-item .img-wrapper,
+body.neo-bauhaus .archive-link .image-frame,
+body.neo-bauhaus .image-button .image-frame,
+body.neo-bauhaus .visual-archive-card .image-frame,
+body.neo-bauhaus .visual-archive-card .img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  max-height: clamp(220px, 24vw, 320px);
+  border-radius: var(--radius-soft, 24px) !important;
+  overflow: hidden;
+}
+
+body.neo-bauhaus .archive-card img,
+body.neo-bauhaus .archive-item img,
+body.neo-bauhaus .visual-archive-card img,
+body.neo-bauhaus .project-card img,
+body.neo-bauhaus .work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.neo-bauhaus .archive-item figcaption,
+body.neo-bauhaus .archive-card .archive-caption,
+body.neo-bauhaus .archive-card .archive-meta,
+body.neo-bauhaus .archive-card .archive-title,
+body.neo-bauhaus .archive-card .archive-label,
+body.neo-bauhaus .visual-archive-card .archive-caption,
+body.neo-bauhaus .visual-archive-card .archive-meta,
+body.neo-bauhaus .visual-archive-card .archive-title,
+body.neo-bauhaus .visual-archive-card .archive-label {
+  position: static;
+  inset: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 12px;
+  transform: none;
+  padding: 12px 4px 0;
+  color: var(--text-primary, #1a1a1a);
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.35;
+}
+
+body.neo-bauhaus .placeholder,
+body.neo-bauhaus .image-placeholder,
+body.neo-bauhaus .project-placeholder,
+body.neo-bauhaus .image-pending {
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  height: auto;
+  max-height: clamp(220px, 24vw, 320px);
+  border-radius: var(--radius-soft, 24px) !important;
+  background: var(--surface-warm, #f4efe6);
+  color: transparent;
+}
+
+body.neo-bauhaus .image-frame.is-placeholder::after,
+body.neo-bauhaus .img-wrapper.is-placeholder::after,
+body.neo-bauhaus .placeholder-label,
+body.neo-bauhaus .image-pending {
+  content: "" !important;
+  color: transparent !important;
+}
+
+body.neo-bauhaus .wechat-qr img,
+body.neo-bauhaus .contact-qr img,
+body.neo-bauhaus .qr-image img {
+  width: clamp(150px, 12vw, 180px);
+  max-width: 100%;
+}
+
+body.neo-bauhaus .custom-cursor {
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+  border-radius: 42% 48% 46% 52% !important;
+  background: #fffdf8 !important;
+  box-shadow: 4px 4px 0 rgba(26, 26, 26, 0.06) !important;
+  opacity: 0;
+}
+
+body.neo-bauhaus .custom-cursor::before {
+  inset: 8px !important;
+}
+
+body.neo-bauhaus .custom-cursor.has-label {
+  background: #fff9f0 !important;
+  transform: scale(1.08) rotate(-4deg);
+}
+
+body.neo-bauhaus .cursor-label,
+body.neo-bauhaus .custom-cursor-label {
+  min-height: 0 !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: var(--theme-accent, #e76f51) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+  white-space: nowrap;
+  transform: translate(28px, -8px) !important;
+}
+
+@media (min-width: 1200px) {
+  body.neo-bauhaus .archive-grid,
+  body.neo-bauhaus .archive-list,
+  body.neo-bauhaus .archive-board,
+  body.neo-bauhaus .visual-archive-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  body.neo-bauhaus .archive-grid,
+  body.neo-bauhaus .archive-list,
+  body.neo-bauhaus .archive-board,
+  body.neo-bauhaus .visual-archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  body.neo-bauhaus .archive-grid,
+  body.neo-bauhaus .archive-list,
+  body.neo-bauhaus .archive-board,
+  body.neo-bauhaus .visual-archive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  body.neo-bauhaus .custom-cursor,
+  body.neo-bauhaus .cursor-label,
+  body.neo-bauhaus .custom-cursor-label {
+    display: none !important;
+  }
+
+  body.neo-bauhaus,
+  body.neo-bauhaus a,
+  body.neo-bauhaus button {
+    cursor: auto;
+  }
+
+  body.neo-bauhaus .wechat-qr img,
+  body.neo-bauhaus .contact-qr img,
+  body.neo-bauhaus .qr-image img {
+    width: 140px;
+  }
+}
