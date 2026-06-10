@@ -16,7 +16,7 @@
   const themeOf=item=>item.theme||themeByCategory[item.category]||'default';
 
   function imageFrame(src,alt){
-    return `<div class="image-frame"><img src="${src}" alt="${alt}" loading="lazy" data-fallback></div>`;
+    return `<div class="img-wrapper image-frame"><img src="${src}" alt="${alt}" loading="lazy" data-fallback></div>`;
   }
 
   function bindFallbacks(root=document){
@@ -106,7 +106,7 @@
     const grid=qs('[data-archive-grid]');
     if(!grid||!window.archiveItems)return;
     grid.innerHTML=window.archiveItems.map(item=>{
-      const media=`<div class="image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback><span class="archive-tag">${item.category||''}</span></div>`;
+      const media=`<div class="img-wrapper image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback><span class="archive-tag">${item.category||''}</span></div>`;
       const action=item.url?`<a class="archive-link" href="${item.url}" data-cursor="View">${media}</a>`:`<button class="image-button" type="button" data-lightbox="${item.image}" data-cursor="Open" aria-label="Open ${item.title}">${media}</button>`;
       return `<figure class="archive-item reveal">${action}<figcaption><span>${item.title}</span><span>${item.category||''}</span></figcaption></figure>`;
     }).join('');

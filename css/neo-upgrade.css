@@ -1,0 +1,274 @@
+/* Neo-Brutalism + Bauhaus visual layer. Scoped by body.neo-bauhaus. */
+body.neo-bauhaus {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f8f9fa;
+  --color-text: #1a1a1a;
+  --color-dark: #1a1a1a;
+  --color-muted: #5f5f5f;
+  --color-line: #1a1a1a;
+  --color-blue: #002fa7;
+  --color-blue-soft: #eef3ff;
+  --color-coral: #002fa7;
+  --color-coral-soft: #eef3ff;
+  --color-lilac: #002fa7;
+  --color-lilac-soft: #eef3ff;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-pill: 0;
+  --shadow-soft: none;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+body.neo-bauhaus *,
+body.neo-bauhaus *::before,
+body.neo-bauhaus *::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.neo-bauhaus .nav-link,
+body.neo-bauhaus .nav-cta,
+body.neo-bauhaus .text-link,
+body.neo-bauhaus .button,
+body.neo-bauhaus .filter-button,
+body.neo-bauhaus .floating-view,
+body.neo-bauhaus h1,
+body.neo-bauhaus h2,
+body.neo-bauhaus h3,
+body.neo-bauhaus .section-kicker,
+body.neo-bauhaus .eyebrow,
+body.neo-bauhaus .tag-list span,
+body.neo-bauhaus .archive-tag,
+body.neo-bauhaus .status-pill,
+body.neo-bauhaus .contact-tags span,
+body.neo-bauhaus .tool-pill,
+body.neo-bauhaus .tool-badge,
+body.neo-bauhaus .work-number,
+body.neo-bauhaus .work-meta,
+body.neo-bauhaus .project-card-meta,
+body.neo-bauhaus .chat-meta {
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.neo-bauhaus h1,
+body.neo-bauhaus h2,
+body.neo-bauhaus h3,
+body.neo-bauhaus .section-kicker,
+body.neo-bauhaus .eyebrow,
+body.neo-bauhaus .nav-link,
+body.neo-bauhaus .nav-cta,
+body.neo-bauhaus .button,
+body.neo-bauhaus .filter-button {
+  letter-spacing: 0.5px;
+}
+
+body.neo-bauhaus .work-number,
+body.neo-bauhaus .work-meta,
+body.neo-bauhaus .project-card-meta,
+body.neo-bauhaus .chat-avatar,
+body.neo-bauhaus .tool-badge {
+  font-weight: 800;
+}
+
+body.neo-bauhaus .site-header,
+body.neo-bauhaus .site-nav,
+body.neo-bauhaus .project-card,
+body.neo-bauhaus .work-row,
+body.neo-bauhaus .quote-card,
+body.neo-bauhaus .chat-card,
+body.neo-bauhaus .contact-card,
+body.neo-bauhaus .info-block,
+body.neo-bauhaus .thinking-card,
+body.neo-bauhaus .service-card,
+body.neo-bauhaus .tool-group,
+body.neo-bauhaus .agent-note,
+body.neo-bauhaus .flow-step,
+body.neo-bauhaus .flow-detail,
+body.neo-bauhaus .now-list li,
+body.neo-bauhaus .collab-steps span,
+body.neo-bauhaus .image-frame,
+body.neo-bauhaus .img-wrapper {
+  border: 1px solid #1a1a1a;
+}
+
+body.neo-bauhaus .site-header,
+body.neo-bauhaus .site-nav,
+body.neo-bauhaus .project-card,
+body.neo-bauhaus .work-row,
+body.neo-bauhaus .quote-card,
+body.neo-bauhaus .chat-card,
+body.neo-bauhaus .contact-card,
+body.neo-bauhaus .now-list li,
+body.neo-bauhaus .info-block,
+body.neo-bauhaus .thinking-card,
+body.neo-bauhaus .service-card,
+body.neo-bauhaus .tool-group,
+body.neo-bauhaus .agent-note,
+body.neo-bauhaus .flow-step,
+body.neo-bauhaus .flow-detail {
+  background: #ffffff;
+}
+
+body.neo-bauhaus .site-header {
+  background: rgba(255, 255, 255, 0.92);
+  border-width: 0 0 1px;
+}
+
+body.neo-bauhaus .brand-symbol,
+body.neo-bauhaus .nav-cta,
+body.neo-bauhaus .button-primary,
+body.neo-bauhaus .floating-view {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+body.neo-bauhaus .nav-link,
+body.neo-bauhaus .nav-cta,
+body.neo-bauhaus .button,
+body.neo-bauhaus .filter-button,
+body.neo-bauhaus .text-link {
+  transition: all 0.3s ease;
+}
+
+body.neo-bauhaus .nav-link:hover,
+body.neo-bauhaus .nav-link:focus-visible,
+body.neo-bauhaus .text-link:hover,
+body.neo-bauhaus .text-link:focus-visible {
+  color: #002fa7;
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+body.neo-bauhaus .nav-cta:hover,
+body.neo-bauhaus .nav-cta:focus-visible,
+body.neo-bauhaus .button:hover,
+body.neo-bauhaus .button:focus-visible,
+body.neo-bauhaus .filter-button:hover,
+body.neo-bauhaus .filter-button:focus-visible,
+body.neo-bauhaus .filter-button.is-active {
+  border-color: #002fa7;
+  background: #002fa7;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+body.neo-bauhaus .section-header {
+  border-top: 1px solid #1a1a1a;
+}
+
+body.neo-bauhaus .hero,
+body.neo-bauhaus .section,
+body.neo-bauhaus .page-hero,
+body.neo-bauhaus .project-detail-hero {
+  background: #ffffff;
+}
+
+body.neo-bauhaus .hero-title,
+body.neo-bauhaus .section-title,
+body.neo-bauhaus .contact-title,
+body.neo-bauhaus .small-title {
+  color: #1a1a1a;
+  font-weight: 650;
+}
+
+body.neo-bauhaus .section-subtitle,
+body.neo-bauhaus .section-copy,
+body.neo-bauhaus .hero-copy,
+body.neo-bauhaus .contact-card p,
+body.neo-bauhaus .now-list li {
+  color: #4f4f4f;
+}
+
+body.neo-bauhaus .project-card,
+body.neo-bauhaus .work-row {
+  background:
+    linear-gradient(90deg, rgba(26, 26, 26, 0.08) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(rgba(26, 26, 26, 0.08) 1px, transparent 1px) 0 0 / 28px 28px,
+    #ffffff;
+}
+
+body.neo-bauhaus .project-card:hover,
+body.neo-bauhaus .project-card:focus-visible,
+body.neo-bauhaus .work-row:hover,
+body.neo-bauhaus .work-row:focus-visible,
+body.neo-bauhaus .chat-card:hover,
+body.neo-bauhaus .contact-card:hover,
+body.neo-bauhaus .now-list li:hover {
+  border-color: #002fa7;
+}
+
+body.neo-bauhaus .img-wrapper {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e5e5e5;
+  background: #f8f9fa;
+}
+
+body.neo-bauhaus .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease, opacity 0.6s ease;
+}
+
+body.neo-bauhaus .img-wrapper:hover img,
+body.neo-bauhaus .project-card:hover .img-wrapper img,
+body.neo-bauhaus .archive-item:hover .img-wrapper img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+body.neo-bauhaus .tag-list span,
+body.neo-bauhaus .archive-tag,
+body.neo-bauhaus .status-pill,
+body.neo-bauhaus .contact-tags span,
+body.neo-bauhaus .tool-pill,
+body.neo-bauhaus .principle-tags span {
+  border: 1px solid #1a1a1a;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+body.neo-bauhaus .tag-list span:hover,
+body.neo-bauhaus .contact-tags span:hover,
+body.neo-bauhaus .tool-pill:hover {
+  border-color: #002fa7;
+  color: #002fa7;
+  background: #ffffff;
+}
+
+body.neo-bauhaus .marquee {
+  border-color: #1a1a1a;
+  background: #f8f9fa;
+}
+
+body.neo-bauhaus .chat-bubble {
+  border: 1px solid #1a1a1a;
+  background: #f8f9fa;
+}
+
+body.neo-bauhaus .chat-bubble:nth-child(2) {
+  background: #ffffff;
+}
+
+body.neo-bauhaus .chat-avatar {
+  border: 1px solid #1a1a1a;
+  background: #ffffff;
+  color: #002fa7;
+}
+
+body.neo-bauhaus .lightbox {
+  background: rgba(26, 26, 26, 0.9);
+}
+
+@media (max-width: 760px) {
+  body.neo-bauhaus .site-nav {
+    border: 1px solid #1a1a1a;
+    background: #ffffff;
+  }
+}
