@@ -81,7 +81,7 @@ images/projects/
 - Hero 主标题：搜索 `品牌视觉设计师 / Brand Visual Designer`
 - 两段简介：在 `.hero-text` 区域内
 - Now 区块：搜索 `<ul class="now-list">`
-- 页脚联系方式：搜索 `hello@example.com` 和 `WeChat`
+- 页脚联系方式：搜索 `Email available on request` 和 `WeChat`
 
 项目名称、项目类型、评价内容和归档图片说明集中在 `data/projects.js`，后续维护时优先改这个文件。
 

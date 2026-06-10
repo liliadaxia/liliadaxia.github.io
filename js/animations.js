@@ -29,8 +29,8 @@ function cursor(){
   const label=qs('.cursor-label',c); let tx=innerWidth/2,ty=innerHeight/2,x=tx,y=ty;
   document.body.classList.add('has-custom-cursor');
   addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;c.classList.add('is-visible');},{passive:true});
-  document.addEventListener('mouseover',e=>{const t=e.target.closest('[data-cursor],.project-card,.chat-card,.chat-bubble,.button,.nav-cta,.image-button,.archive-link,a,button');const text=t?.dataset.cursor||(t?.matches('.project-card,.archive-link')?'View':t?.matches('.chat-bubble')?'Note':t?.matches('.chat-card')?'Read':t?.matches('.image-button')?'Open':t?.matches('a,button')?'Go':'');label.textContent=text;c.classList.toggle('has-label',!!text);});
-  document.addEventListener('mouseout',e=>{if(!e.relatedTarget||!e.relatedTarget.closest('[data-cursor],.project-card,.chat-card,.chat-bubble,.button,.nav-cta,.image-button,.archive-link,a,button')){label.textContent='';c.classList.remove('has-label');}});
+  document.addEventListener('mouseover',e=>{const t=e.target.closest('[data-cursor],.project-card,.chat-card,.chat-bubble,.tool-pill,.flow-step,.button,.nav-cta,.image-button,.archive-link,a,button');let text=t?.matches('.tool-pill')?(t.closest('[data-theme-trigger="ai"]')?'AI':'Tool'):(t?.dataset.cursor||(t?.matches('.project-card')?'View':t?.matches('.archive-link,.image-button')?'Open':t?.matches('.chat-bubble')?'Note':t?.matches('.chat-card')?'Read':t?.matches('.flow-step')?'Step':t?.matches('a,button')?'Go':''));if(text==='Light')text='';label.textContent=text;c.classList.toggle('has-label',!!text);});
+  document.addEventListener('mouseout',e=>{if(!e.relatedTarget||!e.relatedTarget.closest('[data-cursor],.project-card,.chat-card,.chat-bubble,.tool-pill,.flow-step,.button,.nav-cta,.image-button,.archive-link,a,button')){label.textContent='';c.classList.remove('has-label');}});
   (function loop(){x+=(tx-x)*.22;y+=(ty-y)*.22;c.style.transform=`translate3d(${x}px,${y}px,0)`;requestAnimationFrame(loop);})();
 }
 function doodle(){
@@ -70,8 +70,8 @@ function noteLight(){
   if(fine){
     note.addEventListener('mousemove',event=>{
       const rect=note.getBoundingClientRect();
-      const x=((event.clientX-rect.left)/rect.width-.5)*22;
-      const y=((event.clientY-rect.top)/rect.height-.5)*18;
+      const x=((event.clientX-rect.left)/rect.width-.5)*12;
+      const y=((event.clientY-rect.top)/rect.height-.5)*10;
       note.style.setProperty('--beam-x',x.toFixed(1)+'px');
       note.style.setProperty('--beam-y',y.toFixed(1)+'px');
     },{passive:true});
@@ -81,6 +81,33 @@ function noteLight(){
     });
   }
 }
-document.addEventListener('DOMContentLoaded',()=>{reveal();drawLines();scrollLine();cursor();doodle();aboutTheme();noteLight();});
-addEventListener('content:updated',()=>{reveal();aboutTheme();});
+function agentFlow(){
+  const flow=qs('.agent-flow');
+  const detail=qs('.flow-detail');
+  if(!flow||!detail)return;
+  const steps=qsa('.flow-step',flow);
+  const title=qs('span',detail);
+  const copy=qs('p',detail);
+  let timer=0;
+  const setActive=step=>{
+    if(!step||step.classList.contains('is-active'))return;
+    steps.forEach(item=>item.classList.toggle('is-active',item===step));
+    detail.classList.add('is-changing');
+    clearTimeout(timer);
+    timer=setTimeout(()=>{
+      if(title)title.textContent=`${step.dataset.flowStep||''} ${qs('small',step)?.textContent||''}`.trim();
+      if(copy)copy.textContent=step.dataset.flowDesc||'';
+      detail.classList.remove('is-changing');
+    },reduced?0:120);
+  };
+  steps.forEach(step=>{
+    if(step.dataset.flowBound)return;
+    step.dataset.flowBound='true';
+    step.addEventListener('click',()=>setActive(step));
+    step.addEventListener('focus',()=>setActive(step));
+    if(fine)step.addEventListener('mouseenter',()=>setActive(step));
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{reveal();drawLines();scrollLine();cursor();doodle();aboutTheme();noteLight();agentFlow();});
+addEventListener('content:updated',()=>{reveal();aboutTheme();agentFlow();});
 })();
