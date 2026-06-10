@@ -30,11 +30,21 @@
             <h1><span class="haiduo-brand-name">Les Poissons</span><span>海朵餐饮品牌活动视觉系统</span></h1>
             <p>海朵餐饮品牌活动视觉系统围绕菜品推广、节气内容、主题活动、品牌荣誉与现场落地等多场景传播展开，通过统一的品牌识别、精致菜品影像、节令内容表达与活动场景化延展，建立兼具品质感、食欲感与营销转化力的品牌视觉系统。</p>
           </div>
-          <div class="haiduo-hero-card reveal">
-            <span>Restaurant Brand</span>
-            <strong>Campaign / Seasonal / Event / Onsite</strong>
-            <button class="haiduo-hero-visual" type="button" data-lightbox="assets/haiduo/03-event-visual/haiduo-event-art-exhibition-01.jpg" data-cursor="Open" aria-label="Open Les Poissons 海朵品牌活动视觉首图">
-              <img src="assets/haiduo/03-event-visual/haiduo-event-art-exhibition-01.jpg" alt="Les Poissons 海朵品牌活动视觉首图" loading="eager">
+          <div class="haiduo-hero-collage reveal" aria-label="Les Poissons 海朵品牌主视觉拼贴">
+            <button class="hero-collage-item is-main" type="button" data-lightbox="assets/haiduo/03-event-visual/haiduo-event-art-exhibition-01.jpg" aria-label="Open Les Poissons 海朵画展活动视觉">
+              <img src="assets/haiduo/03-event-visual/haiduo-event-art-exhibition-01.jpg" alt="Les Poissons 海朵画展活动视觉" loading="eager">
+            </button>
+            <button class="hero-collage-item" type="button" data-lightbox="assets/haiduo/01-campaign-posters/haiduo-campaign-award.jpg" aria-label="Open Les Poissons 海朵品牌荣誉海报">
+              <img src="assets/haiduo/01-campaign-posters/haiduo-campaign-award.jpg" alt="Les Poissons 海朵品牌荣誉海报" loading="eager">
+            </button>
+            <button class="hero-collage-item" type="button" data-lightbox="assets/haiduo/01-campaign-posters/haiduo-campaign-morning-tea.jpg" aria-label="Open Les Poissons 海朵早茶活动海报">
+              <img src="assets/haiduo/01-campaign-posters/haiduo-campaign-morning-tea.jpg" alt="Les Poissons 海朵早茶活动海报" loading="lazy">
+            </button>
+            <button class="hero-collage-item" type="button" data-lightbox="assets/haiduo/02-seasonal-posters/haiduo-seasonal-bailu.jpg" aria-label="Open Les Poissons 海朵节气海报">
+              <img src="assets/haiduo/02-seasonal-posters/haiduo-seasonal-bailu.jpg" alt="Les Poissons 海朵节气海报" loading="lazy">
+            </button>
+            <button class="hero-collage-item is-wide" type="button" data-lightbox="assets/haiduo/04-onsite-implementation/haiduo-onsite-art-scene-01.jpg" aria-label="Open Les Poissons 海朵现场落地照片">
+              <img src="assets/haiduo/04-onsite-implementation/haiduo-onsite-art-scene-01.jpg" alt="Les Poissons 海朵现场落地照片" loading="lazy">
             </button>
           </div>
         </section>
@@ -176,7 +186,7 @@
       ];
 
       function haiduoImageButton(item, className) {
-        return `<button class="${className} reveal" type="button" data-lightbox="${item.src}" data-cursor="Open" aria-label="Open ${item.alt}">
+        return `<button class="${className} reveal" type="button" data-lightbox="${item.src}" aria-label="Open ${item.alt}">
           <img src="${item.src}" alt="${item.alt}" loading="lazy">
         </button>`;
       }
