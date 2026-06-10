@@ -1,0 +1,290 @@
+﻿[
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-award.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-award.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-children-day.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-children-day.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-chongyang.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-chongyang.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-dianxin.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-dianxin.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-dinner.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-dinner.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-fatherday.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-fathers-day.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and spelling fix fatherday -\u003e fathers-day."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-full-house.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-full-house.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-guangjiao.jpg.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-guangjiao.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and remove duplicate .jpg segment."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-halloween.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-halloween.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-jianjun.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-jianjun.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-jinbang.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-jinbang.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-morning-tea.jpg.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-morning-tea.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and remove duplicate .jpg segment."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-qixi.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-qixi.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-shengxue.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-shengxue.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-teacher-day.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-teachers-day.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and spelling fix teacher-day -\u003e teachers-day."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-thanksgiving.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-thanksgiving.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-worldgame-01.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-world-game-01.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-worldgame-02.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-world-game-02.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/01-campaign-posters/haiduo-zongzi.jpg",
+        "newPath":  "assets/haiduo/01-campaign-posters/haiduo-campaign-zongzi.jpg",
+        "status":  "rename",
+        "reason":  "Apply campaign prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-bailu.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-bailu.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-chunfen.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-chunfen.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-chushu.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-chushu.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-daxue.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-daxue.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-guyu.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-guyu.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-jingzhe.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-jingzhe.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-lidong.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-lidong.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-liqiu.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-liqiu.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-lixia.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-lixia.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-qiufen.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-qiufen.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-shuangjiang.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-shuangjiang.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-xiaoshu.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-xiaoshu.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/02-seasonal-posters/haiduo-xiazhi.jpg",
+        "newPath":  "assets/haiduo/02-seasonal-posters/haiduo-seasonal-xiazhi.jpg",
+        "status":  "rename",
+        "reason":  "Apply seasonal prefix and normalized lowercase hyphenated naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/03-event-visual/haiduo-event-art-exhibition-01.jpg",
+        "newPath":  "assets/haiduo/03-event-visual/haiduo-event-art-exhibition-01.jpg",
+        "status":  "skipped",
+        "reason":  "Already matches requested event naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/03-event-visual/haiduo-event-art-exhibition-02.jpg",
+        "newPath":  "assets/haiduo/03-event-visual/haiduo-event-art-exhibition-02.jpg",
+        "status":  "skipped",
+        "reason":  "Already matches requested event naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/03-event-visual/haiduo-event-art-exhibition-03.jpg",
+        "newPath":  "assets/haiduo/03-event-visual/haiduo-event-art-exhibition-03.jpg",
+        "status":  "skipped",
+        "reason":  "Already matches requested event naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/03-event-visual/haiduo-event-whiskey-01.jpg",
+        "newPath":  "assets/haiduo/03-event-visual/haiduo-event-whiskey-01.jpg",
+        "status":  "skipped",
+        "reason":  "Already matches requested event naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-art xianchang  (1).jpg",
+        "newPath":  "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-scene-01.jpg",
+        "status":  "rename",
+        "reason":  "Visible art event indoor scene; normalize spaces and parentheses."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-art xianchang  (2).jpg",
+        "newPath":  "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-scene-02.jpg",
+        "status":  "rename",
+        "reason":  "Visible art event people scene; normalize spaces and parentheses."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-art xianchang  (3).jpg",
+        "newPath":  null,
+        "status":  "uncertain",
+        "reason":  "Visible art event scene, but only two art-scene slots were specified in the latest rule."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-art xianchang  (4).jpg",
+        "newPath":  null,
+        "status":  "uncertain",
+        "reason":  "Visible art event exterior/group scene, but no exact target name was specified."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-art-exhibition-01.jpg.JPG",
+        "newPath":  null,
+        "status":  "uncertain",
+        "reason":  "Visible art/exhibition installation image, but no exact target name was specified; extension casing also needs normalization if approved."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-art-manu.png",
+        "newPath":  "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-menu.png",
+        "status":  "rename",
+        "reason":  "Menu image; normalize typo manu -\u003e menu and apply onsite art menu naming."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-kt.jpg",
+        "newPath":  null,
+        "status":  "uncertain",
+        "reason":  "Looks like an art exhibition key visual/poster, but latest onsite naming list has no key-visual/poster target."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-wiskey (1).jpg",
+        "newPath":  "assets/haiduo/04-onsite-implementation/haiduo-onsite-whiskey-table-01.jpg",
+        "status":  "rename",
+        "reason":  "Visible whiskey table setup; fix wiskey -\u003e whiskey and normalize parentheses."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-wiskey (3).jpg",
+        "newPath":  "assets/haiduo/04-onsite-implementation/haiduo-onsite-whiskey-scene-01.jpg",
+        "status":  "rename",
+        "reason":  "Visible whiskey event room scene; fix wiskey -\u003e whiskey and normalize parentheses."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-wiskey (4).jpg",
+        "newPath":  "assets/haiduo/04-onsite-implementation/haiduo-onsite-whiskey-service.jpg",
+        "status":  "rename",
+        "reason":  "Visible whiskey service/action scene; fix wiskey -\u003e whiskey and normalize parentheses."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/haiduo-wiskey (5).jpg",
+        "newPath":  null,
+        "status":  "uncertain",
+        "reason":  "Visible whiskey service/action scene, but whiskey-service target would duplicate another suggested name."
+    },
+    {
+        "oldPath":  "assets/haiduo/04-onsite-implementation/hiaduo-art-invitation.jpg",
+        "newPath":  "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-invitation.jpg",
+        "status":  "rename",
+        "reason":  "Invitation image; fix hiaduo -\u003e haiduo and apply onsite art invitation naming."
+    }
+]
