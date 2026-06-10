@@ -27,7 +27,7 @@
       },{once:true});
       img.addEventListener('error',()=>{
         img.removeAttribute('src');
-        img.alt='Image pending';
+        img.alt='';
         img.closest('.image-frame')?.classList.add('is-placeholder');
         img.closest('.tool-badge')?.classList.add('is-text-fallback');
       },{once:true});

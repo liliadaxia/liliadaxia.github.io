@@ -7,11 +7,11 @@ body.neo-bauhaus {
   --color-dark: #1a1a1a;
   --color-muted: #5f5f5f;
   --color-line: #1a1a1a;
-  --color-blue: #002fa7;
+  --color-blue: #e76f51;
   --color-blue-soft: #eef3ff;
-  --color-coral: #002fa7;
+  --color-coral: #e76f51;
   --color-coral-soft: #eef3ff;
-  --color-lilac: #002fa7;
+  --color-lilac: #e76f51;
   --color-lilac-soft: #eef3ff;
   --radius-sm: 0;
   --radius-md: 0;
@@ -91,7 +91,7 @@ body.neo-bauhaus .now-list li,
 body.neo-bauhaus .collab-steps span,
 body.neo-bauhaus .image-frame,
 body.neo-bauhaus .img-wrapper {
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--line-soft);
 }
 
 body.neo-bauhaus .site-header,
@@ -137,7 +137,7 @@ body.neo-bauhaus .nav-link:hover,
 body.neo-bauhaus .nav-link:focus-visible,
 body.neo-bauhaus .text-link:hover,
 body.neo-bauhaus .text-link:focus-visible {
-  color: #002fa7;
+  color: #e76f51;
   background: transparent;
   transform: translateY(-2px);
 }
@@ -149,14 +149,14 @@ body.neo-bauhaus .button:focus-visible,
 body.neo-bauhaus .filter-button:hover,
 body.neo-bauhaus .filter-button:focus-visible,
 body.neo-bauhaus .filter-button.is-active {
-  border-color: #002fa7;
-  background: #002fa7;
+  border-color: #e76f51;
+  background: #e76f51;
   color: #ffffff;
   transform: translateY(-2px);
 }
 
 body.neo-bauhaus .section-header {
-  border-top: 1px solid #1a1a1a;
+  border-top: 1px solid var(--line-soft);
 }
 
 body.neo-bauhaus .hero,
@@ -197,7 +197,7 @@ body.neo-bauhaus .work-row:focus-visible,
 body.neo-bauhaus .chat-card:hover,
 body.neo-bauhaus .contact-card:hover,
 body.neo-bauhaus .now-list li:hover {
-  border-color: #002fa7;
+  border-color: #e76f51;
 }
 
 body.neo-bauhaus .img-wrapper {
@@ -229,7 +229,7 @@ body.neo-bauhaus .status-pill,
 body.neo-bauhaus .contact-tags span,
 body.neo-bauhaus .tool-pill,
 body.neo-bauhaus .principle-tags span {
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--line-soft);
   background: #ffffff;
   color: #1a1a1a;
 }
@@ -237,8 +237,8 @@ body.neo-bauhaus .principle-tags span {
 body.neo-bauhaus .tag-list span:hover,
 body.neo-bauhaus .contact-tags span:hover,
 body.neo-bauhaus .tool-pill:hover {
-  border-color: #002fa7;
-  color: #002fa7;
+  border-color: #e76f51;
+  color: #e76f51;
   background: #ffffff;
 }
 
@@ -248,7 +248,7 @@ body.neo-bauhaus .marquee {
 }
 
 body.neo-bauhaus .chat-bubble {
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--line-soft);
   background: #f8f9fa;
 }
 
@@ -257,9 +257,9 @@ body.neo-bauhaus .chat-bubble:nth-child(2) {
 }
 
 body.neo-bauhaus .chat-avatar {
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--line-soft);
   background: #ffffff;
-  color: #002fa7;
+  color: #e76f51;
 }
 
 body.neo-bauhaus .lightbox {
@@ -268,7 +268,7 @@ body.neo-bauhaus .lightbox {
 
 @media (max-width: 760px) {
   body.neo-bauhaus .site-nav {
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--line-soft);
     background: #ffffff;
   }
 }
@@ -308,7 +308,7 @@ body.neo-bauhaus {
   --shadow-soft: var(--shadow-flat);
   background: var(--bg-clean);
   color: var(--text-primary);
-  font-family: "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", "Microsoft YaHei", sans-serif;
 }
 
 body.neo-bauhaus *,
@@ -327,7 +327,7 @@ body.neo-bauhaus .project-title,
 body.neo-bauhaus .contact-title,
 body.neo-bauhaus .small-title {
   color: var(--text-primary);
-  font-family: "Space Grotesk", "Noto Serif SC", "PingFang SC", sans-serif;
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", "Microsoft YaHei", sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -600,4 +600,360 @@ body.neo-bauhaus .note-section::before,
 body.neo-bauhaus .note-section::after,
 body.neo-bauhaus .light-beam {
   display: none;
+}
+
+/* Final studio polish override loaded after the historical Neo layer. */
+body.neo-bauhaus {
+  --bg-clean: #fdfbf7;
+  --surface-warm: #f4efe6;
+  --surface-soft: #f8f1e8;
+  --text-primary: #1a1a1a;
+  --text-muted: #555555;
+  --line-soft: rgba(0, 0, 0, 0.03);
+  --color-orange: #e76f51;
+  --color-green: #8a9a86;
+  --color-yellow: #e9c46a;
+  --color-purple: #9b8cbf;
+  --theme-accent: var(--color-orange);
+  --theme-accent-secondary: var(--color-green);
+  --radius-soft: 24px;
+  --radius-large: 32px;
+  --shadow-flat: 6px 6px 0 rgba(26, 26, 26, 0.04);
+  --ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+  --color-bg: var(--bg-clean);
+  --color-surface: #fffdf9;
+  --color-surface-soft: var(--surface-soft);
+  --color-text: var(--text-primary);
+  --color-dark: var(--text-primary);
+  --color-muted: var(--text-muted);
+  --color-line: var(--line-soft);
+  --color-blue: var(--color-green);
+  --color-blue-soft: rgba(138, 154, 134, 0.16);
+  --color-coral: var(--color-orange);
+  --color-coral-soft: rgba(231, 111, 81, 0.12);
+  --color-lilac: var(--color-purple);
+  --color-lilac-soft: rgba(155, 140, 191, 0.14);
+  overflow-x: hidden;
+  background: var(--bg-clean);
+  color: var(--text-primary);
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", "Microsoft YaHei", sans-serif;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+body.neo-bauhaus h1,
+body.neo-bauhaus h2,
+body.neo-bauhaus h3,
+body.neo-bauhaus h4,
+body.neo-bauhaus .hero-title,
+body.neo-bauhaus .section-title,
+body.neo-bauhaus .display-title,
+body.neo-bauhaus .project-title,
+body.neo-bauhaus .card-title {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "PingFang SC", "Heiti SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+body.neo-bauhaus .section-copy,
+body.neo-bauhaus .body-copy,
+body.neo-bauhaus .card-copy,
+body.neo-bauhaus .project-description,
+body.neo-bauhaus .archive-description,
+body.neo-bauhaus .hero-copy,
+body.neo-bauhaus .contact-card p,
+body.neo-bauhaus .project-card p,
+body.neo-bauhaus .chat-bubble,
+body.neo-bauhaus .now-list li {
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+body.neo-bauhaus .project-card,
+body.neo-bauhaus .work-row,
+body.neo-bauhaus .archive-card,
+body.neo-bauhaus .archive-item,
+body.neo-bauhaus .service-card,
+body.neo-bauhaus .process-card,
+body.neo-bauhaus .contact-card,
+body.neo-bauhaus .feedback-card,
+body.neo-bauhaus .quote-card,
+body.neo-bauhaus .chat-card,
+body.neo-bauhaus .now-card,
+body.neo-bauhaus .now-list li,
+body.neo-bauhaus .tool-card,
+body.neo-bauhaus .tool-group,
+body.neo-bauhaus .image-frame,
+body.neo-bauhaus .img-wrapper,
+body.neo-bauhaus .project-cover,
+body.neo-bauhaus .hero-stage,
+body.neo-bauhaus .hero-stage-card,
+body.neo-bauhaus .wechat-qr,
+body.neo-bauhaus .qr-image {
+  border: none;
+  border-radius: var(--radius-soft) !important;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+body.neo-bauhaus .contact-card,
+body.neo-bauhaus .contact-panel,
+body.neo-bauhaus .contact-info,
+body.neo-bauhaus .start-conversation {
+  padding: clamp(28px, 4vw, 56px);
+  border: none;
+  background: var(--surface-warm);
+  box-shadow: var(--shadow-flat);
+}
+
+body.neo-bauhaus .contact-method a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body.neo-bauhaus .contact-method a:hover {
+  color: var(--theme-accent);
+}
+
+body.neo-bauhaus .wechat-qr,
+body.neo-bauhaus .contact-qr,
+body.neo-bauhaus .qr-image {
+  width: fit-content;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius-soft) !important;
+  background: var(--bg-clean);
+}
+
+body.neo-bauhaus .wechat-qr img,
+body.neo-bauhaus .contact-qr img,
+body.neo-bauhaus .qr-image img {
+  display: block;
+  width: clamp(140px, 14vw, 180px);
+  height: auto;
+  border-radius: 18px !important;
+}
+
+body.neo-bauhaus .contact-tags span,
+body.neo-bauhaus .collab-steps span,
+body.neo-bauhaus .tag-list span,
+body.neo-bauhaus .archive-tag,
+body.neo-bauhaus .tool-pill,
+body.neo-bauhaus .filter-button {
+  border: none;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+body.neo-bauhaus .contact-grid > .contact-card:nth-child(1),
+body.neo-bauhaus .service-group,
+body.neo-bauhaus .services-panel {
+  background: var(--surface-warm);
+}
+
+body.neo-bauhaus .contact-grid > .contact-card:nth-child(2),
+body.neo-bauhaus .process-group,
+body.neo-bauhaus .process-panel {
+  background: rgba(138, 154, 134, 0.22);
+}
+
+body.neo-bauhaus .project-card:nth-child(4n + 1),
+body.neo-bauhaus .work-list > :nth-child(4n + 1) {
+  --card-accent: var(--color-orange);
+}
+
+body.neo-bauhaus .project-card:nth-child(4n + 2),
+body.neo-bauhaus .work-list > :nth-child(4n + 2) {
+  --card-accent: var(--color-green);
+}
+
+body.neo-bauhaus .project-card:nth-child(4n + 3),
+body.neo-bauhaus .work-list > :nth-child(4n + 3) {
+  --card-accent: var(--color-yellow);
+}
+
+body.neo-bauhaus .project-card:nth-child(4n + 4),
+body.neo-bauhaus .work-list > :nth-child(4n + 4) {
+  --card-accent: var(--color-purple);
+}
+
+body.neo-bauhaus .project-card:hover {
+  background-color: color-mix(in srgb, var(--card-accent, var(--theme-accent)) 13%, white);
+}
+
+body.neo-bauhaus .project-card-meta span:first-child {
+  color: var(--card-accent, var(--theme-accent));
+}
+
+body.neo-bauhaus .archive-item:nth-child(4n + 1) {
+  background: rgba(231, 111, 81, 0.10);
+}
+
+body.neo-bauhaus .archive-item:nth-child(4n + 2) {
+  background: rgba(138, 154, 134, 0.14);
+}
+
+body.neo-bauhaus .archive-item:nth-child(4n + 3) {
+  background: rgba(233, 196, 106, 0.18);
+}
+
+body.neo-bauhaus .archive-item:nth-child(4n + 4) {
+  background: rgba(155, 140, 191, 0.13);
+}
+
+body.neo-bauhaus .service-card:nth-child(4n + 1),
+body.neo-bauhaus .contact-tags span:nth-child(4n + 1) {
+  background: rgba(231, 111, 81, 0.12);
+}
+
+body.neo-bauhaus .service-card:nth-child(4n + 2),
+body.neo-bauhaus .contact-tags span:nth-child(4n + 2) {
+  background: rgba(138, 154, 134, 0.16);
+}
+
+body.neo-bauhaus .service-card:nth-child(4n + 3),
+body.neo-bauhaus .contact-tags span:nth-child(4n + 3) {
+  background: rgba(233, 196, 106, 0.20);
+}
+
+body.neo-bauhaus .service-card:nth-child(4n + 4),
+body.neo-bauhaus .contact-tags span:nth-child(4n + 4) {
+  background: rgba(155, 140, 191, 0.15);
+}
+
+body.neo-bauhaus .project-card .image-frame,
+body.neo-bauhaus .project-card .img-wrapper,
+body.neo-bauhaus .project-card .project-media,
+body.neo-bauhaus .project-card .project-cover,
+body.neo-bauhaus .work-card .image-frame,
+body.neo-bauhaus .work-card .img-wrapper,
+body.neo-bauhaus .archive-card .image-frame,
+body.neo-bauhaus .archive-card .img-wrapper,
+body.neo-bauhaus .archive-item .image-frame,
+body.neo-bauhaus .archive-item .img-wrapper {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  max-height: clamp(240px, 28vw, 360px);
+  border-radius: var(--radius-soft) !important;
+  background: var(--surface-warm);
+  overflow: hidden;
+}
+
+body.neo-bauhaus .image-frame.is-placeholder::after,
+body.neo-bauhaus .img-wrapper.is-placeholder::after {
+  content: "";
+}
+
+body.neo-bauhaus a,
+body.neo-bauhaus button,
+body.neo-bauhaus .button,
+body.neo-bauhaus .project-card,
+body.neo-bauhaus .archive-card,
+body.neo-bauhaus .archive-item,
+body.neo-bauhaus .service-card,
+body.neo-bauhaus .process-card,
+body.neo-bauhaus .contact-card,
+body.neo-bauhaus .now-list li,
+body.neo-bauhaus .tool-group,
+body.neo-bauhaus .image-frame,
+body.neo-bauhaus .img-wrapper {
+  transition: all 0.5s var(--ease-soft);
+}
+
+body.neo-bauhaus .project-card:hover,
+body.neo-bauhaus .archive-card:hover,
+body.neo-bauhaus .archive-item:hover,
+body.neo-bauhaus .service-card:hover,
+body.neo-bauhaus .process-card:hover,
+body.neo-bauhaus .contact-card:hover,
+body.neo-bauhaus .now-list li:hover,
+body.neo-bauhaus .tool-group:hover {
+  transform: translateY(-4px);
+}
+
+body.neo-bauhaus .custom-cursor {
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 38% 48% 42% 52% !important;
+  background: #fffdf8;
+  box-shadow: 6px 6px 0 rgba(26, 26, 26, 0.06);
+  opacity: 0;
+  mix-blend-mode: normal;
+  transition: opacity 0.25s ease, transform 0.35s var(--ease-soft), background-color 0.35s ease;
+}
+
+body.neo-bauhaus .custom-cursor::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  background: var(--text-primary);
+  clip-path: polygon(18% 8%, 78% 52%, 52% 58%, 64% 86%, 48% 92%, 36% 64%, 18% 80%);
+}
+
+body.neo-bauhaus .cursor-dot {
+  display: none;
+}
+
+body.neo-bauhaus .cursor-label {
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 0;
+  padding: 7px 11px;
+  border-radius: 999px !important;
+  background: var(--theme-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translate(18px, 18px);
+  transition: opacity 0.25s ease, background-color 0.35s ease, transform 0.35s var(--ease-soft);
+}
+
+body.neo-bauhaus .custom-cursor.is-visible {
+  opacity: 1;
+}
+
+body.neo-bauhaus .custom-cursor.has-label {
+  transform: scale(1.12) rotate(-6deg);
+  background: #fff9f0;
+}
+
+body.neo-bauhaus .custom-cursor.has-label .cursor-label {
+  opacity: 1;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  body.neo-bauhaus .custom-cursor,
+  body.neo-bauhaus .cursor-label,
+  body.neo-bauhaus #doodle-canvas {
+    display: none !important;
+  }
+
+  body.neo-bauhaus,
+  body.neo-bauhaus a,
+  body.neo-bauhaus button {
+    cursor: auto;
+  }
+
+  body.neo-bauhaus .project-card:hover,
+  body.neo-bauhaus .archive-card:hover,
+  body.neo-bauhaus .archive-item:hover,
+  body.neo-bauhaus .service-card:hover,
+  body.neo-bauhaus .process-card:hover,
+  body.neo-bauhaus .contact-card:hover {
+    transform: none;
+  }
+
+  body.neo-bauhaus .wechat-qr img,
+  body.neo-bauhaus .contact-qr img,
+  body.neo-bauhaus .qr-image img {
+    width: 140px;
+  }
 }
