@@ -313,10 +313,6 @@
             <div class="onsite-board">
               ${onsiteGroups.map(group => `
                 <section class="onsite-group ${group.className} reveal">
-                  <div class="onsite-group-heading">
-                    <span>${group.title}</span>
-                    <small>${group.copy}</small>
-                  </div>
                   <div class="onsite-group-grid">
                     ${group.items.map(item => `
                       <button class="onsite-item ${item.variant}" type="button" data-lightbox="${item.src}" aria-label="Open ${item.alt}">
