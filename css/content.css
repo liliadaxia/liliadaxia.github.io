@@ -4324,7 +4324,7 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-summary {
 }
 
 body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 @media (max-width: 900px) {
@@ -4866,4 +4866,270 @@ body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-
 body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-material:hover img,
 body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-material:focus-visible img {
   transform: scale(1.012);
+}
+
+/* SimonKids project: soft blue brand system */
+body.simonkids-project {
+  --sk-spring: #f3f3e9;
+  --sk-sail: #afd8fb;
+  --sk-cherub: #f4ced3;
+  --sk-cinnabar: #e33529;
+  --sk-ink: #1e2430;
+  --sk-muted: rgba(30, 36, 48, 0.72);
+  background:
+    radial-gradient(circle at 86% 10%, rgba(175, 216, 251, 0.58), transparent 30%),
+    linear-gradient(180deg, #f8f9f5 0%, #f3f3e9 100%);
+  color: var(--sk-ink);
+}
+
+body.simonkids-project .site-header {
+  background: rgba(248, 249, 245, 0.84);
+  border-bottom: 1px solid rgba(90, 130, 180, 0.08);
+}
+
+.simonkids-project-page {
+  overflow: hidden;
+}
+
+.simonkids-project-page .sk-hero,
+.simonkids-project-page .sk-section,
+.simonkids-project-page .project-brief-impact {
+  width: min(1240px, calc(100vw - 48px));
+  margin-inline: auto;
+}
+
+.simonkids-project-page .sk-hero {
+  min-height: calc(100vh - 72px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1.14fr);
+  align-items: center;
+  gap: clamp(32px, 5.4vw, 76px);
+  padding: clamp(68px, 8vw, 112px) 0 clamp(56px, 7vw, 92px);
+}
+
+.simonkids-project-page .sk-hero-copy {
+  max-width: 620px;
+}
+
+.simonkids-project-page .sk-hero h1 {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 22px;
+  color: var(--sk-ink);
+  font-size: clamp(48px, 6.2vw, 92px);
+  font-weight: 740;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.simonkids-project-page .sk-hero h1 span:last-child {
+  font-size: clamp(34px, 4vw, 56px);
+}
+
+.simonkids-project-page .sk-hero p,
+.simonkids-project-page .section-copy,
+.simonkids-project-page .project-brief-impact p {
+  color: var(--sk-muted);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.simonkids-project-page .eyebrow,
+.simonkids-project-page .section-kicker {
+  color: var(--sk-cinnabar);
+}
+
+.simonkids-project-page .sk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.simonkids-project-page .sk-tags span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 13px;
+  border-radius: 999px;
+  background: rgba(175, 216, 251, 0.72);
+  color: var(--sk-ink);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+}
+
+.simonkids-project-page .sk-tags span:nth-child(2n) {
+  background: rgba(244, 206, 211, 0.78);
+}
+
+.simonkids-project-page .sk-hero-visual,
+.simonkids-project-page .sk-media-card {
+  appearance: none;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(90, 130, 180, 0.08);
+  border-radius: 32px;
+  background: #f7fbff;
+  box-shadow: 0 18px 40px rgba(60, 90, 130, 0.08);
+  cursor: pointer;
+  transition: transform 0.42s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1)), box-shadow 0.42s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1));
+}
+
+.simonkids-project-page .sk-hero-visual {
+  padding: clamp(14px, 1.6vw, 22px);
+  background:
+    linear-gradient(145deg, rgba(175, 216, 251, 0.95), rgba(247, 251, 255, 0.92)),
+    var(--sk-sail);
+}
+
+.simonkids-project-page .sk-hero-visual img,
+.simonkids-project-page .sk-media-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.55s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1));
+}
+
+.simonkids-project-page .sk-hero-visual:hover,
+.simonkids-project-page .sk-media-card:hover,
+.simonkids-project-page .sk-hero-visual:focus-visible,
+.simonkids-project-page .sk-media-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 54px rgba(60, 90, 130, 0.13);
+}
+
+.simonkids-project-page .sk-hero-visual:hover img,
+.simonkids-project-page .sk-media-card:hover img,
+.simonkids-project-page .sk-hero-visual:focus-visible img,
+.simonkids-project-page .sk-media-card:focus-visible img {
+  transform: scale(1.025);
+}
+
+.simonkids-project-page .project-brief-impact {
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1fr);
+  border: 1px solid rgba(90, 130, 180, 0.08);
+  background:
+    radial-gradient(circle at 95% 15%, rgba(244, 206, 211, 0.42), transparent 28%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(175, 216, 251, 0.42));
+  box-shadow: 0 18px 40px rgba(60, 90, 130, 0.08);
+}
+
+.simonkids-project-page .project-brief-impact h2,
+.simonkids-project-page .section-title {
+  color: var(--sk-ink);
+  font-weight: 740;
+  letter-spacing: -0.035em;
+}
+
+.simonkids-project-page .project-brief-impact .impact-panel {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.simonkids-project-page .project-brief-impact .impact-card {
+  border: 1px solid rgba(90, 130, 180, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: none;
+}
+
+.simonkids-project-page .project-brief-impact .impact-card strong {
+  color: var(--sk-cinnabar);
+  font-size: clamp(30px, 3vw, 44px);
+}
+
+.simonkids-project-page .project-brief-impact .impact-card > span {
+  color: var(--sk-ink);
+}
+
+.simonkids-project-page .project-brief-impact .impact-card p,
+.simonkids-project-page .project-brief-impact .impact-summary {
+  color: var(--sk-muted);
+}
+
+.simonkids-project-page .project-brief-impact .impact-summary {
+  background: rgba(175, 216, 251, 0.36);
+}
+
+.simonkids-project-page .sk-section {
+  padding: clamp(68px, 9vw, 120px) 0;
+}
+
+.simonkids-project-page .section-header {
+  border-top-color: rgba(90, 130, 180, 0.12);
+}
+
+.simonkids-project-page .sk-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 32px);
+}
+
+.simonkids-project-page .sk-media-grid.is-feature {
+  grid-template-columns: 1fr;
+}
+
+.simonkids-project-page .sk-media-card {
+  aspect-ratio: 4 / 3;
+}
+
+.simonkids-project-page .sk-media-card.is-poster {
+  aspect-ratio: 3 / 4;
+  background: #f7fbff;
+}
+
+.simonkids-project-page .sk-blue-band {
+  width: min(1280px, calc(100vw - 32px));
+  padding: clamp(54px, 7vw, 90px) clamp(16px, 3vw, 36px);
+  border-radius: 36px;
+  background: rgba(175, 216, 251, 0.46);
+}
+
+.simonkids-project-page .sk-value {
+  padding-bottom: clamp(84px, 10vw, 140px);
+}
+
+@media (max-width: 980px) {
+  .simonkids-project-page .sk-hero,
+  .simonkids-project-page .project-brief-impact {
+    grid-template-columns: 1fr;
+  }
+
+  .simonkids-project-page .project-brief-impact .impact-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .simonkids-project-page .sk-hero,
+  .simonkids-project-page .sk-section,
+  .simonkids-project-page .project-brief-impact {
+    width: calc(100vw - 32px);
+  }
+
+  .simonkids-project-page .sk-hero {
+    min-height: auto;
+    padding-top: 56px;
+  }
+
+  .simonkids-project-page .sk-hero h1 {
+    font-size: clamp(38px, 12vw, 56px);
+  }
+
+  .simonkids-project-page .sk-hero h1 span:last-child {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .simonkids-project-page .sk-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .simonkids-project-page .sk-hero-visual,
+  .simonkids-project-page .sk-media-card {
+    border-radius: 24px;
+  }
 }

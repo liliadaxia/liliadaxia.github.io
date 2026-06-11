@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <rect width="900" height="1200" fill="#F3F3E9"/>
+  <rect x="110" y="120" width="680" height="960" rx="64" fill="#AFD8FB"/>
+  <circle cx="250" cy="245" r="95" fill="#FFFFFF"/>
+  <circle cx="650" cy="245" r="95" fill="#F4CED3"/>
+  <text x="150" y="480" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#1E2430">Spring</text>
+  <text x="150" y="570" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#1E2430">Open Day</text>
+  <text x="150" y="640" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#E33529">INVITATION / TV BACKGROUND</text>
+  <rect x="150" y="760" width="600" height="180" rx="38" fill="#FFFFFF"/>
+  <path d="M210 830h440M210 885h300" stroke="#1E2430" stroke-width="12" stroke-linecap="round"/>
+</svg>
