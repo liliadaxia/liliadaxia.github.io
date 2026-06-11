@@ -4323,6 +4323,10 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-summary {
   color: #fff7e8;
 }
 
+body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 @media (max-width: 900px) {
   .project-brief-impact,
   body.haiduo-project .haiduo-project-page .project-brief-impact {
@@ -4732,5 +4736,86 @@ body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-
 
   body.haiduo-project .haiduo-project-page .hero-visual-single img {
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* Haiduo cursor halo: keeps the native pointer visible on dark backgrounds */
+@media (hover: hover) and (pointer: fine) {
+  body.haiduo-project.has-custom-cursor,
+  body.haiduo-project.has-custom-cursor a,
+  body.haiduo-project.has-custom-cursor button {
+    cursor: auto !important;
+  }
+
+  body.haiduo-project.has-custom-cursor a,
+  body.haiduo-project.has-custom-cursor button,
+  body.haiduo-project.has-custom-cursor [role="button"],
+  body.haiduo-project.has-custom-cursor [data-lightbox] {
+    cursor: pointer !important;
+  }
+
+  body.haiduo-project.has-custom-cursor .haido-scrollbar {
+    cursor: grab !important;
+  }
+
+  body.haiduo-project.has-custom-cursor .haido-scrollbar:active {
+    cursor: grabbing !important;
+  }
+}
+
+body.haiduo-project .cursor-halo {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+body.haiduo-project .cursor-halo.is-visible {
+  opacity: 1;
+}
+
+body.haiduo-project .cursor-halo__dot,
+body.haiduo-project .cursor-halo__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+body.haiduo-project .cursor-halo__dot {
+  width: 6px;
+  height: 6px;
+  background: #d6ad68;
+  box-shadow: 0 0 12px rgba(214, 173, 104, 0.55);
+}
+
+body.haiduo-project .cursor-halo__ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(214, 173, 104, 0.72);
+  box-shadow:
+    0 0 18px rgba(214, 173, 104, 0.22),
+    inset 0 0 14px rgba(214, 173, 104, 0.12);
+  transition:
+    width 0.22s ease,
+    height 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+body.haiduo-project .cursor-halo.is-hovering .cursor-halo__ring {
+  width: 48px;
+  height: 48px;
+  border-color: rgba(214, 173, 104, 0.95);
+  background: rgba(214, 173, 104, 0.08);
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  body.haiduo-project .cursor-halo {
+    display: none !important;
   }
 }
