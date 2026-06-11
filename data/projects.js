@@ -11,6 +11,7 @@ const projects = [
     tags: ["VI System", "Kids Brand", "IP Extension", "Brand Materials"],
     year: "2026",
     status: "Selected",
+    featuredOrder: 1,
     cover: "images/featured/simonkids.jpg",
     url: "project-simonkids.html",
     images: ["images/featured/simonkids.jpg", "images/projects/simonkids-01.jpg", "images/projects/simonkids-02.jpg"],
@@ -27,6 +28,7 @@ const projects = [
     tags: ["Study Tour", "Merchandise", "Luggage", "Sticker", "Bag", "Flag"],
     year: "2026",
     status: "Selected",
+    featuredOrder: 3,
     cover: "images/featured/ai-visual.jpg",
     url: "project-study-tour.html",
     images: ["images/featured/ai-visual.jpg", "images/projects/ai-visual-01.jpg", "images/projects/ai-visual-02.jpg"],
@@ -44,6 +46,7 @@ const projects = [
     tags: ["Brand Visual", "Campaign", "Space & Materials"],
     year: "2025",
     status: "Selected",
+    featuredOrder: 2,
     cover: "assets/haiduo/03-event-visual/haiduo-event-art-exhibition-01.jpg",
     url: "project-haido-restaurant.html",
     images: [
@@ -101,6 +104,45 @@ const archiveItems = [
   { id: "archive-12", title: "商业物料组合", category: "品牌物料", image: "images/archive/archive-12.jpg", url: "" },
 ];
 
+const eventPhotographyItems = [
+  {
+    title: "SimonKids 活动现场",
+    label: "儿童互动 / 远景记录",
+    image: "images/photography/simonkids-event-01.jpg",
+    alt: "SimonKids 活动现场远景摄影记录"
+  },
+  {
+    title: "SimonKids 品牌物料",
+    label: "活动物料 / 局部细节",
+    image: "images/photography/simonkids-materials-01.jpg",
+    alt: "SimonKids 活动物料局部摄影记录"
+  },
+  {
+    title: "国际研学集合场景",
+    label: "旅程识别 / 背影记录",
+    image: "images/photography/study-tour-scene-01.jpg",
+    alt: "国际研学集合场景摄影记录"
+  },
+  {
+    title: "国际研学品牌物料",
+    label: "行前沟通 / 物料细节",
+    image: "images/photography/study-tour-materials-01.jpg",
+    alt: "国际研学品牌物料摄影记录"
+  },
+  {
+    title: "品牌现场物料",
+    label: "邀请函 / 桌面触点",
+    image: "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-invitation.jpg",
+    alt: "品牌现场邀请函物料摄影记录"
+  },
+  {
+    title: "活动落地场景",
+    label: "空间应用 / 现场氛围",
+    image: "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-scene-01.jpg",
+    alt: "品牌活动现场空间摄影记录"
+  }
+];
+
 const testimonials = [
   {
     initial: "S",
@@ -151,4 +193,5 @@ const testimonials = [
 window.projects = projects;
 window.siteProjects = projects;
 window.archiveItems = archiveItems;
+window.eventPhotographyItems = eventPhotographyItems;
 window.testimonials = testimonials;

@@ -11,6 +11,9 @@
     '\u884d\u751f\u4ea7\u54c1':'merch'
   };
   const projects=()=>window.projects||window.siteProjects||[];
+  const selectedProjects=()=>projects()
+    .filter(project=>project.status==='Selected'&&link(project))
+    .sort((a,b)=>(a.featuredOrder||99)-(b.featuredOrder||99));
   const cover=p=>p.cover||p.image||'';
   const link=p=>p.url||'';
   const themeOf=item=>item.theme||themeByCategory[item.category]||'default';
@@ -57,7 +60,8 @@
       list.parentNode.insertBefore(holder,list);
     }
     if(!holder)return;
-    holder.innerHTML=categories.map((name,index)=>`<button class="filter-button ${index===0?'is-active':''}" type="button" data-filter="${name}" data-cursor="Go">${name}</button>`).join('');
+    const filterOptions=['\u5168\u90e8',...new Set(selectedProjects().map(project=>project.category).filter(Boolean))];
+    holder.innerHTML=filterOptions.map((name,index)=>`<button class="filter-button ${index===0?'is-active':''}" type="button" data-filter="${name}" data-cursor="Go">${name}</button>`).join('');
     holder.addEventListener('click',event=>{
       const button=event.target.closest('[data-filter]');
       if(!button)return;
@@ -81,7 +85,7 @@
     const grid=qs('[data-project-grid]')||qs('[data-featured-list]');
     if(!grid)return;
     grid.classList.add('work-list','is-switching');
-    const selected=projects().filter(project=>filter==='\u5168\u90e8'||project.category===filter);
+    const selected=selectedProjects().filter(project=>filter==='\u5168\u90e8'||project.category===filter);
     window.setTimeout(()=>{
       grid.innerHTML=selected.map(projectCard).join('');
       bindFallbacks(grid);
@@ -130,6 +134,24 @@
         <footer class="chat-meta">${item.meta||item.type||''}</footer>
       </article>`;
     }).join('');
+  }
+
+  function renderEventPhotography(){
+    const grid=qs('[data-event-photography]');
+    const items=window.eventPhotographyItems||[];
+    if(!grid||!items.length)return;
+    grid.innerHTML=items.map(item=>`
+      <article class="event-photo-card reveal" data-cursor="Open">
+        <button class="event-photo-button" type="button" data-lightbox="${item.image}" aria-label="Open ${item.title}">
+          <div class="image-frame" data-label="${item.label||item.title}">
+            <img src="${item.image}" alt="${item.alt||item.title}" loading="lazy" data-fallback>
+          </div>
+        </button>
+        <span>${item.label||''}</span>
+      </article>
+    `).join('');
+    bindFallbacks(grid);
+    window.dispatchEvent(new CustomEvent('content:updated'));
   }
 
   function setupProjectInteractions(root=document){
@@ -227,6 +249,7 @@
     renderProjectCards();
     renderWorksPage();
     renderArchive();
+    renderEventPhotography();
     renderTestimonials();
     setupMenu();
     prepareProjectGallery();
