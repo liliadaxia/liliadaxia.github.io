@@ -4819,3 +4819,51 @@ body.haiduo-project .cursor-halo.is-hovering .cursor-halo__ring {
     display: none !important;
   }
 }
+
+/* Haiduo onsite collage polish: remove pale backing and align radii */
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase,
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board,
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-group,
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-group-grid {
+  background: transparent !important;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden !important;
+  border: 1px solid rgba(201, 160, 83, 0.22) !important;
+  border-radius: 26px !important;
+  background:
+    linear-gradient(145deg, rgba(32, 20, 12, 0.98), rgba(13, 8, 5, 1)),
+    #120c08 !important;
+  background-clip: padding-box;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-material {
+  padding: 10px !important;
+  background:
+    linear-gradient(145deg, rgba(34, 22, 13, 0.98), rgba(13, 8, 5, 1)),
+    #120c08 !important;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: inherit !important;
+  background: #120c08 !important;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item:not(.is-material) img {
+  object-fit: cover !important;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-material img {
+  object-fit: contain !important;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-material:hover img,
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-material:focus-visible img {
+  transform: scale(1.012);
+}
