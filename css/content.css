@@ -4401,33 +4401,37 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border: 0;
+  border: 1px solid rgba(90, 130, 180, 0.1);
   border-radius: 22px;
   background:
+    radial-gradient(circle at 18% 18%, rgba(244, 140, 84, 0.1), transparent 32%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(232, 244, 255, 0.7)),
     #f7fbff;
-  box-shadow: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -18px 42px rgba(175, 216, 251, 0.16);
 }
 
-.event-photography-section .event-photo-card .image-frame::before {
+.event-photography-section .event-photo-card .image-frame::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
+  border-radius: inherit;
   background:
     linear-gradient(
       135deg,
-      rgba(244, 140, 84, 0.16) 0%,
-      rgba(243, 154, 99, 0.08) 30%,
-      rgba(238, 139, 90, 0.025) 52%,
+      rgba(244, 140, 84, 0.22) 0%,
+      rgba(244, 140, 84, 0.12) 26%,
+      rgba(244, 140, 84, 0.045) 48%,
       rgba(244, 140, 84, 0) 72%
     ),
     linear-gradient(
       180deg,
       rgba(18, 12, 8, 0) 0%,
-      rgba(18, 12, 8, 0.045) 72%,
-      rgba(18, 12, 8, 0.1) 100%
+      rgba(18, 12, 8, 0.04) 72%,
+      rgba(18, 12, 8, 0.08) 100%
     );
 }
 
@@ -4458,22 +4462,33 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
   letter-spacing: 0.03em;
 }
 
-.event-photo-card .image-frame.is-placeholder::after,
-.onsite-photo-card .image-frame.is-placeholder::after {
+.event-photo-card .image-frame.is-placeholder::before,
+.onsite-photo-card .image-frame.is-placeholder::before {
   content: attr(data-label);
   position: absolute;
   inset: 14px;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   place-items: center;
-  border: 1px dashed rgba(90, 130, 180, 0.18);
+  border: 1px solid rgba(90, 130, 180, 0.1);
   border-radius: 18px;
   color: rgba(30, 36, 48, 0.58);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: center;
-  background: rgba(255, 255, 255, 0.36);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(244, 140, 84, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(232, 244, 255, 0.42));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -14px 30px rgba(175, 216, 251, 0.12);
+}
+
+.event-photography-section .event-photo-card .image-frame.is-placeholder::after {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(244, 140, 84, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(244, 140, 84, 0.05), rgba(175, 216, 251, 0.12));
 }
 
 .onsite-photo-section .section-copy {
