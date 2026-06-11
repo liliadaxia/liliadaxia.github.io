@@ -3227,13 +3227,13 @@ body.haiduo-project .haiduo-project-page .onsite-item.is-material {
   aspect-ratio: 4 / 3;
   padding: 12px !important;
   background:
-    linear-gradient(145deg, rgba(201, 163, 91, 0.18), rgba(244, 234, 216, 0.88)),
-    #f4ead8 !important;
+    linear-gradient(145deg, rgba(34, 22, 13, 0.98), rgba(13, 8, 5, 1)),
+    #120c08 !important;
 }
 
 body.haiduo-project .haiduo-project-page .onsite-item.is-material.is-tall {
   grid-column: span 4;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
 }
 
 body.haiduo-project .haiduo-project-page .onsite-item img {
@@ -3250,7 +3250,7 @@ body.haiduo-project .haiduo-project-page .onsite-item:not(.is-material) img {
 
 body.haiduo-project .haiduo-project-page .onsite-item.is-material img {
   object-fit: contain !important;
-  background: #f4ead8;
+  background: #120c08;
 }
 
 body.haiduo-project .haiduo-project-page .onsite-item-label {
@@ -3776,11 +3776,11 @@ body.haiduo-project .haiduo-project-page .onsite-board .onsite-main-group .onsit
 }
 
 body.haiduo-project .haiduo-project-page .onsite-board .onsite-material-group .onsite-item {
-  aspect-ratio: 4 / 5 !important;
+  aspect-ratio: 4 / 3 !important;
   padding: 12px !important;
   background:
-    linear-gradient(145deg, rgba(201, 163, 91, 0.16), rgba(244, 234, 216, 0.9)),
-    #f4ead8 !important;
+    linear-gradient(145deg, rgba(34, 22, 13, 0.98), rgba(13, 8, 5, 1)),
+    #120c08 !important;
 }
 
 body.haiduo-project .haiduo-project-page .onsite-board .onsite-moment-group .onsite-item {
@@ -3845,7 +3845,7 @@ body.haiduo-project .haiduo-project-page .onsite-board .onsite-item-label {
 
   body.haiduo-project .haiduo-project-page .onsite-item.is-material,
   body.haiduo-project .haiduo-project-page .onsite-item.is-material.is-tall {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -4364,12 +4364,36 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
   display: grid;
   gap: 10px;
   width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
+  padding: 10px;
+  border: 1px solid rgba(90, 130, 180, 0.12);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 40px rgba(60, 90, 130, 0.08);
   color: inherit;
   font: inherit;
   text-align: left;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.event-photo-card:hover,
+.event-photo-card:focus-within,
+.onsite-photo-card:hover,
+.onsite-photo-card:focus-within {
+  transform: translateY(-5px);
+  border-color: rgba(90, 130, 180, 0.2);
+  box-shadow: 0 24px 52px rgba(60, 90, 130, 0.13);
+}
+
+.event-photo-button,
+.onsite-photo-card > button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 22px;
+  overflow: hidden;
 }
 
 .event-photo-card .image-frame,
@@ -4378,11 +4402,11 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 0;
-  border-radius: var(--radius-soft, 24px);
+  border-radius: 22px;
   background:
-    radial-gradient(circle at 78% 18%, rgba(231, 111, 81, 0.13), transparent 32%),
-    var(--surface-soft, #f8f1e8);
-  box-shadow: 0 18px 48px rgba(26, 26, 26, 0.06);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(232, 244, 255, 0.7)),
+    #f7fbff;
+  box-shadow: none;
 }
 
 .event-photography-section .event-photo-card .image-frame::before {
@@ -4415,6 +4439,7 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
   height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: inherit;
   transition: transform 0.55s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1));
 }
 
@@ -4441,13 +4466,14 @@ body.haiduo-project .haiduo-project-page .project-brief-impact .impact-panel {
   z-index: 2;
   display: grid;
   place-items: center;
-  border: 1px dashed rgba(26, 26, 26, 0.12);
+  border: 1px dashed rgba(90, 130, 180, 0.18);
   border-radius: 18px;
-  color: var(--text-muted, #555);
+  color: rgba(30, 36, 48, 0.58);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: center;
+  background: rgba(255, 255, 255, 0.36);
 }
 
 .onsite-photo-section .section-copy {
@@ -4868,6 +4894,51 @@ body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-item.is-
   transform: scale(1.012);
 }
 
+/* Haiduo onsite visual application cards: keep horizontal 4:3 rhythm */
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board .onsite-material-group .onsite-group-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board .onsite-material-group .onsite-item,
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board .onsite-material-group .onsite-item.is-material,
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board .onsite-material-group .onsite-item.is-material.is-tall {
+  aspect-ratio: 4 / 3 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 10px !important;
+  overflow: hidden !important;
+  border-radius: 26px !important;
+  border: 1px solid rgba(201, 160, 83, 0.22) !important;
+  background:
+    linear-gradient(145deg, rgba(28, 18, 11, 0.98), rgba(10, 7, 5, 1)),
+    #120c08 !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28) !important;
+}
+
+body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board .onsite-material-group .onsite-item img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 18px !important;
+  object-fit: contain !important;
+  background: #120c08 !important;
+}
+
+@media (max-width: 900px) {
+  body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board .onsite-material-group .onsite-group-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.haiduo-project .haiduo-project-page .haido-onsite-showcase .onsite-board .onsite-material-group .onsite-group-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
+
 /* SimonKids project: soft blue brand system */
 body.simonkids-project {
   --sk-spring: #f3f3e9;
@@ -5013,11 +5084,10 @@ body.simonkids-project .site-header {
 
 .simonkids-project-page .project-brief-impact {
   grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1fr);
-  border: 1px solid rgba(90, 130, 180, 0.08);
-  background:
-    radial-gradient(circle at 95% 15%, rgba(244, 206, 211, 0.42), transparent 28%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(175, 216, 251, 0.42));
-  box-shadow: 0 18px 40px rgba(60, 90, 130, 0.08);
+  border: 1px solid rgba(120, 170, 210, 0.18);
+  background: #ddeffc;
+  border-radius: 36px;
+  box-shadow: 0 24px 70px rgba(80, 130, 170, 0.14);
 }
 
 .simonkids-project-page .project-brief-impact h2,
@@ -5032,27 +5102,36 @@ body.simonkids-project .site-header {
 }
 
 .simonkids-project-page .project-brief-impact .impact-card {
-  border: 1px solid rgba(90, 130, 180, 0.08);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: none;
+  min-height: 232px;
+  border: 1px solid rgba(120, 170, 210, 0.18);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 40px rgba(70, 120, 160, 0.08);
 }
 
 .simonkids-project-page .project-brief-impact .impact-card strong {
-  color: var(--sk-cinnabar);
-  font-size: clamp(30px, 3vw, 44px);
+  color: #e85b4f;
+  font-size: clamp(44px, 4.6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 
 .simonkids-project-page .project-brief-impact .impact-card > span {
   color: var(--sk-ink);
+  line-height: 1.25;
 }
 
 .simonkids-project-page .project-brief-impact .impact-card p,
 .simonkids-project-page .project-brief-impact .impact-summary {
   color: var(--sk-muted);
+  line-height: 1.75;
 }
 
 .simonkids-project-page .project-brief-impact .impact-summary {
-  background: rgba(175, 216, 251, 0.36);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(120, 170, 210, 0.12);
 }
 
 .simonkids-project-page .sk-section {
@@ -5080,6 +5159,38 @@ body.simonkids-project .site-header {
 .simonkids-project-page .sk-media-card.is-poster {
   aspect-ratio: 3 / 4;
   background: #f7fbff;
+}
+
+.simonkids-project-page .sk-overview-placeholder {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  min-height: clamp(260px, 34vw, 420px);
+  padding: clamp(24px, 4vw, 44px);
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(232, 244, 255, 0.86)),
+    #f7fbff;
+}
+
+.simonkids-project-page .sk-overview-placeholder span {
+  color: var(--sk-cinnabar);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.simonkids-project-page .sk-overview-placeholder strong {
+  color: var(--sk-ink);
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: 1.15;
+}
+
+.simonkids-project-page .sk-overview-placeholder p {
+  margin: 0;
+  color: var(--sk-muted);
+  font-weight: 700;
 }
 
 .simonkids-project-page .sk-blue-band {
