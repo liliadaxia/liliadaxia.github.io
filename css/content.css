@@ -3860,3 +3860,317 @@ body.haiduo-project .haiduo-project-page .onsite-board .onsite-item-label {
     transform: none !important;
   }
 }
+
+/* Final Haiduo section title system */
+body.haiduo-project .haiduo-project-page .section-header.haiduo-section-heading {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) !important;
+  gap: clamp(28px, 4vw, 40px) !important;
+  align-items: start !important;
+  margin: 0 0 clamp(48px, 5vw, 64px) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.haiduo-project .haiduo-project-page .section-label {
+  margin: 0 !important;
+  color: #c9a35b !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+body.haiduo-project .haiduo-project-page .section-heading-copy {
+  min-width: 0;
+}
+
+body.haiduo-project .haiduo-project-page .section-header .section-title {
+  max-width: 760px !important;
+  margin: 0 0 18px !important;
+  color: #c9a35b !important;
+  font-size: clamp(42px, 5vw, 72px) !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.04em !important;
+}
+
+body.haiduo-project .haiduo-project-page .section-header .section-copy {
+  max-width: 620px !important;
+  margin: 0 !important;
+  color: #f3e6d0 !important;
+  font-size: clamp(16px, 1.25vw, 18px) !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0 !important;
+}
+
+body.haiduo-project .haiduo-project-page #onsite-implementation .section-header.haiduo-section-heading {
+  margin-bottom: clamp(48px, 5vw, 64px) !important;
+}
+
+body.haiduo-project .haiduo-project-page #onsite-implementation .section-header .section-copy {
+  max-width: 620px !important;
+}
+
+body.haiduo-project .haiduo-project-page .project-value .section-kicker {
+  display: block;
+  margin-bottom: 22px;
+  color: #c9a35b !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  body.haiduo-project,
+  body.haiduo-project .site-shell,
+  body.haiduo-project .haiduo-main,
+  body.haiduo-project .haiduo-project-page {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    min-height: auto !important;
+    padding-inline: 16px !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero-copy {
+    width: 100%;
+    max-width: calc(100vw - 32px) !important;
+    min-width: 0;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero .eyebrow {
+    max-width: calc(100vw - 32px) !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero h1 {
+    max-width: calc(100vw - 32px) !important;
+    overflow-wrap: anywhere;
+    word-break: break-all !important;
+    white-space: normal !important;
+    font-size: clamp(36px, 10.8vw, 50px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero h1 span {
+    display: block;
+    max-width: 100%;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-all !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero-copy > p:not(.eyebrow) {
+    max-width: 100% !important;
+    overflow-wrap: break-word;
+    white-space: normal !important;
+    word-break: break-all !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .hero-visual-single {
+    width: 100% !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .section-header.haiduo-section-heading {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-bottom: 34px !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .section-header .section-title {
+    font-size: clamp(34px, 11vw, 52px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .section-header .section-copy {
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* Reusable selected work card system */
+.work-list .project-card.work-card {
+  display: grid !important;
+  grid-template-rows: auto 1fr;
+  gap: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(201, 163, 91, 0.18) !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.58) !important;
+  box-shadow: 0 18px 54px rgba(26, 26, 26, 0.06) !important;
+  color: var(--text-primary, #1a1a1a) !important;
+  text-decoration: none !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease, border-color 0.28s ease !important;
+}
+
+.work-list .project-card.work-card:hover,
+.work-list .project-card.work-card:focus-visible {
+  transform: translateY(-6px) !important;
+  border-color: rgba(201, 163, 91, 0.34) !important;
+  background: rgba(255, 255, 255, 0.76) !important;
+  box-shadow: 0 24px 60px rgba(26, 26, 26, 0.12) !important;
+}
+
+.work-list .project-card.work-card .work-card-media {
+  aspect-ratio: 4 / 3 !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 24px 24px 0 0 !important;
+  background: #f4efe6 !important;
+  box-shadow: none !important;
+}
+
+.work-list .project-card.work-card .work-card-media img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.work-list .project-card.work-card:hover .work-card-media img {
+  transform: scale(1.035) !important;
+}
+
+.work-list .project-card.work-card .work-card-body {
+  display: grid;
+  gap: 12px;
+  padding: 20px 20px 22px !important;
+}
+
+.work-list .project-card.work-card .project-card-meta {
+  margin: 0 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-muted, #555) !important;
+}
+
+.work-list .project-card.work-card h3 {
+  display: grid;
+  gap: 2px;
+  margin: 0 !important;
+  color: var(--text-primary, #1a1a1a) !important;
+  font-size: clamp(23px, 2.25vw, 34px) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.work-list .project-card.work-card h3 span:first-child {
+  color: var(--theme-accent, #e76f51);
+  font-size: 0.72em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.work-list .project-card.work-card p {
+  display: -webkit-box;
+  max-width: 44em;
+  margin: 0 !important;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--text-muted, #555) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.62 !important;
+}
+
+.work-list .project-card.work-card .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.work-list .project-card.work-card .tag-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 11px;
+  border: 0 !important;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-accent, #e76f51) 12%, white);
+  color: var(--text-primary, #1a1a1a);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .work-list .project-card.work-card {
+    border-radius: 20px !important;
+  }
+
+  .work-list .project-card.work-card .work-card-media {
+    border-radius: 20px 20px 0 0 !important;
+  }
+
+  .work-list .project-card.work-card:hover,
+  .work-list .project-card.work-card:focus-visible {
+    transform: none !important;
+  }
+}
+
+/* Final mobile safety layer for the Haiduo cover page */
+@media (max-width: 760px) {
+  body.haiduo-project .haiduo-project-page .haiduo-hero {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero-copy,
+  body.haiduo-project .haiduo-project-page .section-heading-copy {
+    width: 100% !important;
+    max-width: calc(100vw - 32px) !important;
+    min-width: 0 !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero .eyebrow,
+  body.haiduo-project .haiduo-project-page .haiduo-hero h1,
+  body.haiduo-project .haiduo-project-page .haiduo-hero h1 span,
+  body.haiduo-project .haiduo-project-page .haiduo-hero-copy > p:not(.eyebrow),
+  body.haiduo-project .haiduo-project-page .section-copy {
+    max-width: calc(100vw - 32px) !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-all !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .haiduo-hero h1 {
+    font-size: clamp(30px, 8vw, 32px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  body.haiduo-project .haiduo-project-page .section-header .section-title {
+    max-width: calc(100vw - 32px) !important;
+    font-size: clamp(32px, 9vw, 44px) !important;
+    word-break: break-all !important;
+  }
+}

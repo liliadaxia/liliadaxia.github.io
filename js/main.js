@@ -15,8 +15,9 @@
   const link=p=>p.url||'';
   const themeOf=item=>item.theme||themeByCategory[item.category]||'default';
 
-  function imageFrame(src,alt){
-    return `<div class="img-wrapper image-frame"><img src="${src}" alt="${alt}" loading="lazy" data-fallback></div>`;
+  function imageFrame(src,alt,extraClass=''){
+    const className=['img-wrapper','image-frame',extraClass].filter(Boolean).join(' ');
+    return `<div class="${className}"><img src="${src}" alt="${alt}" loading="lazy" data-fallback></div>`;
   }
 
   function bindFallbacks(root=document){
@@ -69,10 +70,11 @@
   function projectCard(project){
     const tags=(project.tags||[]).map(tag=>`<span>${tag}</span>`).join('');
     const status=link(project)?'\u67e5\u770b\u9879\u76ee View Project':'\u6574\u7406\u4e2d';
-    const body=`${imageFrame(cover(project),project.title)}<span class="floating-view">${status}</span><div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
+    const titleMarkup=project.displayTitle||project.title;
+    const body=`${imageFrame(cover(project),project.title,'work-card-media')}<span class="floating-view">${status}</span><div class="project-card-body work-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${titleMarkup}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
     const theme=themeOf(project);
-    if(link(project))return `<a class="project-card reveal" href="${link(project)}" data-category="${project.category||''}" data-theme-trigger="${theme}" data-cursor="View">${body}</a>`;
-    return `<article class="project-card is-disabled reveal" data-category="${project.category||''}" data-theme-trigger="${theme}" aria-label="${project.title} coming soon">${body}</article>`;
+    if(link(project))return `<a class="project-card work-card reveal" href="${link(project)}" data-category="${project.category||''}" data-theme-trigger="${theme}" data-cursor="View">${body}</a>`;
+    return `<article class="project-card work-card is-disabled reveal" data-category="${project.category||''}" data-theme-trigger="${theme}" aria-label="${project.title} coming soon">${body}</article>`;
   }
 
   function renderProjectCards(filter='\u5168\u90e8'){
