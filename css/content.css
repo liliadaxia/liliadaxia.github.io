@@ -4536,3 +4536,71 @@ body.haiduo-project .haiduo-project-page .poster-rail::-webkit-scrollbar-thumb:h
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* Haiduo exact seasonal rail + rounded media cleanup */
+body.haiduo-project .haiduo-project-page .haido-scrollbar {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  cursor: grab;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #b88746 rgba(120, 84, 35, 0.18);
+}
+
+body.haiduo-project .haiduo-project-page .haido-scrollbar:active {
+  cursor: grabbing;
+}
+
+body.haiduo-project .haiduo-project-page .haido-scrollbar > * {
+  scroll-snap-align: start;
+}
+
+body.haiduo-project .haiduo-project-page .haido-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+body.haiduo-project .haiduo-project-page .haido-scrollbar::-webkit-scrollbar-track {
+  background: rgba(120, 84, 35, 0.16);
+  border-radius: 999px;
+}
+
+body.haiduo-project .haiduo-project-page .haido-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #8f5d27, #d7b06a, #b88746);
+  border-radius: 999px;
+}
+
+body.haiduo-project .haiduo-project-page .haido-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #a56b2f, #e3c17d, #c99a52);
+}
+
+body.haiduo-project .haiduo-project-page .poster-card,
+body.haiduo-project .haiduo-project-page .season-card,
+body.haiduo-project .haiduo-project-page .case-board-image,
+body.haiduo-project .haiduo-project-page .onsite-item {
+  overflow: hidden !important;
+  background-clip: padding-box;
+}
+
+body.haiduo-project .haiduo-project-page .case-board-image img,
+body.haiduo-project .haiduo-project-page .onsite-item:not(.is-material) img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: inherit !important;
+}
+
+body.haiduo-project .haiduo-project-page .poster-card img,
+body.haiduo-project .haiduo-project-page .season-card img,
+body.haiduo-project .haiduo-project-page .onsite-item.is-material img {
+  display: block !important;
+  border-radius: 18px !important;
+}
+
+@media (pointer: coarse) {
+  body.haiduo-project .haiduo-project-page .haido-scrollbar {
+    cursor: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
