@@ -25,16 +25,21 @@
 
   function bindFallbacks(root=document){
     qsa('img[data-fallback]',root).forEach(img=>{
-      img.addEventListener('load',()=>{
-        img.classList.add('is-loaded');
-        img.closest('.image-frame')?.classList.remove('is-placeholder');
-      },{once:true});
-      img.addEventListener('error',()=>{
+      const applyFallback=()=>{
         img.removeAttribute('src');
         img.alt='';
         img.closest('.image-frame')?.classList.add('is-placeholder');
         img.closest('.tool-badge')?.classList.add('is-text-fallback');
+      };
+      if(img.complete&&!img.naturalWidth){
+        applyFallback();
+        return;
+      }
+      img.addEventListener('load',()=>{
+        img.classList.add('is-loaded');
+        img.closest('.image-frame')?.classList.remove('is-placeholder');
       },{once:true});
+      img.addEventListener('error',applyFallback,{once:true});
     });
   }
 
@@ -174,6 +179,33 @@
     });
   }
 
+  function setupHeroStoryCollage(){
+    const collage=qs('[data-hero-story-collage]');
+    if(!collage||!finePointer||reduced)return;
+    let raf=0;
+    let targetX=0;
+    let targetY=0;
+    const reset=()=>{
+      targetX=0;
+      targetY=0;
+      if(!raf)raf=requestAnimationFrame(update);
+    };
+    const update=()=>{
+      raf=0;
+      collage.style.setProperty('--story-shift-x',(targetX*7).toFixed(1)+'px');
+      collage.style.setProperty('--story-shift-y',(targetY*6).toFixed(1)+'px');
+      collage.style.setProperty('--story-glow-x',(targetX*-5).toFixed(1)+'px');
+      collage.style.setProperty('--story-glow-y',(targetY*-4).toFixed(1)+'px');
+    };
+    collage.addEventListener('mousemove',event=>{
+      const rect=collage.getBoundingClientRect();
+      targetX=((event.clientX-rect.left)/rect.width-.5)*2;
+      targetY=((event.clientY-rect.top)/rect.height-.5)*2;
+      if(!raf)raf=requestAnimationFrame(update);
+    },{passive:true});
+    collage.addEventListener('mouseleave',reset);
+  }
+
   function setupHoverPreview(){
     const rows=qsa('.work-row[data-preview]');
     const preview=qs('.hover-preview');
@@ -255,6 +287,7 @@
     prepareProjectGallery();
     prepareNowCards();
     bindFallbacks();
+    setupHeroStoryCollage();
     setupHoverPreview();
     setupLightbox();
     setupProjectInteractions();
