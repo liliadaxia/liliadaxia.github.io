@@ -5518,3 +5518,134 @@ body.simonkids-project .site-header {
     max-height: 460px;
   }
 }
+/* SimonKids media taxonomy refinement */
+.simonkids-project-page .sk-media-grid.is-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.simonkids-project-page .sk-media-grid.is-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.simonkids-project-page .sk-media-figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.simonkids-project-page .sk-media-caption {
+  margin-top: 12px;
+  color: var(--text-muted, #555);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.simonkids-project-page .sk-media-card {
+  transition:
+    transform 0.35s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1)),
+    box-shadow 0.35s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1));
+}
+
+.simonkids-project-page .sk-media-card:hover,
+.simonkids-project-page .sk-media-card:focus-visible {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.simonkids-project-page .sk-media-card:hover img,
+.simonkids-project-page .sk-media-card:focus-visible img {
+  transform: scale(1.025);
+}
+
+.simonkids-project-page .sk-media-card.is-contain img {
+  object-fit: contain;
+  padding: clamp(10px, 1.5vw, 20px);
+}
+
+.simonkids-project-page .sk-media-grid.is-overview .sk-media-card {
+  aspect-ratio: 4 / 3;
+  max-height: 520px;
+}
+
+.simonkids-project-page .sk-media-grid.is-overview .sk-media-card img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.simonkids-project-page .sk-media-grid.is-materials .sk-media-card {
+  aspect-ratio: 4 / 3;
+  max-height: 520px;
+}
+
+.simonkids-project-page .sk-media-grid.is-campaign .sk-media-card {
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
+}
+
+.simonkids-project-page .sk-media-grid.is-photo .sk-media-card {
+  aspect-ratio: 4 / 3;
+  max-height: 360px;
+}
+
+.simonkids-project-page .sk-media-grid.is-photo .sk-media-card img {
+  object-fit: cover;
+}
+
+.simonkids-project-page .sk-media-card.has-blue-overlay {
+  position: relative;
+}
+
+.simonkids-project-page .sk-media-card.has-blue-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    to top,
+    rgba(91, 154, 229, 0.18),
+    rgba(91, 154, 229, 0.06),
+    rgba(91, 154, 229, 0)
+  );
+  opacity: 0.8;
+  transition: opacity 0.45s ease;
+}
+
+.simonkids-project-page .sk-media-card.has-blue-overlay:hover::after,
+.simonkids-project-page .sk-media-card.has-blue-overlay:focus-visible::after {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .simonkids-project-page .sk-media-grid.is-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .simonkids-project-page .sk-media-grid.is-two,
+  .simonkids-project-page .sk-media-grid.is-three {
+    grid-template-columns: 1fr;
+  }
+
+  .simonkids-project-page .sk-media-grid.is-overview .sk-media-card,
+  .simonkids-project-page .sk-media-grid.is-materials .sk-media-card,
+  .simonkids-project-page .sk-media-grid.is-campaign .sk-media-card {
+    max-height: 420px;
+  }
+
+  .simonkids-project-page .sk-media-grid.is-photo .sk-media-card {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .simonkids-project-page .project-brief-impact .brief-copy {
+    max-width: 100% !important;
+  }
+
+  .simonkids-project-page .project-brief-impact h2 {
+    max-width: 9em;
+    font-size: clamp(30px, 8.4vw, 38px);
+    line-height: 1.08;
+  }
+}
