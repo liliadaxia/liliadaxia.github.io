@@ -5901,28 +5901,28 @@ body.study-tour-project .study-hero {
   min-height: min(760px, calc(100vh - 76px));
   padding: clamp(76px, 9vw, 132px) 0 clamp(72px, 8vw, 118px);
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.9fr);
-  gap: clamp(36px, 6vw, 88px);
+  grid-template-columns: minmax(500px, 1.02fr) minmax(360px, 0.9fr);
+  gap: clamp(42px, 6vw, 92px);
   align-items: center;
 }
 
 body.study-tour-project .study-hero-copy {
-  max-width: 720px;
+  max-width: 780px;
 }
 
 body.study-tour-project .study-hero h1 {
   display: grid;
-  gap: 12px;
-  margin: 18px 0 16px;
+  gap: 14px;
+  margin: 24px 0 18px;
   color: var(--study-ink);
-  font-size: clamp(42px, 4.8vw, 72px);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-size: clamp(48px, 5.2vw, 78px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
 }
 
 body.study-tour-project .study-title-cn {
   display: grid;
-  gap: 0;
+  gap: 2px;
 }
 
 body.study-tour-project .study-title-cn span {
@@ -5930,18 +5930,30 @@ body.study-tour-project .study-title-cn span {
 }
 
 body.study-tour-project .study-hero h1 span:last-child {
-  max-width: 760px;
+  max-width: 680px;
   color: var(--study-blue-deep);
-  font-size: clamp(22px, 2.8vw, 38px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(20px, 2.1vw, 31px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  font-weight: 650;
 }
 
 body.study-tour-project .study-subtitle {
   margin: 0 0 18px;
   color: var(--study-gold);
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(16px, 1.55vw, 21px);
+  line-height: 1.35;
   font-weight: 700;
+}
+
+body.study-tour-project .study-subtitle span {
+  display: inline-block;
+}
+
+body.study-tour-project .study-subtitle span + span {
+  margin-left: 10px;
+  color: rgba(23, 34, 59, 0.58);
+  font-weight: 650;
 }
 
 body.study-tour-project .study-hero p,
@@ -6073,6 +6085,7 @@ body.study-tour-project .project-brief-impact {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 36px;
   box-shadow: 0 24px 64px rgba(23, 34, 59, 0.08);
+  gap: clamp(28px, 4vw, 54px);
 }
 
 body.study-tour-project .project-brief-impact h2,
@@ -6088,21 +6101,34 @@ body.study-tour-project .section-kicker {
 }
 
 body.study-tour-project .project-brief-impact .impact-card {
-  min-height: 230px;
+  min-height: 248px;
+  padding: clamp(22px, 2.5vw, 30px);
   border: 1px solid var(--study-line);
-  border-radius: 26px;
+  border-radius: 30px;
   background: #fff;
+  box-shadow: 0 18px 42px rgba(31, 94, 168, 0.08);
 }
 
 body.study-tour-project .project-brief-impact .impact-card strong {
   color: var(--study-blue-deep);
-  font-size: clamp(42px, 4vw, 66px);
+  font-size: clamp(48px, 4.6vw, 76px);
   line-height: 0.95;
   white-space: nowrap;
 }
 
 body.study-tour-project .project-brief-impact .impact-card > span {
   color: var(--study-ink);
+  margin-top: 8px;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.12;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+}
+
+body.study-tour-project .project-brief-impact .impact-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.72;
 }
 
 body.study-tour-project .study-section {
@@ -6261,6 +6287,28 @@ body.study-tour-project .study-value .next-projects {
   body.study-tour-project .study-hero {
     min-height: auto;
     padding-top: 62px;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  body.study-tour-project .study-hero > *,
+  body.study-tour-project .project-brief-impact > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  body.study-tour-project .study-hero-copy {
+    width: min(100%, calc(100vw - 56px));
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  body.study-tour-project .study-hero .eyebrow {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 11px;
+    line-height: 1.45;
   }
 
   body.study-tour-project .study-hero h1 {
@@ -6271,7 +6319,37 @@ body.study-tour-project .study-value .next-projects {
     white-space: normal;
   }
 
+  body.study-tour-project .study-subtitle span {
+    display: block;
+  }
+
+  body.study-tour-project .study-subtitle span + span {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  body.study-tour-project .study-hero p:not(.eyebrow),
+  body.study-tour-project .project-brief-impact p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  body.study-tour-project .study-tags {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  body.study-tour-project .study-tags span {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
   body.study-tour-project .study-hero-board {
+    width: min(100%, calc(100vw - 48px));
+    max-width: 100%;
     min-height: 640px;
   }
 
