@@ -4006,6 +4006,378 @@ body.haiduo-project .haiduo-project-page .project-value .section-kicker {
   }
 }
 
+/* Study tour project deep navy and champagne gold refinement */
+body.study-tour-project {
+  --study-bg-primary: #0b1325;
+  --study-bg-secondary: #111b33;
+  --study-bg-card: rgba(255, 255, 255, 0.06);
+  --study-bg-card-strong: rgba(255, 255, 255, 0.1);
+  --study-border: rgba(212, 175, 55, 0.22);
+  --study-border-strong: rgba(212, 175, 55, 0.42);
+  --study-gold: #d4af37;
+  --study-gold-soft: #e7c96a;
+  --study-text-main: #ffffff;
+  --study-text-sub: #b8c2d6;
+  --study-blue-light: #2f6fb7;
+  --study-cream: #f6e9c8;
+  --study-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+  background:
+    radial-gradient(circle at 82% 9%, rgba(212, 175, 55, 0.12), transparent 30%),
+    radial-gradient(circle at 12% 32%, rgba(47, 111, 183, 0.16), transparent 34%),
+    linear-gradient(180deg, #0b1325 0%, #0e1730 45%, #0b1325 100%);
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .site-header {
+  background: rgba(11, 19, 37, 0.82);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+  backdrop-filter: blur(18px);
+}
+
+body.study-tour-project .brand,
+body.study-tour-project .header-center,
+body.study-tour-project .nav-link {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+body.study-tour-project .brand-symbol,
+body.study-tour-project .nav-cta {
+  background: var(--study-gold);
+  color: #0b1325;
+}
+
+body.study-tour-project .site-nav {
+  border-color: rgba(212, 175, 55, 0.18);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+body.study-tour-project .nav-link:hover,
+body.study-tour-project .nav-link:focus-visible {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-tour-page {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(212, 175, 55, 0.028) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(rgba(212, 175, 55, 0.022) 1px, transparent 1px) 0 0 / 56px 56px;
+}
+
+body.study-tour-project .study-hero {
+  min-height: min(820px, calc(100vh - 74px));
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
+  padding: clamp(84px, 9vw, 132px) 0 clamp(88px, 9vw, 128px);
+}
+
+body.study-tour-project .study-hero-copy {
+  max-width: 680px;
+}
+
+body.study-tour-project .eyebrow,
+body.study-tour-project .section-kicker,
+body.study-tour-project .project-brief-impact .brief-copy .section-kicker {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-hero h1 {
+  color: var(--study-text-main);
+  font-family: "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
+  text-shadow: 0 16px 46px rgba(0, 0, 0, 0.28);
+}
+
+body.study-tour-project .study-hero h1 span:last-child {
+  color: var(--study-gold-soft);
+  font-weight: 620;
+}
+
+body.study-tour-project .study-subtitle {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .study-subtitle span + span {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-hero p,
+body.study-tour-project .study-section p,
+body.study-tour-project .project-brief-impact p {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-tags span,
+body.study-tour-project .materials-map span {
+  border: 1px solid var(--study-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--study-text-main);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body.study-tour-project .study-tags span:nth-child(2n),
+body.study-tour-project .materials-map span:nth-child(3n + 2),
+body.study-tour-project .study-tags span:nth-child(3n),
+body.study-tour-project .materials-map span:nth-child(3n) {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-hero-board {
+  min-height: 590px;
+  border: 1px solid var(--study-border);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(212, 175, 55, 0.24), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02)),
+    #111b33;
+  box-shadow: var(--study-shadow);
+}
+
+body.study-tour-project .study-hero-board::before {
+  inset: 38px;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+body.study-tour-project .study-hero-board::after {
+  content: "STUDY TOUR SYSTEM";
+  position: absolute;
+  right: 36px;
+  bottom: 28px;
+  color: rgba(231, 201, 106, 0.22);
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+body.study-tour-project .study-cover-card {
+  border: 1px solid var(--study-border);
+  background: rgba(10, 18, 36, 0.78);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(14px);
+}
+
+body.study-tour-project .study-cover-card span {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-cover-card strong {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .study-cover-card p {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-cover-card.is-main {
+  background:
+    linear-gradient(145deg, rgba(47, 111, 183, 0.72), rgba(10, 18, 36, 0.92)),
+    #14264a;
+}
+
+body.study-tour-project .study-cover-card.is-main strong {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-cover-card.is-gold {
+  background:
+    linear-gradient(145deg, rgba(212, 175, 55, 0.22), rgba(10, 18, 36, 0.86)),
+    #111b33;
+}
+
+body.study-tour-project .study-cover-card.is-cream {
+  background:
+    linear-gradient(145deg, rgba(246, 233, 200, 0.14), rgba(10, 18, 36, 0.88)),
+    #101a31;
+}
+
+body.study-tour-project .project-brief-impact,
+body.study-tour-project .study-blue-panel,
+body.study-tour-project .study-cream-panel {
+  border: 1px solid var(--study-border);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(17, 27, 51, 0.76);
+  box-shadow: var(--study-shadow);
+}
+
+body.study-tour-project .project-brief-impact h2,
+body.study-tour-project .study-section h2 {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .project-brief-impact .impact-card,
+body.study-tour-project .study-info-card,
+body.study-tour-project .program-card,
+body.study-tour-project .campaign-system-card,
+body.study-tour-project .timeline-card,
+body.study-tour-project .documentation-card {
+  border: 1px solid var(--study-border);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035)),
+    rgba(17, 27, 51, 0.86);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+body.study-tour-project .project-brief-impact .impact-card strong,
+body.study-tour-project .study-info-card span,
+body.study-tour-project .program-card span,
+body.study-tour-project .campaign-system-card span,
+body.study-tour-project .timeline-card span,
+body.study-tour-project .documentation-card span {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .project-brief-impact .impact-card > span,
+body.study-tour-project .study-info-card strong,
+body.study-tour-project .program-card strong,
+body.study-tour-project .campaign-system-card strong,
+body.study-tour-project .timeline-card strong {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .campaign-system-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+body.study-tour-project .campaign-system-card {
+  min-height: 210px;
+  padding: clamp(22px, 2.5vw, 32px);
+}
+
+body.study-tour-project .study-promotion .campaign-system-card {
+  position: relative;
+  overflow: hidden;
+}
+
+body.study-tour-project .study-promotion .campaign-system-card::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  top: -32px;
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.08);
+  pointer-events: none;
+}
+
+body.study-tour-project .program-card:nth-child(2),
+body.study-tour-project .program-card:nth-child(3) {
+  background:
+    linear-gradient(145deg, rgba(212, 175, 55, 0.11), rgba(255, 255, 255, 0.035)),
+    rgba(17, 27, 51, 0.86);
+}
+
+body.study-tour-project .itinerary-timeline {
+  gap: 0;
+  border: 1px solid var(--study-border);
+  background: rgba(212, 175, 55, 0.18);
+}
+
+body.study-tour-project .timeline-card {
+  position: relative;
+}
+
+body.study-tour-project .timeline-card::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--study-gold);
+  box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.12);
+}
+
+body.study-tour-project .study-section-header {
+  border-top: 1px solid var(--study-border);
+}
+
+body.study-tour-project .study-value .text-link,
+body.study-tour-project .site-footer,
+body.study-tour-project .site-footer a {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-value .text-link:hover,
+body.study-tour-project .site-footer a:hover {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .site-footer {
+  border-top: 1px solid var(--study-border);
+}
+
+@media (max-width: 1080px) {
+  body.study-tour-project .study-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  body.study-tour-project .study-hero,
+  body.study-tour-project .study-section,
+  body.study-tour-project .project-brief-impact {
+    width: calc(100vw - 32px);
+  }
+
+  body.study-tour-project .study-hero {
+    padding: 56px 0 72px;
+  }
+
+  body.study-tour-project .study-hero-copy,
+  body.study-tour-project .study-hero-board {
+    width: 100%;
+  }
+
+  body.study-tour-project .study-hero-board {
+    min-height: auto;
+    display: grid;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 30px;
+  }
+
+  body.study-tour-project .study-hero-board::before,
+  body.study-tour-project .study-hero-board::after {
+    display: none;
+  }
+
+  body.study-tour-project .study-cover-card,
+  body.study-tour-project .study-cover-card.is-main,
+  body.study-tour-project .study-cover-card.is-blue,
+  body.study-tour-project .study-cover-card.is-gold,
+  body.study-tour-project .study-cover-card.is-cream {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin: 0;
+    transform: none;
+  }
+
+  body.study-tour-project .study-cover-card.is-main {
+    min-height: 190px;
+  }
+
+  body.study-tour-project .study-section {
+    padding: 64px 0;
+  }
+
+  body.study-tour-project .project-brief-impact,
+  body.study-tour-project .study-blue-panel,
+  body.study-tour-project .study-cream-panel {
+    border-radius: 28px;
+    padding: 28px 18px;
+  }
+
+  body.study-tour-project .campaign-system-grid,
+  body.study-tour-project .program-quadrant,
+  body.study-tour-project .documentation-grid,
+  body.study-tour-project .itinerary-timeline,
+  body.study-tour-project .positioning-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Reusable selected work card system */
 .work-list .project-card.work-card {
   display: grid !important;
@@ -6377,5 +6749,425 @@ body.study-tour-project .study-value .next-projects {
   body.study-tour-project .study-cream-panel {
     padding: 32px 18px;
     border-radius: 28px;
+  }
+}
+
+/* Final study tour visual system override: deep navy and champagne gold */
+body.study-tour-project {
+  --study-bg-primary: #0b1325;
+  --study-bg-secondary: #111b33;
+  --study-bg-card: rgba(255, 255, 255, 0.06);
+  --study-bg-card-strong: rgba(255, 255, 255, 0.1);
+  --study-border: rgba(212, 175, 55, 0.22);
+  --study-border-strong: rgba(212, 175, 55, 0.42);
+  --study-gold: #d4af37;
+  --study-gold-soft: #e7c96a;
+  --study-text-main: #ffffff;
+  --study-text-sub: #b8c2d6;
+  --study-blue-light: #2f6fb7;
+  --study-cream: #f6e9c8;
+  --study-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+  background:
+    radial-gradient(circle at 82% 9%, rgba(212, 175, 55, 0.12), transparent 30%),
+    radial-gradient(circle at 12% 32%, rgba(47, 111, 183, 0.16), transparent 34%),
+    linear-gradient(180deg, #0b1325 0%, #0e1730 45%, #0b1325 100%) !important;
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .site-header {
+  background: rgba(11, 19, 37, 0.84) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.14) !important;
+  backdrop-filter: blur(18px);
+}
+
+body.study-tour-project .brand,
+body.study-tour-project .header-center,
+body.study-tour-project .nav-link {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+body.study-tour-project .brand-symbol,
+body.study-tour-project .nav-cta {
+  background: var(--study-gold);
+  color: #0b1325;
+}
+
+body.study-tour-project .site-nav {
+  border-color: rgba(212, 175, 55, 0.18);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+body.study-tour-project .nav-link:hover,
+body.study-tour-project .nav-link:focus-visible {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-tour-page {
+  position: relative;
+  background-color: transparent !important;
+  background:
+    linear-gradient(90deg, rgba(212, 175, 55, 0.028) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(rgba(212, 175, 55, 0.022) 1px, transparent 1px) 0 0 / 56px 56px !important;
+  overflow-x: hidden;
+}
+
+body.study-tour-project .study-tour-page .study-section,
+body.study-tour-project .study-tour-page .study-section-header,
+body.study-tour-project .study-tour-page .positioning-grid,
+body.study-tour-project .study-tour-page .program-quadrant,
+body.study-tour-project .study-tour-page .campaign-system-grid,
+body.study-tour-project .study-tour-page .documentation-grid {
+  background: transparent !important;
+}
+
+body.study-tour-project .study-tour-page .study-hero {
+  min-height: min(820px, calc(100vh - 74px));
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
+  padding: clamp(84px, 9vw, 132px) 0 clamp(88px, 9vw, 128px);
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  border-radius: 0 0 42px 42px;
+  background:
+    radial-gradient(circle at 22% 20%, rgba(47, 111, 183, 0.18), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    rgba(11, 19, 37, 0.62) !important;
+}
+
+body.study-tour-project .study-tour-page .study-hero-copy {
+  max-width: 680px;
+}
+
+body.study-tour-project .study-tour-page .eyebrow,
+body.study-tour-project .study-tour-page .section-kicker,
+body.study-tour-project .study-tour-page .project-brief-impact .brief-copy .section-kicker {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-tour-page .study-hero h1 {
+  color: var(--study-text-main);
+  font-family: "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
+  text-shadow: 0 16px 46px rgba(0, 0, 0, 0.28);
+}
+
+body.study-tour-project .study-tour-page .study-hero h1 span:last-child {
+  color: var(--study-gold-soft);
+  font-weight: 620;
+}
+
+body.study-tour-project .study-tour-page .study-subtitle {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .study-tour-page .study-subtitle span + span {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-tour-page .study-hero p,
+body.study-tour-project .study-tour-page .study-section p,
+body.study-tour-project .study-tour-page .project-brief-impact p {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-tour-page .study-tags span,
+body.study-tour-project .study-tour-page .materials-map span {
+  border: 1px solid var(--study-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--study-text-main);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body.study-tour-project .study-tour-page .study-tags span:nth-child(2n),
+body.study-tour-project .study-tour-page .materials-map span:nth-child(3n + 2),
+body.study-tour-project .study-tour-page .study-tags span:nth-child(3n),
+body.study-tour-project .study-tour-page .materials-map span:nth-child(3n) {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-tour-page .study-hero-board {
+  min-height: 590px;
+  border: 1px solid var(--study-border);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(212, 175, 55, 0.24), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02)),
+    #111b33;
+  box-shadow: var(--study-shadow);
+}
+
+body.study-tour-project .study-tour-page .study-hero-board::before {
+  inset: 38px;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+body.study-tour-project .study-tour-page .study-hero-board::after {
+  content: "STUDY TOUR SYSTEM";
+  position: absolute;
+  right: 36px;
+  bottom: 28px;
+  color: rgba(231, 201, 106, 0.22);
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+body.study-tour-project .study-tour-page .study-cover-card {
+  border: 1px solid var(--study-border);
+  background: rgba(10, 18, 36, 0.78);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(14px);
+}
+
+body.study-tour-project .study-tour-page .study-cover-card span {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-tour-page .study-cover-card strong {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .study-tour-page .study-cover-card p {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-tour-page .study-cover-card.is-main {
+  background:
+    linear-gradient(145deg, rgba(47, 111, 183, 0.72), rgba(10, 18, 36, 0.92)),
+    #14264a;
+}
+
+body.study-tour-project .study-tour-page .study-cover-card.is-main strong {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-tour-page .study-cover-card.is-gold {
+  background:
+    linear-gradient(145deg, rgba(212, 175, 55, 0.22), rgba(10, 18, 36, 0.86)),
+    #111b33;
+}
+
+body.study-tour-project .study-tour-page .study-cover-card.is-cream {
+  background:
+    linear-gradient(145deg, rgba(246, 233, 200, 0.14), rgba(10, 18, 36, 0.88)),
+    #101a31;
+}
+
+body.study-tour-project .study-tour-page .project-brief-impact,
+body.study-tour-project .study-tour-page .study-blue-panel,
+body.study-tour-project .study-tour-page .study-cream-panel {
+  border: 1px solid var(--study-border);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(17, 27, 51, 0.76);
+  box-shadow: var(--study-shadow);
+}
+
+body.study-tour-project .study-tour-page .project-brief-impact h2,
+body.study-tour-project .study-tour-page .study-section h2 {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .study-tour-page .project-brief-impact .impact-card,
+body.study-tour-project .study-tour-page .study-info-card,
+body.study-tour-project .study-tour-page .program-card,
+body.study-tour-project .study-tour-page .campaign-system-card,
+body.study-tour-project .study-tour-page .timeline-card,
+body.study-tour-project .study-tour-page .documentation-card {
+  border: 1px solid var(--study-border);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035)),
+    rgba(17, 27, 51, 0.86);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+body.study-tour-project .study-tour-page .project-brief-impact .impact-card strong,
+body.study-tour-project .study-tour-page .study-info-card span,
+body.study-tour-project .study-tour-page .program-card span,
+body.study-tour-project .study-tour-page .campaign-system-card span,
+body.study-tour-project .study-tour-page .timeline-card span,
+body.study-tour-project .study-tour-page .documentation-card span {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .study-tour-page .project-brief-impact .impact-card > span,
+body.study-tour-project .study-tour-page .study-info-card strong,
+body.study-tour-project .study-tour-page .program-card strong,
+body.study-tour-project .study-tour-page .campaign-system-card strong,
+body.study-tour-project .study-tour-page .timeline-card strong {
+  color: var(--study-text-main);
+}
+
+body.study-tour-project .study-tour-page .campaign-system-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+body.study-tour-project .study-tour-page .campaign-system-card {
+  min-height: 210px;
+  padding: clamp(22px, 2.5vw, 32px);
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card {
+  position: relative;
+  overflow: hidden;
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  top: -32px;
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.08);
+  pointer-events: none;
+}
+
+body.study-tour-project .study-tour-page .program-card:nth-child(2),
+body.study-tour-project .study-tour-page .program-card:nth-child(3) {
+  background:
+    linear-gradient(145deg, rgba(212, 175, 55, 0.11), rgba(255, 255, 255, 0.035)),
+    rgba(17, 27, 51, 0.86);
+}
+
+body.study-tour-project .study-tour-page .itinerary-timeline {
+  gap: 0;
+  border: 1px solid var(--study-border);
+  background: rgba(212, 175, 55, 0.18);
+}
+
+body.study-tour-project .study-tour-page .timeline-card {
+  position: relative;
+}
+
+body.study-tour-project .study-tour-page .timeline-card::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--study-gold);
+  box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.12);
+}
+
+body.study-tour-project .study-tour-page .study-section-header {
+  border-top: 1px solid var(--study-border);
+}
+
+body.study-tour-project .study-value .text-link,
+body.study-tour-project .site-footer,
+body.study-tour-project .site-footer a {
+  color: var(--study-text-sub);
+}
+
+body.study-tour-project .study-value .text-link:hover,
+body.study-tour-project .site-footer a:hover {
+  color: var(--study-gold-soft);
+}
+
+body.study-tour-project .site-footer {
+  border-top: 1px solid var(--study-border);
+}
+
+@media (max-width: 1080px) {
+  body.study-tour-project .study-tour-page .study-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  body.study-tour-project .study-tour-page .study-hero,
+  body.study-tour-project .study-tour-page .study-section,
+  body.study-tour-project .study-tour-page .project-brief-impact {
+    width: calc(100vw - 64px) !important;
+    max-width: calc(100vw - 64px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: hidden;
+  }
+
+  body.study-tour-project .study-tour-page .study-hero {
+    padding: 56px 0 72px;
+  }
+
+  body.study-tour-project .study-tour-page .study-hero-copy,
+  body.study-tour-project .study-tour-page .study-hero-board {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+  }
+
+  body.study-tour-project .study-tour-page h1,
+  body.study-tour-project .study-tour-page h2,
+  body.study-tour-project .study-tour-page h3,
+  body.study-tour-project .study-tour-page .study-hero-copy p,
+  body.study-tour-project .study-tour-page .brief-copy p,
+  body.study-tour-project .study-tour-page .study-section-header p,
+  body.study-tour-project .study-tour-page .impact-card p {
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  body.study-tour-project .study-tour-page .project-brief-impact h2,
+  body.study-tour-project .study-tour-page .study-section h2 {
+    font-size: clamp(30px, 8.4vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  body.study-tour-project .study-tour-page .study-tags {
+    overflow: visible;
+  }
+
+  body.study-tour-project .study-tour-page .study-hero-board {
+    min-height: auto;
+    display: grid;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 30px;
+  }
+
+  body.study-tour-project .study-tour-page .study-hero-board::before,
+  body.study-tour-project .study-tour-page .study-hero-board::after {
+    display: none;
+  }
+
+  body.study-tour-project .study-tour-page .study-cover-card,
+  body.study-tour-project .study-tour-page .study-cover-card.is-main,
+  body.study-tour-project .study-tour-page .study-cover-card.is-blue,
+  body.study-tour-project .study-tour-page .study-cover-card.is-gold,
+  body.study-tour-project .study-tour-page .study-cover-card.is-cream {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin: 0;
+    transform: none;
+  }
+
+  body.study-tour-project .study-tour-page .study-cover-card.is-main {
+    min-height: 190px;
+  }
+
+  body.study-tour-project .study-tour-page .study-section {
+    padding: 64px 0;
+  }
+
+  body.study-tour-project .study-tour-page .project-brief-impact,
+  body.study-tour-project .study-tour-page .study-blue-panel,
+  body.study-tour-project .study-tour-page .study-cream-panel {
+    border-radius: 28px;
+    padding: 28px 18px;
+  }
+
+  body.study-tour-project .study-tour-page .campaign-system-grid,
+  body.study-tour-project .study-tour-page .program-quadrant,
+  body.study-tour-project .study-tour-page .documentation-grid,
+  body.study-tour-project .study-tour-page .itinerary-timeline,
+  body.study-tour-project .study-tour-page .positioning-grid {
+    grid-template-columns: 1fr;
   }
 }
