@@ -5649,3 +5649,184 @@ body.simonkids-project .site-header {
     line-height: 1.08;
   }
 }
+
+/* SimonKids final media path/layout override */
+body.simonkids-project .simonkids-project-page {
+  overflow-x: hidden;
+}
+
+body.simonkids-project .sk-section {
+  width: min(1240px, calc(100vw - 48px));
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: clamp(72px, 8vw, 118px) 0;
+}
+
+body.simonkids-project .section-header {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.25fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: start;
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+
+body.simonkids-project .sk-media-grid {
+  display: grid !important;
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  gap: clamp(20px, 2.6vw, 36px);
+}
+
+body.simonkids-project .sk-media-grid.is-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+body.simonkids-project .sk-media-grid.is-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body.simonkids-project .sk-media-figure {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+}
+
+body.simonkids-project .sk-media-card {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: var(--radius-soft, 24px);
+  background: var(--surface-warm, #f4efe6);
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.35s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1)),
+    box-shadow 0.35s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1));
+}
+
+body.simonkids-project .sk-media-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transition: transform 0.45s var(--ease-soft, cubic-bezier(0.25, 1, 0.5, 1));
+}
+
+body.simonkids-project .sk-media-card.is-contain img {
+  object-fit: contain !important;
+  object-position: center;
+  padding: clamp(10px, 1.5vw, 20px);
+}
+
+body.simonkids-project .sk-media-card:not(.is-contain) img {
+  object-fit: cover;
+  object-position: center;
+}
+
+body.simonkids-project .sk-media-grid.is-overview .sk-media-card {
+  aspect-ratio: 16 / 10;
+  max-height: 500px;
+}
+
+body.simonkids-project .sk-media-grid.is-materials .sk-media-card {
+  aspect-ratio: 16 / 10;
+  max-height: 520px;
+}
+
+body.simonkids-project .sk-media-grid.is-campaign .sk-media-card {
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
+}
+
+body.simonkids-project .sk-media-grid.is-photo .sk-media-card,
+body.simonkids-project .sk-media-grid.is-space .sk-media-card {
+  aspect-ratio: 4 / 3;
+  max-height: 360px;
+}
+
+body.simonkids-project .sk-media-caption {
+  margin: 0;
+  color: var(--text-muted, #555);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+body.simonkids-project .sk-blue-band {
+  width: min(1240px, calc(100vw - 48px));
+  padding: clamp(56px, 7vw, 96px) clamp(24px, 4vw, 56px);
+  border-radius: var(--radius-large, 32px);
+  background: rgba(191, 215, 243, 0.42);
+}
+
+body.simonkids-project .sk-media-card.has-blue-overlay {
+  position: relative;
+}
+
+body.simonkids-project .sk-media-card.has-blue-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    to top,
+    rgba(91, 154, 229, 0.18),
+    rgba(91, 154, 229, 0.06),
+    rgba(91, 154, 229, 0)
+  );
+  opacity: 0.85;
+  transition: opacity 0.45s ease;
+}
+
+body.simonkids-project .sk-media-card.has-blue-overlay:hover::after,
+body.simonkids-project .sk-media-card.has-blue-overlay:focus-visible::after {
+  opacity: 1;
+}
+
+body.simonkids-project .sk-media-card:hover,
+body.simonkids-project .sk-media-card:focus-visible {
+  transform: translateY(-4px);
+}
+
+body.simonkids-project .sk-media-card:hover img,
+body.simonkids-project .sk-media-card:focus-visible img {
+  transform: scale(1.02);
+}
+
+@media (max-width: 960px) {
+  body.simonkids-project .section-header {
+    grid-template-columns: 1fr;
+  }
+
+  body.simonkids-project .sk-media-grid.is-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body.simonkids-project .sk-section,
+  body.simonkids-project .sk-blue-band {
+    width: calc(100vw - 32px);
+  }
+
+  body.simonkids-project .sk-media-grid.is-two,
+  body.simonkids-project .sk-media-grid.is-three {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.simonkids-project .sk-media-grid.is-overview .sk-media-card,
+  body.simonkids-project .sk-media-grid.is-materials .sk-media-card,
+  body.simonkids-project .sk-media-grid.is-campaign .sk-media-card {
+    max-height: 420px;
+  }
+
+  body.simonkids-project .sk-media-grid.is-photo .sk-media-card,
+  body.simonkids-project .sk-media-grid.is-space .sk-media-card {
+    max-height: 320px;
+  }
+}
