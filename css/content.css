@@ -8072,3 +8072,375 @@ body.study-tour-project .study-tour-page .documentation-card {
     word-break: break-word !important;
   }
 }
+
+/* International study tour glass asset components */
+body.study-tour-project .study-tour-page {
+  --tour-bg-main: #06101e;
+  --tour-bg-mid: #0b1e36;
+  --tour-bg-deep: #112d52;
+  --tour-card-bg: rgba(16, 37, 66, 0.45);
+  --tour-card-bg-strong: rgba(16, 31, 66, 0.72);
+  --tour-blue: #00b4d8;
+  --tour-sky: #90e0ef;
+  --tour-gold: #e0a96d;
+  --tour-text-white: #ffffff;
+  --tour-text-grey: #e2e8f0;
+  --tour-text-muted: #b8c2d6;
+  --tour-border-blue: rgba(0, 180, 216, 0.2);
+  --tour-border-blue-hover: rgba(0, 180, 216, 0.7);
+  --tour-border-gold: rgba(224, 169, 109, 0.24);
+  position: relative;
+  background:
+    radial-gradient(circle at 78% 8%, rgba(0, 180, 216, 0.18), transparent 34%),
+    radial-gradient(circle at 12% 28%, rgba(144, 224, 239, 0.08), transparent 28%),
+    linear-gradient(135deg, #06101e 0%, #0b1e36 50%, #112d52 100%) !important;
+  color: var(--tour-text-grey);
+}
+
+body.study-tour-project .study-tour-page .tour-glow {
+  position: absolute;
+  pointer-events: none;
+  width: 520px;
+  height: 520px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 216, 0.22) 0%,
+    rgba(144, 224, 239, 0.1) 34%,
+    rgba(6, 16, 30, 0) 72%
+  );
+  filter: blur(70px);
+  z-index: 0;
+}
+
+body.study-tour-project .study-tour-page .tour-glow-hero {
+  right: 4%;
+  top: 8%;
+}
+
+body.study-tour-project .study-tour-page .study-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+body.study-tour-project .study-tour-page .study-hero-copy,
+body.study-tour-project .study-tour-page .tour-hero-visual {
+  position: relative;
+  z-index: 1;
+}
+
+body.study-tour-project .study-tour-page .hero-title-en {
+  background: linear-gradient(90deg, var(--tour-sky), var(--tour-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.study-tour-project .study-tour-page .tour-hero-visual {
+  align-self: center;
+  min-height: clamp(460px, 48vw, 620px);
+  padding: clamp(18px, 2.4vw, 24px);
+  border: 1px solid rgba(0, 180, 216, 0.22);
+  border-radius: 32px;
+  background: var(--tour-card-bg);
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.32),
+    0 0 42px rgba(0, 180, 216, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+body.study-tour-project .study-tour-page .tour-hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(144, 224, 239, 0.16),
+    transparent 42%,
+    rgba(224, 169, 109, 0.12)
+  );
+  pointer-events: none;
+}
+
+body.study-tour-project .study-tour-page .mock-image-box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  min-height: 210px;
+  border: 1px dashed rgba(144, 224, 239, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0, 180, 216, 0.18), transparent 38%),
+    linear-gradient(135deg, rgba(144, 224, 239, 0.1), rgba(0, 180, 216, 0.04));
+  color: rgba(226, 232, 240, 0.68);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+body.study-tour-project .study-tour-page .mock-image-box-hero {
+  min-height: 100%;
+  border-style: solid;
+  border-color: rgba(144, 224, 239, 0.2);
+  background:
+    radial-gradient(circle at 24% 16%, rgba(144, 224, 239, 0.2), transparent 34%),
+    radial-gradient(circle at 84% 78%, rgba(224, 169, 109, 0.14), transparent 38%),
+    linear-gradient(145deg, rgba(16, 37, 66, 0.78), rgba(6, 16, 30, 0.86));
+}
+
+body.study-tour-project .study-tour-page .mock-image-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+body.study-tour-project .study-tour-page .mock-image-box.is-contain img {
+  object-fit: contain;
+  background: rgba(6, 16, 30, 0.85);
+}
+
+body.study-tour-project .study-tour-page .tour-float-chip {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 14px;
+  border: 1px solid rgba(144, 224, 239, 0.24);
+  border-radius: 999px;
+  background: rgba(6, 16, 30, 0.54);
+  color: var(--tour-sky);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px);
+}
+
+body.study-tour-project .study-tour-page .tour-float-chip.is-top {
+  top: 34px;
+  right: 34px;
+}
+
+body.study-tour-project .study-tour-page .tour-float-chip.is-mid {
+  left: 34px;
+  bottom: 92px;
+}
+
+body.study-tour-project .study-tour-page .tour-float-chip.is-bottom {
+  right: 34px;
+  bottom: 34px;
+  color: var(--tour-gold);
+  border-color: rgba(224, 169, 109, 0.26);
+}
+
+body.study-tour-project .study-tour-page .tour-asset-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 26px);
+  align-items: stretch;
+}
+
+body.study-tour-project .study-tour-page .tour-materials-grid,
+body.study-tour-project .study-tour-page .documentation-grid.tour-asset-grid {
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+
+body.study-tour-project .study-tour-page .tour-asset-card {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(22px, 2.3vw, 28px);
+  border: 1px solid var(--tour-border-blue);
+  border-radius: 28px;
+  background: var(--tour-card-bg);
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(20px);
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.study-tour-project .study-tour-page .tour-asset-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--tour-border-blue-hover);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.35),
+    0 0 34px rgba(0, 180, 216, 0.28);
+}
+
+body.study-tour-project .study-tour-page .tour-asset-card::after {
+  content: attr(data-watermark);
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  color: rgba(255, 255, 255, 0.035);
+  font-size: clamp(68px, 8vw, 132px);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+body.study-tour-project .study-tour-page .tour-card-meta {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+  color: var(--tour-sky);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.study-tour-project .study-tour-page .tour-asset-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px;
+  color: var(--tour-text-white);
+  font-size: clamp(24px, 2vw, 34px);
+  font-weight: 780;
+  line-height: 1.15;
+}
+
+body.study-tour-project .study-tour-page .tour-asset-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 24px;
+  color: var(--tour-text-grey);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+body.study-tour-project .study-tour-page .tour-asset-card .mock-image-box {
+  margin-top: auto;
+}
+
+body.study-tour-project .study-tour-page .study-cream-panel {
+  background:
+    radial-gradient(circle at 76% 12%, rgba(0, 180, 216, 0.12), transparent 32%),
+    rgba(16, 37, 66, 0.58) !important;
+}
+
+@media (max-width: 960px) {
+  body.study-tour-project .study-tour-page .tour-asset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.study-tour-project .study-tour-page .tour-hero-visual {
+    min-height: 420px;
+    padding: 22px;
+  }
+
+  body.study-tour-project .study-tour-page .tour-asset-card {
+    padding: 22px;
+  }
+
+  body.study-tour-project .study-tour-page .mock-image-box {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.study-tour-project .study-tour-page .tour-glow {
+    display: none;
+  }
+
+  body.study-tour-project .study-tour-page .tour-hero-visual {
+    min-height: 360px;
+    width: 100%;
+  }
+
+  body.study-tour-project .study-tour-page .mock-image-box-hero {
+    min-height: 300px;
+  }
+
+  body.study-tour-project .study-tour-page .tour-float-chip {
+    position: relative;
+    inset: auto !important;
+    width: fit-content;
+    margin-top: 10px;
+  }
+
+  body.study-tour-project .study-tour-page .tour-asset-card::after {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.study-tour-project .study-tour-page {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-inline: 32px !important;
+    overflow-x: hidden !important;
+  }
+
+  body.study-tour-project .study-tour-page .study-hero,
+  body.study-tour-project .study-tour-page .study-section,
+  body.study-tour-project .study-tour-page .project-brief-impact,
+  body.study-tour-project .study-tour-page .study-hero-copy,
+  body.study-tour-project .study-tour-page .tour-hero-visual,
+  body.study-tour-project .study-tour-page .brief-copy,
+  body.study-tour-project .study-tour-page .impact-panel,
+  body.study-tour-project .study-tour-page .study-section-header,
+  body.study-tour-project .study-tour-page .study-section-header > div,
+  body.study-tour-project .study-tour-page .tour-asset-grid,
+  body.study-tour-project .study-tour-page .campaign-system-grid,
+  body.study-tour-project .study-tour-page .documentation-grid,
+  body.study-tour-project .study-tour-page .materials-map {
+    width: calc(100vw - 64px) !important;
+    max-width: calc(100vw - 64px) !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.study-tour-project .study-tour-page .study-tags {
+    width: calc(100vw - 64px) !important;
+    max-width: calc(100vw - 64px) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body.study-tour-project .study-tour-page .study-tags span {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  body.study-tour-project .study-tour-page .study-hero-copy p,
+  body.study-tour-project .study-tour-page .brief-copy p,
+  body.study-tour-project .study-tour-page .study-section-header p,
+  body.study-tour-project .study-tour-page .impact-card p,
+  body.study-tour-project .study-tour-page .tour-asset-card p {
+    max-width: calc(100vw - 64px) !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  body.study-tour-project .study-tour-page h1,
+  body.study-tour-project .study-tour-page h2,
+  body.study-tour-project .study-tour-page h3 {
+    max-width: calc(100vw - 64px) !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+
+  body.study-tour-project .study-tour-page .project-brief-impact h2,
+  body.study-tour-project .study-tour-page .study-section h2 {
+    font-size: clamp(27px, 7.5vw, 34px) !important;
+  }
+}
