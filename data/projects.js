@@ -96,18 +96,14 @@ const projects = [
 ];
 
 const archiveItems = [
-  { id: "archive-01", title: "品牌包装样机", category: "品牌物料", image: "images/archive/archive-01.jpg", url: "project-simonkids.html" },
-  { id: "archive-02", title: "活动海报延展", category: "活动延展", image: "images/archive/archive-02.jpg", url: "project-campaign-archive.html" },
-  { id: "archive-03", title: "邀请函设计", category: "活动延展", image: "images/archive/archive-03.jpg", url: "project-campaign-archive.html" },
-  { id: "archive-04", title: "IP形象延展", category: "IP延展", image: "images/archive/archive-04.jpg", url: "project-simonkids.html" },
-  { id: "archive-05", title: "儿童服饰物料", category: "衍生产品", image: "images/archive/archive-05.jpg", url: "project-study-tour.html" },
-  { id: "archive-06", title: "行李箱视觉", category: "衍生产品", image: "images/archive/archive-06.jpg", url: "project-study-tour.html" },
-  { id: "archive-07", title: "研学场景样机", category: "衍生产品", image: "images/archive/archive-07.jpg", url: "project-study-tour.html" },
-  { id: "archive-08", title: "门店空间视觉", category: "空间视觉", image: "images/archive/archive-08.jpg", url: "project-haido-restaurant.html" },
-  { id: "archive-09", title: "品牌手册片段", category: "品牌物料", image: "images/archive/archive-09.jpg", url: "project-simonkids.html" },
-  { id: "archive-10", title: "社媒视觉模板", category: "社媒视觉", image: "images/archive/archive-10.jpg", url: "project-haido-restaurant.html" },
-  { id: "archive-11", title: "主视觉现场延展", category: "活动延展", image: "images/archive/archive-11.jpg", url: "project-campaign-archive.html" },
-  { id: "archive-12", title: "商业物料组合", category: "品牌物料", image: "images/archive/archive-12.jpg", url: "" },
+  { id: "archive-01", title: "品牌包装样机", category: "品牌物料", image: "assets/images/projects/simonkids/materials/simonkids-materials-01.webp", url: "project-simonkids.html" },
+  { id: "archive-02", title: "活动海报延展", category: "活动延展", image: "assets/images/projects/simonkids/campaign/simonkids-campaign-spring-01.webp", url: "project-simonkids.html" },
+  { id: "archive-03", title: "邀请函设计", category: "活动延展", image: "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-invitation.jpg", url: "project-haido-restaurant.html" },
+  { id: "archive-04", title: "IP形象延展", category: "IP延展", image: "assets/images/projects/simonkids/overview/simonkids-hero-system.webp", url: "project-simonkids.html" },
+  { id: "archive-05", title: "儿童服饰物料", category: "品牌物料", image: "assets/images/projects/simonkids/materials/simonkids-materials-02.webp", url: "project-simonkids.html" },
+  { id: "archive-06", title: "行李箱视觉", category: "衍生产品", image: "assets/images/projects/international-tour/materials/materials-overview-01.jpg", url: "project-study-tour.html" },
+  { id: "archive-07", title: "研学场景样机", category: "场景视觉", image: "assets/images/projects/international-tour/hero/study-tour-home-cover.jpg", url: "project-study-tour.html" },
+  { id: "archive-08", title: "门店空间视觉", category: "空间视觉", image: "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-scene-01.jpg", url: "project-haido-restaurant.html" },
 ];
 
 const eventPhotographyItems = [
