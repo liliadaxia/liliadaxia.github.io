@@ -3235,6 +3235,94 @@ body.haiduo-project .haiduo-project-page .onsite-item.is-material {
   display: none !important;
 }
 
+/* SimonKids media sizing: keep system boards complete, photos tidy, and posters readable. */
+body.simonkids-project .sk-media-card {
+  position: relative;
+  min-height: 0 !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  background: #f3efe7 !important;
+}
+
+body.simonkids-project .sk-media-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: inherit !important;
+}
+
+body.simonkids-project .sk-media-grid.is-overview .sk-media-card,
+body.simonkids-project .sk-media-grid.is-materials .sk-media-card {
+  aspect-ratio: 16 / 10 !important;
+  max-height: 520px !important;
+}
+
+body.simonkids-project .sk-media-grid.is-overview .sk-media-card img,
+body.simonkids-project .sk-media-grid.is-materials .sk-media-card img,
+body.simonkids-project .sk-media-card.is-contain img {
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: clamp(14px, 1.6vw, 22px) !important;
+  background: #f3efe7 !important;
+}
+
+body.simonkids-project .sk-media-grid.is-campaign .sk-media-card,
+body.simonkids-project .sk-media-grid.is-social .sk-media-card,
+body.simonkids-project .sk-media-card.is-poster {
+  aspect-ratio: 3 / 4 !important;
+  max-height: 520px !important;
+}
+
+body.simonkids-project .sk-media-grid.is-campaign .sk-media-card img,
+body.simonkids-project .sk-media-grid.is-social .sk-media-card img,
+body.simonkids-project .sk-media-card.is-poster img {
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 14px !important;
+  background: #f3efe7 !important;
+}
+
+body.simonkids-project .sk-media-grid.is-photo .sk-media-card,
+body.simonkids-project .sk-media-grid.is-space .sk-media-card {
+  aspect-ratio: 4 / 3 !important;
+  max-height: 380px !important;
+}
+
+body.simonkids-project .sk-media-grid.is-photo .sk-media-card img,
+body.simonkids-project .sk-media-grid.is-space .sk-media-card img,
+body.simonkids-project .sk-media-card.has-blue-overlay img {
+  object-fit: cover !important;
+  object-position: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+body.simonkids-project .sk-media-caption {
+  display: block;
+  padding: 0 2px;
+  color: rgba(30, 36, 48, 0.76) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 768px) {
+  body.simonkids-project .sk-media-grid.is-two,
+  body.simonkids-project .sk-media-grid.is-three,
+  body.simonkids-project .sk-media-grid.is-space,
+  body.simonkids-project .sk-media-grid.is-photo,
+  body.simonkids-project .sk-media-grid.is-social {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.simonkids-project .sk-media-grid.is-overview .sk-media-card,
+  body.simonkids-project .sk-media-grid.is-materials .sk-media-card,
+  body.simonkids-project .sk-media-grid.is-campaign .sk-media-card,
+  body.simonkids-project .sk-media-grid.is-social .sk-media-card {
+    max-height: none !important;
+  }
+}
+
 body.haiduo-project .haiduo-project-page .onsite-item.is-material.is-tall {
   grid-column: span 4;
   aspect-ratio: 4 / 3;

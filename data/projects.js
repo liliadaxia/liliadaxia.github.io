@@ -12,12 +12,12 @@ const projects = [
     year: "2026",
     status: "Selected",
     featuredOrder: 1,
-    cover: "assets/images/projects/simonkids/overview/simonkids-hero-system.webp",
+    cover: "assets/images/projects/simonkids/overview/simonkids-hero-overview.webp",
     url: "project-simonkids.html",
     images: [
-      "assets/images/projects/simonkids/overview/simonkids-hero-system.webp",
+      "assets/images/projects/simonkids/overview/simonkids-hero-overview.webp",
       "assets/images/projects/simonkids/overview/simonkids-brand-overview-01.png",
-      "assets/images/projects/simonkids/campaign/simonkids-campaign-spring-01.webp"
+      "assets/images/projects/simonkids/campaign/simonkids-campaign-01.webp"
     ],
   },
   {
@@ -97,9 +97,9 @@ const projects = [
     tags: ["Space Graphics", "Wall Visual", "Scene Design"],
     year: "2025",
     status: "Archive",
-    cover: "assets/images/projects/simonkids/space/simonkids-space-scene-01.webp",
+    cover: "assets/images/projects/simonkids/space-scene/simonkids-space-scene-01.webp",
     url: "",
-    images: ["assets/images/projects/simonkids/space/simonkids-space-scene-01.webp"],
+    images: ["assets/images/projects/simonkids/space-scene/simonkids-space-scene-01.webp"],
   },
 ];
 
@@ -107,18 +107,18 @@ const archiveItems = [
   { id: "archive-01", title: "品牌包装样机", category: "品牌物料", image: "assets/images/home/archive/archive-01-brand-materials.png", source: "assets/images/projects/simonkids/overview/simonkids-brand-overview-01.png", url: "project-simonkids.html" },
   { id: "archive-02", title: "活动海报延展", category: "活动延展", image: "assets/images/home/archive/archive-02-campaign-poster.webp", source: "assets/images/projects/simonkids/campaign/simonkids-campaign-spring-01.webp", url: "project-simonkids.html" },
   { id: "archive-03", title: "邀请函设计", category: "活动延展", image: "assets/images/home/archive/archive-03-invitation.jpg", source: "assets/haiduo/04-onsite-implementation/haiduo-onsite-art-invitation.jpg", url: "project-haido-restaurant.html" },
-  { id: "archive-04", title: "IP 形象延展", category: "IP延展", image: "assets/images/home/archive/archive-04-ip-extension.webp", source: "assets/images/projects/simonkids/overview/simonkids-hero-system.webp", url: "project-simonkids.html" },
+  { id: "archive-04", title: "IP 形象延展", category: "IP延展", image: "assets/images/home/archive/archive-04-ip-extension.webp", source: "assets/images/projects/simonkids/overview/simonkids-hero-overview.webp", url: "project-simonkids.html" },
   { id: "archive-05", title: "儿童服饰物料", category: "衍生产品", image: "assets/images/home/archive/archive-05-kids-products.png", source: "assets/images/projects/simonkids/overview/simonkids-brand-overview-03.png", url: "project-simonkids.html" },
   { id: "archive-06", title: "行李箱视觉", category: "衍生产品", image: "assets/images/home/archive/archive-06-luggage-materials.jpg", source: "assets/images/projects/international-tour/materials/backpack-01.jpg", url: "project-study-tour.html" },
   { id: "archive-07", title: "研学场景物料", category: "研学项目", image: "assets/images/home/archive/archive-07-study-tour-materials.jpg", source: "assets/images/projects/international-tour/materials/materials-overview-01.jpg", url: "project-study-tour.html" },
-  { id: "archive-08", title: "门店空间视觉", category: "空间视觉", image: "assets/images/home/archive/archive-08-space-visual.webp", source: "assets/images/projects/simonkids/space/simonkids-space-scene-01.webp", url: "project-simonkids.html" },
+  { id: "archive-08", title: "门店空间视觉", category: "空间视觉", image: "assets/images/home/archive/archive-08-space-visual.webp", source: "assets/images/projects/simonkids/space-scene/simonkids-space-scene-01.webp", url: "project-simonkids.html" },
 ];
 
 const eventPhotographyItems = [
   {
     title: "SimonKids 品牌空间",
     label: "品牌空间",
-    image: "assets/images/projects/simonkids/photo/simonkids-photo-03.webp",
+    image: "assets/images/projects/simonkids/photo-record/simonkids-photo-record-02.webp",
     alt: "SimonKids 品牌空间与活动场景摄影记录"
   },
   {
