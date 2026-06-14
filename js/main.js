@@ -80,7 +80,7 @@
     const tags=(project.tags||[]).map(tag=>`<span>${tag}</span>`).join('');
     const status=link(project)?'\u67e5\u770b\u9879\u76ee View Project':'\u6574\u7406\u4e2d';
     const titleMarkup=project.displayTitle||project.title;
-    const body=`${imageFrame(cover(project),project.title,'work-card-media')}<span class="floating-view">${status}</span><div class="project-card-body work-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${titleMarkup}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
+    const body=`${imageFrame(cover(project),project.coverAlt||project.alt||project.title,'work-card-media')}<span class="floating-view">${status}</span><div class="project-card-body work-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${titleMarkup}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
     const theme=themeOf(project);
     if(link(project))return `<a class="project-card work-card reveal" href="${link(project)}" data-category="${project.category||''}" data-theme-trigger="${theme}" data-cursor="View">${body}</a>`;
     return `<article class="project-card work-card is-disabled reveal" data-category="${project.category||''}" data-theme-trigger="${theme}" aria-label="${project.title} coming soon">${body}</article>`;
@@ -105,7 +105,7 @@
     if(!grid)return;
     grid.innerHTML=projects().map(project=>{
       const theme=themeOf(project);
-      const body=`${imageFrame(cover(project),project.title)}<div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p></div>`;
+      const body=`${imageFrame(cover(project),project.coverAlt||project.alt||project.title)}<div class="project-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${project.title}</h3><p>${project.description||project.summary||''}</p></div>`;
       return `<article class="project-card reveal" id="${project.id||project.slug||''}" data-theme-trigger="${theme}">${link(project)?`<a href="${link(project)}" data-cursor="View">${body}</a>`:body}</article>`;
     }).join('');
     bindFallbacks(grid);
