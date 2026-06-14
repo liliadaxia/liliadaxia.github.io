@@ -27,7 +27,7 @@
     qsa('img[data-fallback]',root).forEach(img=>{
       const applyFallback=()=>{
         if(img.hasAttribute('data-hide-card-on-error')){
-          img.closest('.event-photo-card')?.remove();
+          img.closest('.event-photo-card,.archive-item')?.remove();
           return;
         }
         img.removeAttribute('src');
@@ -121,7 +121,7 @@
     const grid=qs('[data-archive-grid]');
     if(!grid||!window.archiveItems)return;
     grid.innerHTML=window.archiveItems.map(item=>{
-      const media=`<div class="img-wrapper image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback><span class="archive-tag">${item.category||''}</span></div>`;
+      const media=`<div class="img-wrapper image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback data-hide-card-on-error><span class="archive-tag">${item.category||''}</span></div>`;
       const action=item.url?`<a class="archive-link" href="${item.url}" data-cursor="View">${media}</a>`:`<button class="image-button" type="button" data-lightbox="${item.image}" data-cursor="Open" aria-label="Open ${item.title}">${media}</button>`;
       return `<figure class="archive-item reveal">${action}<figcaption><span>${item.title}</span><span>${item.category||''}</span></figcaption></figure>`;
     }).join('');
@@ -161,7 +161,7 @@
     `).join('');
     bindFallbacks(grid);
     qsa('img[data-hide-card-on-error]',grid).forEach(img=>{
-      img.addEventListener('error',()=>img.closest('.event-photo-card')?.remove(),{once:true});
+      img.addEventListener('error',()=>img.closest('.event-photo-card,.archive-item')?.remove(),{once:true});
     });
     window.dispatchEvent(new CustomEvent('content:updated'));
   }
