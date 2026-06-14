@@ -1715,7 +1715,7 @@ body.neo-bauhaus .hero-visual-card:focus-visible .card-image {
   }
 }
 
-/* Home Visual Archive: curated 8-image monochrome archive */
+/* Home Visual Archive: curated 8-image natural-color archive */
 body.neo-bauhaus #archive .archive-grid {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -1770,7 +1770,7 @@ body.neo-bauhaus #archive .archive-item img {
   height: 100% !important;
   object-fit: cover !important;
   border-radius: 0 !important;
-  filter: grayscale(100%) contrast(1.02) brightness(1.02);
+  filter: none !important;
   opacity: 1;
   transition: transform 0.45s ease, filter 0.45s ease;
 }
@@ -1778,7 +1778,7 @@ body.neo-bauhaus #archive .archive-item img {
 body.neo-bauhaus #archive .archive-item:hover img,
 body.neo-bauhaus #archive .archive-item:focus-within img {
   transform: scale(1.025);
-  filter: grayscale(88%) contrast(1.04) brightness(1.03);
+  filter: none !important;
 }
 
 body.neo-bauhaus #archive .archive-tag {
@@ -1788,7 +1788,7 @@ body.neo-bauhaus #archive .archive-tag {
 body.neo-bauhaus #archive .archive-item figcaption {
   display: flex !important;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 12px;
   min-height: 58px;
   padding: 14px 16px 16px !important;
@@ -1805,11 +1805,11 @@ body.neo-bauhaus #archive .archive-item figcaption span:first-child {
 }
 
 body.neo-bauhaus #archive .archive-item figcaption span:last-child {
-  flex: 0 0 auto;
-  color: #5f6368;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
+  display: none !important;
+}
+
+.is-missing {
+  display: none !important;
 }
 
 @media (max-width: 1024px) {

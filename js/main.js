@@ -47,6 +47,23 @@
     });
   }
 
+  function hideMissingProjectMedia(root=document){
+    qsa('.simonkids-project-page img,.hero-visual-card img,#archive img',root).forEach(img=>{
+      const hideCard=()=>{
+        const card=img.closest('.sk-media-figure')||
+          img.closest('.sk-hero-visual')||
+          img.closest('.hero-visual-card')||
+          img.closest('.archive-item');
+        card?.classList.add('is-missing');
+      };
+      if(img.complete&&!img.naturalWidth){
+        hideCard();
+        return;
+      }
+      img.addEventListener('error',hideCard,{once:true});
+    });
+  }
+
   function setupMenu(){
     const toggle=qs('.menu-toggle');
     if(!toggle)return;
@@ -121,11 +138,12 @@
     const grid=qs('[data-archive-grid]');
     if(!grid||!window.archiveItems)return;
     grid.innerHTML=window.archiveItems.map(item=>{
-      const media=`<div class="img-wrapper image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback data-hide-card-on-error><span class="archive-tag">${item.category||''}</span></div>`;
+      const media=`<div class="img-wrapper image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback data-hide-card-on-error></div>`;
       const action=item.url?`<a class="archive-link" href="${item.url}" data-cursor="View">${media}</a>`:`<button class="image-button" type="button" data-lightbox="${item.image}" data-cursor="Open" aria-label="Open ${item.title}">${media}</button>`;
-      return `<figure class="archive-item reveal">${action}<figcaption><span>${item.title}</span><span>${item.category||''}</span></figcaption></figure>`;
+      return `<figure class="archive-item reveal">${action}<figcaption><span>${item.title}</span></figcaption></figure>`;
     }).join('');
     bindFallbacks(grid);
+    hideMissingProjectMedia(grid);
     window.dispatchEvent(new CustomEvent('content:updated'));
   }
 
@@ -294,6 +312,7 @@
     prepareProjectGallery();
     prepareNowCards();
     bindFallbacks();
+    hideMissingProjectMedia();
     setupHeroStoryCollage();
     setupHoverPreview();
     setupLightbox();

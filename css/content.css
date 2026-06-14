@@ -3231,6 +3231,10 @@ body.haiduo-project .haiduo-project-page .onsite-item.is-material {
     #120c08 !important;
 }
 
+.is-missing {
+  display: none !important;
+}
+
 body.haiduo-project .haiduo-project-page .onsite-item.is-material.is-tall {
   grid-column: span 4;
   aspect-ratio: 4 / 3;
