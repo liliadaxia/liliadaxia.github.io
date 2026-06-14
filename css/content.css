@@ -37,7 +37,7 @@ body:not(.motion-ready) [data-reveal] {
 
 .about-hero {
   display: grid;
-  grid-template-columns: minmax(280px, 0.44fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
   align-items: center;
   gap: clamp(30px, 6vw, 88px);
 }
@@ -63,6 +63,26 @@ body:not(.motion-ready) [data-reveal] {
   font-size: var(--fs-small);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.about-visual-card {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  border-radius: var(--radius-large, 32px);
+  background: var(--surface-warm, #f4efe6);
+  overflow: hidden;
+  box-shadow: var(--shadow-flat, 6px 6px 0 rgba(26, 26, 26, 0.04));
+}
+
+.about-visual-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: inherit;
 }
 
 .about-title {
@@ -895,6 +915,14 @@ body:not(.motion-ready) [data-reveal] {
   .contact-panel,
   .contact-hero {
     grid-template-columns: 1fr;
+  }
+
+  .about-visual-card {
+    max-width: 100%;
+  }
+
+  .about-visual-card img {
+    max-height: 520px;
   }
 
   .flow-step:not(:last-child)::after {
@@ -8537,5 +8565,64 @@ body.study-tour-project .study-tour-page .study-cream-panel {
   body.study-tour-project .study-tour-page .project-brief-impact h2,
   body.study-tour-project .study-tour-page .study-section h2 {
     font-size: clamp(27px, 7.5vw, 34px) !important;
+  }
+}
+
+/* Study Tour: compact B2B promotion support cards */
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-grid.tour-asset-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 2.4vw, 32px);
+  align-items: stretch;
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card.tour-asset-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100%;
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card .tour-card-meta {
+  color: var(--study-gold-soft);
+  letter-spacing: 0.12em;
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card h3 {
+  margin-bottom: 14px;
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card p {
+  margin-bottom: 22px;
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card .mock-image-box {
+  width: 100%;
+  height: 180px;
+  min-height: 0;
+  margin-top: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+body.study-tour-project .study-tour-page .study-promotion .campaign-system-card .mock-image-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: inherit;
+}
+
+@media (max-width: 960px) {
+  body.study-tour-project .study-tour-page .study-promotion .campaign-system-grid.tour-asset-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  body.study-tour-project .study-tour-page .study-promotion .campaign-system-grid.tour-asset-grid {
+    grid-template-columns: 1fr;
   }
 }
