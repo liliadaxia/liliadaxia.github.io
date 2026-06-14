@@ -26,6 +26,10 @@
   function bindFallbacks(root=document){
     qsa('img[data-fallback]',root).forEach(img=>{
       const applyFallback=()=>{
+        if(img.hasAttribute('data-hide-card-on-error')){
+          img.closest('.event-photo-card')?.remove();
+          return;
+        }
         img.removeAttribute('src');
         img.alt='';
         img.closest('.image-frame')?.classList.add('is-placeholder');
@@ -149,13 +153,16 @@
       <article class="event-photo-card reveal" data-cursor="Open">
         <button class="event-photo-button" type="button" data-lightbox="${item.image}" aria-label="Open ${item.title}">
           <div class="image-frame" data-label="${item.label||item.title}">
-            <img src="${item.image}" alt="${item.alt||item.title}" loading="lazy" data-fallback>
+            <img src="${item.image}" alt="${item.alt||item.title}" loading="lazy" data-fallback data-hide-card-on-error>
           </div>
         </button>
         <span>${item.label||''}</span>
       </article>
     `).join('');
     bindFallbacks(grid);
+    qsa('img[data-hide-card-on-error]',grid).forEach(img=>{
+      img.addEventListener('error',()=>img.closest('.event-photo-card')?.remove(),{once:true});
+    });
     window.dispatchEvent(new CustomEvent('content:updated'));
   }
 
