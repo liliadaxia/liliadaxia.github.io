@@ -1708,6 +1708,234 @@ body.neo-bauhaus .hero-visual-card:focus-visible .card-image {
   }
 }
 
+/* Mobile final performance and layout fixes */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body.neo-bauhaus,
+body.neo-bauhaus .site-shell,
+body.neo-bauhaus .main-content,
+body.neo-bauhaus .section,
+body.neo-bauhaus .hero,
+body.neo-bauhaus .work-list,
+body.neo-bauhaus .archive-grid,
+body.neo-bauhaus .event-photo-grid,
+body.neo-bauhaus [data-testimonials] {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body.neo-bauhaus .section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.neo-bauhaus .section-header {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.neo-bauhaus img,
+  body.neo-bauhaus video,
+  body.neo-bauhaus canvas {
+    max-width: 100% !important;
+  }
+
+  body.neo-bauhaus .work-list,
+  body.neo-bauhaus [data-featured-list],
+  body.neo-bauhaus [data-project-grid],
+  body.neo-bauhaus .archive-grid,
+  body.neo-bauhaus .event-photo-grid,
+  body.neo-bauhaus .now-list,
+  body.neo-bauhaus .contact-grid,
+  body.neo-bauhaus [data-testimonials],
+  body.neo-bauhaus .testimonial-grid,
+  body.neo-bauhaus .quote-grid,
+  body.neo-bauhaus .feedback-grid,
+  body.neo-bauhaus .chat-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body.neo-bauhaus .work-list,
+  body.neo-bauhaus [data-featured-list],
+  body.neo-bauhaus [data-project-grid] {
+    gap: 22px !important;
+  }
+
+  body.neo-bauhaus .project-card,
+  body.neo-bauhaus .work-card,
+  body.neo-bauhaus .quote-card,
+  body.neo-bauhaus .chat-card,
+  body.neo-bauhaus .feedback-card,
+  body.neo-bauhaus .event-photo-card,
+  body.neo-bauhaus .contact-card,
+  body.neo-bauhaus .now-list li,
+  body.neo-bauhaus .archive-item,
+  body.neo-bauhaus .visual-archive-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    border-radius: 22px !important;
+  }
+
+  body.neo-bauhaus .project-card,
+  body.neo-bauhaus .work-card {
+    padding: 18px !important;
+    border-radius: 24px !important;
+  }
+
+  body.neo-bauhaus .quote-card,
+  body.neo-bauhaus .chat-card,
+  body.neo-bauhaus .feedback-card {
+    padding: 22px !important;
+  }
+
+  body.neo-bauhaus .project-card .image-frame,
+  body.neo-bauhaus .project-card .img-wrapper,
+  body.neo-bauhaus .work-card .image-frame,
+  body.neo-bauhaus .work-card .img-wrapper {
+    aspect-ratio: 4 / 3 !important;
+    max-height: 260px !important;
+  }
+
+  body.neo-bauhaus .project-card h3 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+    line-height: 1.18 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  body.neo-bauhaus .project-card p {
+    font-size: 15.5px !important;
+    line-height: 1.7 !important;
+  }
+
+  body.neo-bauhaus .tag-list {
+    gap: 6px !important;
+  }
+
+  body.neo-bauhaus .tag-list span {
+    min-height: 26px !important;
+    padding: 0 9px !important;
+    font-size: 11px !important;
+  }
+
+  body.neo-bauhaus .chat-card-header {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 14px !important;
+    align-items: center !important;
+  }
+
+  body.neo-bauhaus .chat-avatar {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+  }
+
+  body.neo-bauhaus .chat-project,
+  body.neo-bauhaus .chat-project strong,
+  body.neo-bauhaus .chat-project small,
+  body.neo-bauhaus .chat-bubble,
+  body.neo-bauhaus .chat-meta {
+    writing-mode: horizontal-tb !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+
+  body.neo-bauhaus .chat-project strong {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+  }
+
+  body.neo-bauhaus .chat-project small {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  body.neo-bauhaus .chat-bubble {
+    padding: 16px 18px !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+  }
+
+  body.neo-bauhaus .chat-meta {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  body.neo-bauhaus.has-custom-cursor,
+  body.neo-bauhaus.has-custom-cursor a,
+  body.neo-bauhaus.has-custom-cursor button,
+  body.neo-bauhaus a,
+  body.neo-bauhaus button {
+    cursor: auto !important;
+  }
+
+  body.neo-bauhaus .custom-cursor,
+  body.neo-bauhaus .cursor-label,
+  body.neo-bauhaus .custom-cursor-label,
+  body.neo-bauhaus #doodle-canvas,
+  body.neo-bauhaus .hover-preview {
+    display: none !important;
+  }
+
+  body.neo-bauhaus .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  body.neo-bauhaus .project-card,
+  body.neo-bauhaus .work-card,
+  body.neo-bauhaus .archive-item,
+  body.neo-bauhaus .visual-archive-card,
+  body.neo-bauhaus .chat-card,
+  body.neo-bauhaus .event-photo-card,
+  body.neo-bauhaus .hero-visual-card,
+  body.neo-bauhaus img {
+    transition-duration: 0.18s !important;
+  }
+
+  body.neo-bauhaus .project-card:hover,
+  body.neo-bauhaus .work-card:hover,
+  body.neo-bauhaus .archive-item:hover,
+  body.neo-bauhaus .visual-archive-card:hover,
+  body.neo-bauhaus .chat-card:hover,
+  body.neo-bauhaus .event-photo-card:hover,
+  body.neo-bauhaus .hero-visual-card:hover {
+    transform: none !important;
+  }
+
+  body.neo-bauhaus .project-card:hover img,
+  body.neo-bauhaus .work-card:hover img,
+  body.neo-bauhaus .archive-item:hover img,
+  body.neo-bauhaus .visual-archive-card:hover img,
+  body.neo-bauhaus .event-photo-card:hover img,
+  body.neo-bauhaus .hero-visual-card:hover img,
+  body.neo-bauhaus .image-frame:hover img,
+  body.neo-bauhaus .img-wrapper:hover img {
+    transform: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body.neo-bauhaus .hero-visual-card,
   body.neo-bauhaus .hero-visual-card .card-image {

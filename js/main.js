@@ -3,6 +3,10 @@
   const qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const isMobile=matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+  let hasRenderedArchive=false;
+  let hasRenderedEventPhotography=false;
+  let hasRenderedTestimonials=false;
   const categories=['\u5168\u90e8','\u54c1\u724c\u7cfb\u7edf','\u6d3b\u52a8\u4f20\u64ad','\u7a7a\u95f4\u7269\u6599','\u884d\u751f\u4ea7\u54c1'];
   const themeByCategory={
     '\u54c1\u724c\u7cfb\u7edf':'brand',
@@ -20,7 +24,7 @@
 
   function imageFrame(src,alt,extraClass=''){
     const className=['img-wrapper','image-frame',extraClass].filter(Boolean).join(' ');
-    return `<div class="${className}"><img src="${src}" alt="${alt}" loading="lazy" data-fallback></div>`;
+    return `<div class="${className}"><img src="${src}" alt="${alt}" loading="lazy" decoding="async" data-fallback></div>`;
   }
 
   function bindFallbacks(root=document){
@@ -138,9 +142,11 @@
 
   function renderArchive(){
     const grid=qs('[data-archive-grid]');
+    if(hasRenderedArchive)return;
     if(!grid||!window.archiveItems)return;
+    hasRenderedArchive=true;
     grid.innerHTML=window.archiveItems.slice(0,8).map(item=>{
-      const image=`<img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback data-hide-card-on-error onerror="this.closest('.visual-archive-card,.archive-item,.archive-card')?.classList.add('is-missing')">`;
+      const image=`<img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async" data-fallback data-hide-card-on-error onerror="this.closest('.visual-archive-card,.archive-item,.archive-card')?.classList.add('is-missing')">`;
       if(item.url){
         return `<a class="archive-item visual-archive-card reveal" href="${item.url}" data-cursor="View">${image}</a>`;
       }
@@ -153,7 +159,9 @@
 
   function renderTestimonials(){
     const holder=qs('[data-testimonials]');
+    if(hasRenderedTestimonials)return;
     if(!holder||!window.testimonials)return;
+    hasRenderedTestimonials=true;
     holder.innerHTML=window.testimonials.map(item=>{
       const messages=(item.messages||[item.quote||'']).filter(Boolean).map(message=>`<p class="chat-bubble" data-cursor="Note">${message}</p>`).join('');
       return `<article class="quote-card chat-card reveal" data-cursor="Read">
@@ -165,17 +173,20 @@
         <footer class="chat-meta">${item.meta||item.type||''}</footer>
       </article>`;
     }).join('');
+    window.dispatchEvent(new CustomEvent('content:updated'));
   }
 
   function renderEventPhotography(){
     const grid=qs('[data-event-photography]');
     const items=(window.eventPhotographyItems||[]).filter(item=>item&&item.image).slice(0,6);
+    if(hasRenderedEventPhotography)return;
     if(!grid||!items.length)return;
+    hasRenderedEventPhotography=true;
     grid.innerHTML=items.map(item=>`
       <article class="event-photo-card reveal" data-cursor="Open">
         <button class="event-photo-button" type="button" data-lightbox="${item.image}" aria-label="Open ${item.title}">
           <div class="image-frame" data-label="${item.label||item.title}">
-            <img src="${item.image}" alt="${item.alt||item.title}" loading="lazy" data-fallback data-hide-card-on-error onerror="this.closest('.event-photo-card')?.classList.add('is-missing')">
+            <img src="${item.image}" alt="${item.alt||item.title}" loading="lazy" decoding="async" data-fallback data-hide-card-on-error onerror="this.closest('.event-photo-card')?.classList.add('is-missing')">
           </div>
         </button>
         <span>${item.label||''}</span>
@@ -302,6 +313,23 @@
     });
   }
 
+  function lazyRenderWhenVisible(selector,renderFn){
+    const target=qs(selector);
+    if(!target||typeof renderFn!=='function')return;
+    if(!('IntersectionObserver' in window)){
+      renderFn();
+      return;
+    }
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        renderFn();
+        observer.disconnect();
+      });
+    },{rootMargin:'300px 0px'});
+    observer.observe(target);
+  }
+
   document.addEventListener('DOMContentLoaded',()=>{
     const featured=qs('[data-featured-list]');
     const themedMain=qs('.main-content');
@@ -309,18 +337,26 @@
     setupFilters(featured);
     renderProjectCards();
     renderWorksPage();
-    renderArchive();
-    renderEventPhotography();
-    renderTestimonials();
+    if(isMobile){
+      lazyRenderWhenVisible('#archive',renderArchive);
+      lazyRenderWhenVisible('#event-photography',renderEventPhotography);
+      lazyRenderWhenVisible('#voices',renderTestimonials);
+    }else{
+      renderArchive();
+      renderEventPhotography();
+      renderTestimonials();
+    }
     setupMenu();
     prepareProjectGallery();
     prepareNowCards();
     bindFallbacks();
     hideMissingProjectMedia();
-    setupHeroStoryCollage();
-    setupHoverPreview();
+    if(!isMobile){
+      setupHeroStoryCollage();
+      setupHoverPreview();
+      setupProjectInteractions();
+    }
     setupLightbox();
-    setupProjectInteractions();
     setTimeout(()=>document.body.classList.add('is-loaded'),80);
   });
 })();
