@@ -3252,13 +3252,15 @@ body.simonkids-project .sk-media-card img {
 }
 
 body.simonkids-project .sk-media-grid.is-overview .sk-media-card,
-body.simonkids-project .sk-media-grid.is-materials .sk-media-card {
+body.simonkids-project .sk-media-grid.is-materials .sk-media-card,
+body.simonkids-project .sk-media-grid.is-campaign-social .sk-media-card {
   aspect-ratio: 16 / 10 !important;
   max-height: 520px !important;
 }
 
 body.simonkids-project .sk-media-grid.is-overview .sk-media-card img,
 body.simonkids-project .sk-media-grid.is-materials .sk-media-card img,
+body.simonkids-project .sk-media-grid.is-campaign-social .sk-media-card img,
 body.simonkids-project .sk-media-card.is-contain img {
   object-fit: contain !important;
   object-position: center !important;
@@ -3317,6 +3319,7 @@ body.simonkids-project .sk-media-caption {
 
   body.simonkids-project .sk-media-grid.is-overview .sk-media-card,
   body.simonkids-project .sk-media-grid.is-materials .sk-media-card,
+  body.simonkids-project .sk-media-grid.is-campaign-social .sk-media-card,
   body.simonkids-project .sk-media-grid.is-campaign .sk-media-card,
   body.simonkids-project .sk-media-grid.is-social .sk-media-card {
     max-height: none !important;
