@@ -27,7 +27,7 @@
     qsa('img[data-fallback]',root).forEach(img=>{
       const applyFallback=()=>{
         if(img.hasAttribute('data-hide-card-on-error')){
-          img.closest('.event-photo-card,.archive-item')?.remove();
+          img.closest('.event-photo-card,.archive-item,.visual-archive-card,.archive-card,.photo-card,.gallery-card,.image-card')?.remove();
           return;
         }
         img.removeAttribute('src');
@@ -53,7 +53,8 @@
         const card=img.closest('.sk-media-figure')||
           img.closest('.sk-hero-visual')||
           img.closest('.hero-visual-card')||
-          img.closest('.archive-item');
+          img.closest('.archive-item')||
+          img.closest('.visual-archive-card');
         card?.classList.add('is-missing');
       };
       if(img.complete&&!img.naturalWidth){
@@ -103,8 +104,9 @@
     const titleMarkup=project.displayTitle||project.title;
     const body=`${imageFrame(cover(project),project.coverAlt||project.alt||project.title,'work-card-media')}<span class="floating-view">${status}</span><div class="project-card-body work-card-body"><div class="project-card-meta"><span>${project.category||''}</span><span>${project.year||project.status||''}</span></div><h3>${titleMarkup}</h3><p>${project.description||project.summary||''}</p><div class="tag-list">${tags}</div></div>`;
     const theme=themeOf(project);
-    if(link(project))return `<a class="project-card work-card reveal" href="${link(project)}" data-category="${project.category||''}" data-theme-trigger="${theme}" data-cursor="View">${body}</a>`;
-    return `<article class="project-card work-card is-disabled reveal" data-category="${project.category||''}" data-theme-trigger="${theme}" aria-label="${project.title} coming soon">${body}</article>`;
+    const projectId=project.id||project.slug||'';
+    if(link(project))return `<a class="project-card work-card reveal" href="${link(project)}" data-project-id="${projectId}" data-category="${project.category||''}" data-theme-trigger="${theme}" data-cursor="View">${body}</a>`;
+    return `<article class="project-card work-card is-disabled reveal" data-project-id="${projectId}" data-category="${project.category||''}" data-theme-trigger="${theme}" aria-label="${project.title} coming soon">${body}</article>`;
   }
 
   function renderProjectCards(filter='\u5168\u90e8'){
@@ -137,10 +139,12 @@
   function renderArchive(){
     const grid=qs('[data-archive-grid]');
     if(!grid||!window.archiveItems)return;
-    grid.innerHTML=window.archiveItems.map(item=>{
-      const media=`<div class="img-wrapper image-frame"><img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback data-hide-card-on-error></div>`;
-      const action=item.url?`<a class="archive-link" href="${item.url}" data-cursor="View">${media}</a>`:`<button class="image-button" type="button" data-lightbox="${item.image}" data-cursor="Open" aria-label="Open ${item.title}">${media}</button>`;
-      return `<figure class="archive-item reveal">${action}<figcaption><span>${item.title}</span></figcaption></figure>`;
+    grid.innerHTML=window.archiveItems.slice(0,8).map(item=>{
+      const image=`<img src="${item.image}" alt="${item.title}" loading="lazy" data-fallback data-hide-card-on-error onerror="this.closest('.visual-archive-card,.archive-item,.archive-card')?.classList.add('is-missing')">`;
+      if(item.url){
+        return `<a class="archive-item visual-archive-card reveal" href="${item.url}" data-cursor="View">${image}</a>`;
+      }
+      return `<button class="archive-item visual-archive-card image-button reveal" type="button" data-lightbox="${item.image}" data-cursor="Open" aria-label="Open ${item.title}">${image}</button>`;
     }).join('');
     bindFallbacks(grid);
     hideMissingProjectMedia(grid);
@@ -165,13 +169,13 @@
 
   function renderEventPhotography(){
     const grid=qs('[data-event-photography]');
-    const items=window.eventPhotographyItems||[];
+    const items=(window.eventPhotographyItems||[]).filter(item=>item&&item.image).slice(0,6);
     if(!grid||!items.length)return;
     grid.innerHTML=items.map(item=>`
       <article class="event-photo-card reveal" data-cursor="Open">
         <button class="event-photo-button" type="button" data-lightbox="${item.image}" aria-label="Open ${item.title}">
           <div class="image-frame" data-label="${item.label||item.title}">
-            <img src="${item.image}" alt="${item.alt||item.title}" loading="lazy" data-fallback data-hide-card-on-error>
+            <img src="${item.image}" alt="${item.alt||item.title}" loading="lazy" data-fallback data-hide-card-on-error onerror="this.closest('.event-photo-card')?.classList.add('is-missing')">
           </div>
         </button>
         <span>${item.label||''}</span>
@@ -179,7 +183,7 @@
     `).join('');
     bindFallbacks(grid);
     qsa('img[data-hide-card-on-error]',grid).forEach(img=>{
-      img.addEventListener('error',()=>img.closest('.event-photo-card,.archive-item')?.remove(),{once:true});
+      img.addEventListener('error',()=>img.closest('.event-photo-card,.archive-item,.visual-archive-card')?.remove(),{once:true});
     });
     window.dispatchEvent(new CustomEvent('content:updated'));
   }

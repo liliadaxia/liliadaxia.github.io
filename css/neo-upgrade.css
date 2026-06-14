@@ -1959,3 +1959,197 @@ body.neo-bauhaus .event-photography-section .event-photo-card .image-frame.is-pl
     transform: none;
   }
 }
+
+/* Homepage archive/photo cleanup: keep failed media and archive captions from leaving empty cards. */
+body.neo-bauhaus .event-photography-section .event-photo-card.is-missing,
+body.neo-bauhaus #archive .archive-item.is-missing,
+body.neo-bauhaus #archive .visual-archive-card.is-missing {
+  display: none !important;
+}
+
+body.neo-bauhaus #archive .archive-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(16px, 2vw, 28px) !important;
+}
+
+body.neo-bauhaus #archive .archive-item,
+body.neo-bauhaus #archive .archive-card,
+body.neo-bauhaus #archive .visual-archive-card {
+  display: block !important;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-width: 0;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+body.neo-bauhaus #archive .archive-item img,
+body.neo-bauhaus #archive .archive-card img,
+body.neo-bauhaus #archive .visual-archive-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 4 / 3;
+  object-fit: cover !important;
+  border-radius: inherit !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+body.neo-bauhaus #archive .visual-archive-meta,
+body.neo-bauhaus #archive .archive-meta,
+body.neo-bauhaus #archive .archive-caption,
+body.neo-bauhaus #archive .visual-archive-caption,
+body.neo-bauhaus #archive .archive-title,
+body.neo-bauhaus #archive .visual-archive-title,
+body.neo-bauhaus #archive .archive-tag,
+body.neo-bauhaus #archive .visual-archive-tag,
+body.neo-bauhaus #archive .card-meta,
+body.neo-bauhaus #archive .card-caption,
+body.neo-bauhaus #archive .card-title,
+body.neo-bauhaus #archive .card-tag,
+body.neo-bauhaus #archive figcaption {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 1024px) {
+  body.neo-bauhaus #archive .archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.neo-bauhaus #archive .archive-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Homepage final polish: study-tour card tone and natural hero collage. */
+body.neo-bauhaus .project-card[data-project-id="study-tour"] {
+  --study-title: #151b2c;
+  --study-subtitle: #2e4a7d;
+  --study-meta: #6a7386;
+  --study-body: #4e596c;
+  --study-chip-bg: #f3eee7;
+  --study-chip-text: #233554;
+  --study-accent: #c7a76c;
+  --card-accent: var(--study-accent);
+  color: var(--study-title);
+}
+
+body.neo-bauhaus .project-card[data-project-id="study-tour"] h3 {
+  color: var(--study-title) !important;
+}
+
+body.neo-bauhaus .project-card[data-project-id="study-tour"] h3 span:first-child {
+  color: var(--study-subtitle) !important;
+}
+
+body.neo-bauhaus .project-card[data-project-id="study-tour"] h3 span:last-child {
+  color: var(--study-title) !important;
+}
+
+body.neo-bauhaus .project-card[data-project-id="study-tour"] .project-card-meta,
+body.neo-bauhaus .project-card[data-project-id="study-tour"] .project-card-meta span {
+  color: var(--study-meta) !important;
+}
+
+body.neo-bauhaus .project-card[data-project-id="study-tour"] p {
+  color: var(--study-body) !important;
+}
+
+body.neo-bauhaus .project-card[data-project-id="study-tour"] .tag-list span {
+  border: 1px solid rgba(35, 53, 84, 0.08) !important;
+  background: var(--study-chip-bg) !important;
+  color: var(--study-chip-text) !important;
+}
+
+body.neo-bauhaus .project-card[data-project-id="study-tour"] .tag-list span:hover {
+  border-color: rgba(199, 167, 108, 0.38) !important;
+  background: #fffaf1 !important;
+  color: var(--study-title) !important;
+}
+
+body.neo-bauhaus .hero-visual-cards {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+  align-items: start !important;
+  align-self: center;
+  gap: 22px !important;
+  width: min(100%, 560px) !important;
+  max-width: 560px !important;
+  margin: 0 0 0 auto !important;
+  overflow: visible !important;
+}
+
+body.neo-bauhaus .hero-visual-card {
+  background: transparent !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10) !important;
+}
+
+body.neo-bauhaus .hero-visual-card:nth-child(2) {
+  margin-top: 44px;
+}
+
+body.neo-bauhaus .hero-visual-card:nth-child(3) {
+  margin-top: -10px;
+}
+
+body.neo-bauhaus .hero-visual-card:nth-child(4) {
+  margin-top: 28px;
+}
+
+body.neo-bauhaus .hero-visual-card:hover,
+body.neo-bauhaus .hero-visual-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.14) !important;
+}
+
+body.neo-bauhaus .hero-visual-card .card-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+@media (max-width: 1080px) {
+  body.neo-bauhaus .hero-visual-cards {
+    margin-inline: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body.neo-bauhaus .hero-visual-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+  }
+
+  body.neo-bauhaus .hero-visual-card:nth-child(2),
+  body.neo-bauhaus .hero-visual-card:nth-child(3),
+  body.neo-bauhaus .hero-visual-card:nth-child(4) {
+    margin-top: 0;
+  }
+
+  body.neo-bauhaus .hero-visual-card {
+    border-radius: 18px !important;
+  }
+
+  body.neo-bauhaus .hero-visual-card:hover,
+  body.neo-bauhaus .hero-visual-card:focus-visible {
+    transform: none;
+  }
+}
