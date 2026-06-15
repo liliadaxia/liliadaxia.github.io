@@ -1890,13 +1890,20 @@ body.neo-bauhaus [data-testimonials] {
     cursor: auto !important;
   }
 
-  body.neo-bauhaus .custom-cursor,
-  body.neo-bauhaus .cursor-label,
-  body.neo-bauhaus .custom-cursor-label,
-  body.neo-bauhaus #doodle-canvas,
-  body.neo-bauhaus .hover-preview {
-    display: none !important;
-  }
+body.neo-bauhaus .custom-cursor,
+body.neo-bauhaus .cursor-label,
+body.neo-bauhaus .custom-cursor-label,
+body.neo-bauhaus #doodle-canvas,
+body.neo-bauhaus .hover-preview {
+  display: none !important;
+}
+
+body.neo-bauhaus.has-custom-cursor,
+body.neo-bauhaus.has-custom-cursor a,
+body.neo-bauhaus.has-custom-cursor button,
+body.neo-bauhaus.has-custom-cursor [role="button"] {
+  cursor: auto !important;
+}
 
   body.neo-bauhaus .marquee-track {
     animation: none !important;

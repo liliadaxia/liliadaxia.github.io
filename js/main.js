@@ -313,6 +313,87 @@
     });
   }
 
+  function prepareImagePerformance(root=document){
+    qsa('img',root).forEach((img,index)=>{
+      if(!img.hasAttribute('decoding'))img.setAttribute('decoding','async');
+      if(!img.hasAttribute('loading')){
+        const isHero=!!img.closest('.hero,.home-hero,.study-hero,.sk-hero,.haiduo-hero,.hero-section,.about-hero');
+        img.setAttribute('loading',isHero&&index<3?'eager':'lazy');
+      }
+      const isPriority=!!img.closest('.hero,.home-hero,.study-hero,.sk-hero,.haiduo-hero,.hero-section');
+      if(isPriority&&!img.hasAttribute('fetchpriority'))img.setAttribute('fetchpriority','high');
+    });
+  }
+
+  function setupPageOutline(){
+    if(qs('.page-outline'))return;
+    const main=qs('main')||qs('.main-content');
+    if(!main)return;
+    const knownLabels={
+      top:'Top',
+      works:'作品',
+      'event-photography':'摄影',
+      archive:'归档',
+      voices:'反馈',
+      now:'近期',
+      contact:'联系'
+    };
+    const kickerLabels=[
+      [/PROJECT BRIEF|BRIEF & IMPACT/i,'Brief'],
+      [/BRAND POSITIONING/i,'定位'],
+      [/PROGRAM SYSTEM/i,'体系'],
+      [/B2B PROMOTION/i,'B2B'],
+      [/CAMPAIGN & SOCIAL/i,'社媒'],
+      [/CAMPAIGN VISUAL/i,'海报'],
+      [/SPACE & SCENE/i,'空间'],
+      [/MATERIAL/i,'物料'],
+      [/ITINERARY/i,'行程'],
+      [/DOCUMENTATION|PHOTOGRAPHY/i,'摄影'],
+      [/PROJECT VALUE/i,'总结'],
+      [/CAMPAIGN POSTERS/i,'海报'],
+      [/SEASONAL/i,'节气'],
+      [/EVENT VISUAL/i,'活动'],
+      [/ONSITE/i,'落地'],
+      [/BRAND OVERVIEW/i,'总览'],
+      [/PHOTO RECORD/i,'摄影']
+    ];
+    const clean=text=>(text||'').replace(/\s+/g,' ').trim();
+    const labelFor=(section,index)=>{
+      if(section.id&&knownLabels[section.id])return knownLabels[section.id];
+      if(index===0&&section.matches('.hero,.home-hero,.study-hero,.sk-hero,.haiduo-hero,.hero-section'))return 'Top';
+      const kicker=clean(qs('.section-kicker,.section-label,.hero-kicker,.eyebrow,.tour-card-meta',section)?.textContent);
+      for(const [pattern,label] of kickerLabels){
+        if(pattern.test(kicker))return label;
+      }
+      const heading=clean(qs('h2,h1,h3',section)?.textContent);
+      if(!heading)return `Section ${index+1}`;
+      const firstLine=heading.split(/[｜|/]/)[0].trim();
+      return firstLine.length>8?`${firstLine.slice(0,8)}...`:firstLine;
+    };
+    const sections=qsa('section',main).filter(section=>qs('h1,h2,h3',section));
+    const items=sections.map((section,index)=>{
+      if(!section.id)section.id=`page-section-${index+1}`;
+      return {id:section.id,label:labelFor(section,index),section};
+    }).filter(item=>item.label);
+    if(items.length<3)return;
+    const nav=document.createElement('nav');
+    nav.className='page-outline';
+    nav.setAttribute('aria-label','页面内容导航');
+    nav.innerHTML=`<span class="page-outline__label">PAGE</span><div class="page-outline__track">${items.map(item=>`<a href="#${item.id}" data-outline-target="${item.id}">${item.label}</a>`).join('')}</div>`;
+    document.body.appendChild(nav);
+    const links=qsa('a',nav);
+    const setActive=id=>links.forEach(link=>link.classList.toggle('is-active',link.dataset.outlineTarget===id));
+    setActive(items[0].id);
+    if('IntersectionObserver'in window){
+      const io=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting)setActive(entry.target.id);
+        });
+      },{rootMargin:'-35% 0px -52% 0px',threshold:0.01});
+      items.forEach(item=>io.observe(item.section));
+    }
+  }
+
   function lazyRenderWhenVisible(selector,renderFn){
     const target=qs(selector);
     if(!target||typeof renderFn!=='function')return;
@@ -349,6 +430,8 @@
     setupMenu();
     prepareProjectGallery();
     prepareNowCards();
+    prepareImagePerformance();
+    setupPageOutline();
     bindFallbacks();
     hideMissingProjectMedia();
     if(!isMobile){
@@ -359,4 +442,5 @@
     setupLightbox();
     setTimeout(()=>document.body.classList.add('is-loaded'),80);
   });
+  addEventListener('content:updated',()=>prepareImagePerformance());
 })();

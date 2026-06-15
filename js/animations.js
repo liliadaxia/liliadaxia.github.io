@@ -23,17 +23,13 @@ function scrollLine(){
   u(); addEventListener('scroll',u,{passive:true}); addEventListener('resize',u);
 }
 function cursor(){
+  document.body.classList.remove('has-custom-cursor');
   if(reduced||!fine)return;
-  let c=qs('.custom-cursor');
-  if(!c){c=document.createElement('div');c.className='custom-cursor';c.setAttribute('aria-hidden','true');c.innerHTML='<span class="cursor-dot"></span><span class="cursor-label"></span>';document.body.appendChild(c);}
-  const label=qs('.cursor-label',c); let tx=innerWidth/2,ty=innerHeight/2,x=tx,y=ty;
-  document.body.classList.add('has-custom-cursor');
-  addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;c.classList.add('is-visible');},{passive:true});
-  document.addEventListener('mouseover',e=>{const t=e.target.closest('[data-cursor],.project-card,.chat-card,.chat-bubble,.tool-pill,.flow-step,.button,.nav-cta,.image-button,.archive-link,a,button');let text=t?.matches('.tool-pill')?(t.closest('[data-theme-trigger="ai"]')?'AI':'Tool'):(t?.dataset.cursor||(t?.matches('.project-card')?'View':t?.matches('.archive-link,.image-button')?'Open':t?.matches('.chat-bubble')?'Note':t?.matches('.chat-card')?'Read':t?.matches('.flow-step')?'Step':t?.matches('a,button')?'Go':''));if(text==='Light')text='';label.textContent=text;c.classList.toggle('has-label',!!text);});
-  document.addEventListener('mouseout',e=>{if(!e.relatedTarget||!e.relatedTarget.closest('[data-cursor],.project-card,.chat-card,.chat-bubble,.tool-pill,.flow-step,.button,.nav-cta,.image-button,.archive-link,a,button')){label.textContent='';c.classList.remove('has-label');}});
-  (function loop(){x+=(tx-x)*.22;y+=(ty-y)*.22;c.style.transform=`translate3d(${x}px,${y}px,0)`;requestAnimationFrame(loop);})();
+  qsa('.custom-cursor,.custom-cursor-label,.cursor-label').forEach(item=>item.remove());
 }
 function haiduoCursorHalo(){
+  qs('.cursor-halo')?.remove();
+  return;
   if(reduced||!fine||!document.body.classList.contains('haiduo-project'))return;
   let halo=qs('.cursor-halo');
   if(!halo){
@@ -67,6 +63,8 @@ function haiduoCursorHalo(){
   })();
 }
 function doodle(){
+  qs('#doodle-canvas')?.remove();
+  return;
   if(reduced||!fine)return;
   let cv=qs('#doodle-canvas'); if(!cv){cv=document.createElement('canvas');cv.id='doodle-canvas';cv.setAttribute('aria-hidden','true');document.body.appendChild(cv);}
   const ctx=cv.getContext('2d'),colors=['#141414','#f2a394','#bfd7f3']; let dpr=1,down=false,cur=null; const strokes=[];
