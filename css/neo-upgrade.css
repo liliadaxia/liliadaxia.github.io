@@ -1708,6 +1708,173 @@ body.neo-bauhaus .hero-visual-card:focus-visible .card-image {
   }
 }
 
+/* Home selected work: compact cinematic cards */
+body.neo-bauhaus #works {
+  padding-top: clamp(72px, 8vw, 112px) !important;
+  padding-bottom: clamp(72px, 8vw, 112px) !important;
+}
+
+body.neo-bauhaus #works .section-header {
+  grid-template-columns: minmax(100px, 0.22fr) minmax(0, 1fr) !important;
+  gap: clamp(22px, 4vw, 64px) !important;
+  margin-bottom: clamp(24px, 3.2vw, 40px) !important;
+}
+
+body.neo-bauhaus #works .section-title {
+  max-width: 760px !important;
+  font-size: clamp(40px, 4.2vw, 64px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.04em !important;
+}
+
+body.neo-bauhaus #works .section-copy {
+  max-width: 700px !important;
+  margin-top: 20px !important;
+  font-size: clamp(15px, 1.05vw, 17px) !important;
+  line-height: 1.75 !important;
+}
+
+body.neo-bauhaus #works .project-filters {
+  margin-bottom: clamp(22px, 2.5vw, 34px) !important;
+}
+
+body.neo-bauhaus #works .filter-button {
+  min-height: 38px !important;
+  padding-inline: 16px !important;
+}
+
+body.neo-bauhaus #works .work-list {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: start !important;
+  gap: clamp(18px, 2.2vw, 28px) !important;
+  overflow: visible !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card {
+  --work-scroll-y: 10px;
+  --work-focus: 0.35;
+  min-height: 0 !important;
+  border-radius: 22px !important;
+  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.055) !important;
+  opacity: calc(0.72 + (var(--work-focus) * 0.28));
+  transform: translate3d(0, var(--work-scroll-y), 0) scale(calc(0.965 + (var(--work-focus) * 0.035))) !important;
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card:nth-child(2) {
+  margin-top: 34px;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card:nth-child(3) {
+  margin-top: 12px;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card.is-scroll-active,
+body.neo-bauhaus #works .work-list .project-card.work-card:hover,
+body.neo-bauhaus #works .work-list .project-card.work-card:focus-visible {
+  border-color: rgba(201, 163, 91, 0.32) !important;
+  box-shadow: 0 22px 56px rgba(26, 26, 26, 0.11) !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card .work-card-media {
+  aspect-ratio: 16 / 10 !important;
+  height: clamp(210px, 21vw, 315px) !important;
+  max-height: 315px !important;
+  border-radius: 22px 22px 0 0 !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card .work-card-body {
+  gap: 9px !important;
+  padding: 16px 18px 18px !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card h3 {
+  font-size: clamp(20px, 1.6vw, 27px) !important;
+  line-height: 1.08 !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card p {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  -webkit-line-clamp: 2 !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card .project-card-meta {
+  font-size: 11px !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card .tag-list {
+  gap: 6px !important;
+}
+
+body.neo-bauhaus #works .work-list .project-card.work-card .tag-list span {
+  min-height: 26px !important;
+  padding-inline: 9px !important;
+  font-size: 11px !important;
+}
+
+body.neo-bauhaus #works .floating-view {
+  top: 18px !important;
+  right: 18px !important;
+  min-height: 34px !important;
+  padding-inline: 12px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.neo-bauhaus #works .work-list .project-card.work-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body.neo-bauhaus #works .work-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body.neo-bauhaus #works .work-list .project-card.work-card:nth-child(2),
+  body.neo-bauhaus #works .work-list .project-card.work-card:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body.neo-bauhaus #works {
+    padding-top: 64px !important;
+    padding-bottom: 72px !important;
+  }
+
+  body.neo-bauhaus #works .section-header {
+    grid-template-columns: 1fr !important;
+    margin-bottom: 24px !important;
+  }
+
+  body.neo-bauhaus #works .section-title {
+    font-size: clamp(34px, 10vw, 46px) !important;
+  }
+
+  body.neo-bauhaus #works .work-list {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  body.neo-bauhaus #works .work-list .project-card.work-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body.neo-bauhaus #works .work-list .project-card.work-card .work-card-media {
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+}
+
 /* Mobile final performance and layout fixes */
 html,
 body {

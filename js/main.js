@@ -7,6 +7,7 @@
   let hasRenderedArchive=false;
   let hasRenderedEventPhotography=false;
   let hasRenderedTestimonials=false;
+  let selectedWorkMotionBound=false;
   const categories=['\u5168\u90e8','\u54c1\u724c\u7cfb\u7edf','\u6d3b\u52a8\u4f20\u64ad','\u7a7a\u95f4\u7269\u6599','\u884d\u751f\u4ea7\u54c1'];
   const themeByCategory={
     '\u54c1\u724c\u7cfb\u7edf':'brand',
@@ -122,6 +123,7 @@
       grid.innerHTML=selected.map(projectCard).join('');
       bindFallbacks(grid);
       setupProjectInteractions(grid);
+      setupSelectedWorkMotion();
       grid.classList.remove('is-switching');
       window.dispatchEvent(new CustomEvent('content:updated'));
     },reduced?0:140);
@@ -244,6 +246,50 @@
       if(!raf)raf=requestAnimationFrame(update);
     },{passive:true});
     collage.addEventListener('mouseleave',reset);
+  }
+
+  function updateSelectedWorkMotion(){
+    const section=qs('#works');
+    if(!section)return;
+    const cards=qsa('.work-list .work-card',section);
+    if(!cards.length)return;
+    if(reduced||isMobile){
+      cards.forEach(card=>{
+        card.classList.add('is-scroll-active');
+        card.style.removeProperty('--work-scroll-y');
+        card.style.removeProperty('--work-focus');
+      });
+      return;
+    }
+    const focusY=innerHeight*0.58;
+    cards.forEach(card=>{
+      const rect=card.getBoundingClientRect();
+      const cardCenter=rect.top+rect.height*0.5;
+      const distance=Math.abs(cardCenter-focusY);
+      const focus=Math.max(0,1-distance/(innerHeight*0.62));
+      const lift=(1-focus)*14;
+      card.style.setProperty('--work-scroll-y',`${lift.toFixed(1)}px`);
+      card.style.setProperty('--work-focus',focus.toFixed(3));
+      card.classList.toggle('is-scroll-active',focus>0.52);
+    });
+  }
+
+  function setupSelectedWorkMotion(){
+    const section=qs('#works');
+    if(!section||!qsa('.work-list .work-card',section).length)return;
+    updateSelectedWorkMotion();
+    if(selectedWorkMotionBound)return;
+    selectedWorkMotionBound=true;
+    let raf=0;
+    const requestUpdate=()=>{
+      if(raf)return;
+      raf=requestAnimationFrame(()=>{
+        raf=0;
+        updateSelectedWorkMotion();
+      });
+    };
+    addEventListener('scroll',requestUpdate,{passive:true});
+    addEventListener('resize',requestUpdate);
   }
 
   function setupHoverPreview(){
@@ -439,6 +485,7 @@
       setupHoverPreview();
       setupProjectInteractions();
     }
+    setupSelectedWorkMotion();
     setupLightbox();
     setTimeout(()=>document.body.classList.add('is-loaded'),80);
   });
